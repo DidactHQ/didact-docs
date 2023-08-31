@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.47",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "medium-zoom": "^1.0.8"
+  }
+}
