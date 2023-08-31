@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Displagent Docs',
-  description: 'The official docsite for Displagent.',
+  title: 'Didact Docs',
+  description: 'The official docsite for the Didact .NET job orchestration platform.',
   cleanUrls: true,
   head: [
     // [
@@ -12,12 +12,12 @@ export default defineConfig({
     // ],
     [
       'script',
-      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-ZYJNTMM4SR' }
+      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-Y85QWRX1XL' }
     ],
     [
       'script',
       {},
-      "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZYJNTMM4SR')"
+      "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Y85QWRX1XL')"
     ]
   ],
   themeConfig: {

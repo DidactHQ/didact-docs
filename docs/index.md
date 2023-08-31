@@ -1,14 +1,14 @@
 ---
 layout: home
 hero:
-  name: Displagent Docs
+  name: Didact Docs
   # text: Welcome
-  tagline: The most advanced Power BI slideshow mechanics and digital signage software in the Power BI ecosystem.
+  tagline: The modern, standalone, fullstack, and atomic background job orchestrator that .NET has been missing.
   actions:
     - theme: brand
       text: Get Started
-      link: /setup/what-is-displagent
+      link: /
     - theme: alt
       text: Primary Website
-      link: https://www.displagent.io
+      link: https://www.didact.dev
 ---
