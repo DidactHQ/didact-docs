@@ -1,5 +1,6 @@
 ---
 layout: home
+titleTemplate: The official docsite of the Didact platform
 hero:
   name: Didact Docs
   # text: Welcome
