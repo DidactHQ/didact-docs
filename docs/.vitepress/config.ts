@@ -1,4 +1,10 @@
 import { defineConfig } from 'vitepress'
+import { createWriteStream } from 'node:fs'
+import { resolve } from 'node:path'
+import { SitemapStream } from 'sitemap'
+
+const hostname = 'https://docs.didact.dev';
+const links = [];
 
 export default defineConfig({
   title: 'Didact Docs',
@@ -82,5 +88,56 @@ export default defineConfig({
     },
     outline: [2,6],
     lastUpdatedText: 'Last Updated'
-  }
+  },
+    transformPageData(pageData, context) {
+    pageData.frontmatter.head ??= [];
+
+    // Add og:title meta tags.
+    const dynamicTitle = !pageData.title
+      ? context.siteConfig.site.title
+      : pageData.title;
+
+    const dynamicTitleTemplate = !pageData.titleTemplate
+      ? context.siteConfig.site.title
+      : pageData.titleTemplate;
+
+    pageData.frontmatter.head.push([
+      'meta',
+      {
+        name: 'og:title',
+        content: `${dynamicTitle} | ${dynamicTitleTemplate}`
+      }
+    ]);
+
+    // Add og:description meta tags.
+    pageData.frontmatter.head.push([
+      'meta',
+      {
+        name: 'og:description',
+        content: `${!pageData.description
+          ? context.siteConfig.site.description
+          : pageData.description }`
+      }
+    ]);
+  },
+  // From https://github.com/vuejs/vitepress/issues/520#issuecomment-1566062351
+  transformHtml: (_, id, { pageData }) => {
+    if (!/[\\/]404\.html$/.test(id))
+      links.push({
+        // you might need to change this if not using clean urls mode
+        url: pageData.relativePath.replace(/((^|\/)index)?\.md$/, '$2'),
+        lastmod: pageData.lastUpdated
+      })
+  },
+  // From https://github.com/vuejs/vitepress/issues/520#issuecomment-1566062351
+  buildEnd: async ({ outDir }) => {
+    const sitemap = new SitemapStream({
+      hostname: hostname
+    })
+    const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
+    sitemap.pipe(writeStream)
+    links.forEach((link) => sitemap.write(link))
+    sitemap.end()
+    await new Promise((r) => writeStream.on('finish', r))
+  },
 })

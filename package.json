@@ -9,6 +9,7 @@
     "vue": "^3.2.47"
   },
   "dependencies": {
-    "medium-zoom": "^1.0.8"
+    "medium-zoom": "^1.0.8",
+    "sitemap": "^7.1.1"
   }
 }
