@@ -30,27 +30,33 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: [
+        { text: 'Getting Started', link: '/getting-started/' },
         { text: 'Concepts', link: '/overview/' },
+        { text: 'Deployments', link: '/overview/' },
         { text: 'Guide', link: '/report-slideshows/' },
         { text: 'Recipes', link: '/dashboard-slideshows/'},
         { text: 'API', link: '/autolaunch/' },
     ],
     sidebar: {
-        '/overview/': [
+        '/getting-started/': [
           {
             text: 'Introduction',
             items: [
               { text: 'What Is Didact?', link: '/setup/' },
               { text: 'Why Build Didact?', link: '/setup/what-is-displagent' },
-              { text: 'Didact vs. Other Tools', link: '/setup/required-credentials' },
+              { text: 'Platform vs. Library', link: '/setup/' },
+              { text: 'Compare Didact', link: '/setup/required-credentials' },
               { text: 'Common Use Cases', link: '/setup/power-bi-service-account' },
               { text: 'Licensing', link: '/setup/azure-app-registration' },
+              { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
             ]
           },
+        ],
+        '/overview/': [
           {
             text: 'Architecture',
             items: [
-              { text: 'Architecture Survey', link: '/setup/' },
+              { text: 'Survey', link: '/setup/' },
               { text: 'Didact Engine', link: '/setup/what-is-displagent' },
               { text: 'Didact UI', link: '/setup/required-credentials' },
               { text: 'Didact Sentinnel', link: '/setup/power-bi-service-account' },
