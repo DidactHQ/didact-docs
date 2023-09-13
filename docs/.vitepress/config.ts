@@ -30,9 +30,9 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: [
-        { text: 'Getting Started', link: '/getting-started/' },
-        { text: 'Concepts', link: '/overview/' },
-        { text: 'Deployments', link: '/overview/' },
+        { text: 'Getting started', link: '/getting-started/' },
+        { text: 'Concepts', link: '/concepts/' },
+        { text: 'Deployments', link: '/deployments/' },
         { text: 'Guide', link: '/report-slideshows/' },
         { text: 'Recipes', link: '/dashboard-slideshows/'},
         { text: 'API', link: '/autolaunch/' },
@@ -52,7 +52,7 @@ export default defineConfig({
             ]
           },
         ],
-        '/overview/': [
+        '/concepts/': [
           {
             text: 'Architecture',
             items: [
@@ -72,7 +72,21 @@ export default defineConfig({
               { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
             ]
           }
-        ]
+        ],
+        '/deployments/': [
+          {
+            text: 'Self-hosted',
+            items: [
+              { text: 'Deploy Didact Engine', link: '/setup/' },
+              { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
+              { text: 'Deploy Didact Sentinnel', link: '/setup/' },
+              { text: 'Multiple Engines', link: '/setup/required-credentials' },
+            ]
+          },
+          {
+            text: 'Didact Cloud'
+          }
+        ],
     },
     search: {
       provider: 'local'
@@ -80,6 +94,10 @@ export default defineConfig({
     outline: [2,6],
     editLink: {
       pattern: 'https://github.com/DidactHQ/didact-docs/edit/main/docs/:path'
+    },
+    footer: {
+      message: 'The modern, standalone, fullstack, and atomic background job orchestrator that .NET has been missing.',
+      copyright: 'Copyright © 2023-present Daniel Miradakis'
     }
   },
     transformPageData(pageData, context) {
