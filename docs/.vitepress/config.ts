@@ -10,6 +10,7 @@ export default defineConfig({
   title: 'Didact Docs',
   description: 'The official docsite for the Didact .NET job orchestration platform.',
   cleanUrls: true,
+  lastUpdated: true,
   head: [
     // [
     //   'link',
@@ -71,7 +72,9 @@ export default defineConfig({
       provider: 'local'
     },
     outline: [2,6],
-    lastUpdatedText: 'Last Updated'
+    editLink: {
+      pattern: 'https://github.com/DidactHQ/didact-docs/edit/main/docs/:path'
+    }
   },
     transformPageData(pageData, context) {
     pageData.frontmatter.head ??= [];
