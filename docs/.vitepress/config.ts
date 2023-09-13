@@ -29,7 +29,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: [
-        { text: 'Overview', link: '/overview/' },
+        { text: 'Concepts', link: '/overview/' },
         { text: 'Guide', link: '/report-slideshows/' },
         { text: 'Recipes', link: '/dashboard-slideshows/'},
         { text: 'API', link: '/autolaunch/' },
@@ -37,7 +37,7 @@ export default defineConfig({
     sidebar: {
         '/overview/': [
           {
-            text: 'Overview',
+            text: 'Introduction',
             items: [
               { text: 'What Is Didact?', link: '/setup/' },
               { text: 'Why Build Didact?', link: '/setup/what-is-displagent' },
@@ -49,21 +49,20 @@ export default defineConfig({
           {
             text: 'Architecture',
             items: [
-              { text: 'What Is Didact?', link: '/setup/' },
-              { text: 'Why Build Didact?', link: '/setup/what-is-displagent' },
-              { text: 'Didact vs. Other Tools', link: '/setup/required-credentials' },
-              { text: 'Common Use Cases', link: '/setup/power-bi-service-account' },
-              { text: 'Licensing', link: '/setup/azure-app-registration' },
+              { text: 'Architecture Survey', link: '/setup/' },
+              { text: 'Didact Engine', link: '/setup/what-is-displagent' },
+              { text: 'Didact UI', link: '/setup/required-credentials' },
+              { text: 'Didact Sentinnel', link: '/setup/power-bi-service-account' },
+              { text: 'Didact Core', link: '/setup/azure-app-registration' },
             ]
           },
           {
             text: 'Core Concepts',
             items: [
-              { text: 'What Is Didact?', link: '/setup/' },
-              { text: 'Why Build Didact?', link: '/setup/what-is-displagent' },
-              { text: 'Didact vs. Other Tools', link: '/setup/required-credentials' },
-              { text: 'Common Use Cases', link: '/setup/power-bi-service-account' },
-              { text: 'Licensing', link: '/setup/azure-app-registration' },
+              { text: 'Class Library Project', link: '/setup/' },
+              { text: 'Flows', link: '/setup/what-is-displagent' },
+              { text: 'Execution Blocks', link: '/setup/required-credentials' },
+              { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
             ]
           }
         ]
