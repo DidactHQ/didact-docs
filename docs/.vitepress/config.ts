@@ -33,9 +33,9 @@ export default defineConfig({
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
         { text: 'Concepts', link: '/concepts/' },
         { text: 'Deployments', link: '/deployments/' },
-        { text: 'Guide', link: '/report-slideshows/' },
-        { text: 'Recipes', link: '/dashboard-slideshows/'},
-        { text: 'API', link: '/autolaunch/' },
+        { text: 'Guide', link: '/guide/' },
+        { text: 'Recipes', link: '/recipes/'},
+        { text: 'API', link: '/api/' },
     ],
     sidebar: {
         '/getting-started/': [
