@@ -47,7 +47,7 @@ export default defineConfig({
               { text: 'Platform vs. Library', link: '/getting-started/platform-vs-library' },
               { text: 'Compare Didact', link: '/geting-started/compare-didact' },
               { text: 'Use Cases', link: '/getting-started/use-cases' },
-              { text: 'Licensing', link: '/getting-started/licensing' },
+              { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
               { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
             ]
           },
