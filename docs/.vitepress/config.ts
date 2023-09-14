@@ -59,7 +59,7 @@ export default defineConfig({
               { text: 'Survey', link: '/concepts/survey' },
               { text: 'Didact Engine', link: '/concepts/didact-engine' },
               { text: 'Didact UI', link: '/concepts/didact-ui' },
-              { text: 'Didact Sentinnel', link: '/concepts/didact-sentinnel' },
+              { text: 'Didact Sentinel', link: '/concepts/didact-sentinnel' },
               { text: 'Didact Core', link: '/concepts/didact-core' },
               { text: 'Class Library Project', link: '/concepts/class-library-project' }
             ]
@@ -86,7 +86,7 @@ export default defineConfig({
             items: [
               { text: 'Deploy Didact Engine', link: '/setup/' },
               { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
-              { text: 'Deploy Didact Sentinnel', link: '/setup/' },
+              { text: 'Deploy Didact Sentinel', link: '/setup/' },
               { text: 'Multiple Engines', link: '/setup/required-credentials' },
             ]
           },
