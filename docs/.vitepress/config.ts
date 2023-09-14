@@ -103,7 +103,7 @@ export default defineConfig({
       pattern: 'https://github.com/DidactHQ/didact-docs/edit/main/docs/:path'
     },
     footer: {
-      // message: 'The modern, standalone, fullstack, and atomic background job orchestrator that .NET has been missing.',
+      message: 'Proudly powered by <a style="color: #f97316;" target="_blank" href="https://www.vitepress.dev">Vitepress</a>',
       copyright: 'Copyright © 2023-present Daniel Miradakis'
     }
   },
