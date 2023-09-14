@@ -1,0 +1,34 @@
+---
+title: Meet the Team
+description: Meet the team behind the Didact platform.
+---
+
+# Meet the Team
+
+Hi, I'm Daniel, the founder and maintainer of Didact. I'm a solo, bootstrapped, indie-hacking software developer and data engineer. After binge-watching an unhealthy amount of [MicroConf Youtube videos](https://www.youtube.com/@MicroConf) and discovering the [IndieHackers](https://www.indiehackers.com/) community, I decided that I wanted to try and support myself from my own projects and apps.
+
+## My Portfolio
+
+Didact is project #2 in my portfolio, behind project #1 [Displagent](https://www.displagent.io), a micro SaaS app I designed for advanced slideshow mechanics and digital signage in Power BI.
+
+As you can see, I have a natural gravitation towards solving problems in Microsoft ecosystems.
+
+## Solo and Bootstrapped
+
+As I said, I'm a solo, bootstrapped founder, meaning I have not taken **any** funding whatsoever, not from venture capitalists, not from angel investors, and not from anyone else. Didact is funded from my own pocket and from any monetization models that I can pull off for it (shameless reminder to checkout Didact's [Pricing](https://www.didact.dev/pricing) page).
+
+I think this makes Didact, and by extension, myself, rather unique in the job orchestration community as whole, because if you look at any other platform similar to Didact, such as:
+
+* Prefect
+* Dagster
+* Kestra
+* Inngest
+
+They all have two things in common:
+
+* They are venture-capital funded.
+* They have an entire team of fulltime engineers.
+
+And then there's me and Didact. But I'm confident and positive about what the future holds. Indie Hackers have a knack for pulling off what otherwise seems impossible, and with the open source community behind me, I'm confident that I can make Didact a fulltime gig for myself.
+
+Any support or pricing plans that you purchase go towards this project's sustainability and help me pay my bills, and I cannot thank you enough.
