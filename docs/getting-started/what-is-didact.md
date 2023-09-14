@@ -39,6 +39,7 @@ I go into a deep dive of the architecture on the dedicated [Architecture](/conce
 ## Open Source
 
 Didact's codebase is open source and available for inspection, forking, and modification on [GitHub](https://www.github.com/DidactHQ). It is offered under the AGPL3.0 open source license, and I am attempting to monetize the project with paid support and cloud hosting which you can view on the main site's [Pricing](https://www.didact.dev/pricing) page.
+
 ::: warning Deep breath
 If you recoiled from seeing the AGPL3.0 license, I have some good news for you: **don't worry**.
 
