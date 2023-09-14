@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /
+      link: /getting-started/what-is-didact
     - theme: alt
       text: Primary Website
       link: https://www.didact.dev
