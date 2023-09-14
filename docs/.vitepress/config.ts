@@ -56,11 +56,18 @@ export default defineConfig({
           {
             text: 'Architecture',
             items: [
+              { text: 'Survey', link: '/concepts/survey' },
+              { text: 'Didact Engine', link: '/concepts/didact-engine' },
+              { text: 'Didact UI', link: '/concepts/didact-ui' },
+              { text: 'Didact Sentinnel', link: '/concepts/didact-sentinnel' },
+              { text: 'Didact Core', link: '/concepts/didact-core' },
+              { text: 'Class Library Project', link: '/concepts/class-library-project' }
+            ]
+          },
+          {
+            text: 'Class Library Project',
+            items: [
               { text: 'Survey', link: '/setup/' },
-              { text: 'Didact Engine', link: '/setup/what-is-displagent' },
-              { text: 'Didact UI', link: '/setup/required-credentials' },
-              { text: 'Didact Sentinnel', link: '/setup/power-bi-service-account' },
-              { text: 'Didact Core', link: '/setup/azure-app-registration' },
             ]
           },
           {
