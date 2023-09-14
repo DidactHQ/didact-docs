@@ -12,11 +12,6 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   head: [
-    // [
-    //   'link',
-    //   // { rel: 'icon', href: '/logo.svg' },
-    //   { rel: 'icon', href: '/favicon.ico' }
-    // ],
     [
       'script',
       { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-Y85QWRX1XL' }
@@ -29,6 +24,11 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: '/logo.svg',
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/DidactHQ' },
+      { icon: 'twitter', link: 'https://twitter.com/DidactPlatform' },
+      { icon: 'youtube', link: 'https://www.youtube.com/channel/UCPYXvf2OvQku5HrOKYFsxHg' }
+    ],
     nav: [
         { text: 'Getting started', link: '/getting-started/' },
         { text: 'Concepts', link: '/concepts/' },
@@ -96,7 +96,7 @@ export default defineConfig({
       pattern: 'https://github.com/DidactHQ/didact-docs/edit/main/docs/:path'
     },
     footer: {
-      message: 'The modern, standalone, fullstack, and atomic background job orchestrator that .NET has been missing.',
+      // message: 'The modern, standalone, fullstack, and atomic background job orchestrator that .NET has been missing.',
       copyright: 'Copyright © 2023-present Daniel Miradakis'
     }
   },
