@@ -30,7 +30,7 @@ export default defineConfig({
       { icon: 'youtube', link: 'https://www.youtube.com/channel/UCPYXvf2OvQku5HrOKYFsxHg' }
     ],
     nav: [
-        { text: 'Getting started', link: '/getting-started/' },
+        { text: 'Getting started', link: '/getting-started/what-is-didact' },
         { text: 'Concepts', link: '/concepts/' },
         { text: 'Deployments', link: '/deployments/' },
         { text: 'Guide', link: '/report-slideshows/' },
@@ -42,12 +42,12 @@ export default defineConfig({
           {
             text: 'Introduction',
             items: [
-              { text: 'What Is Didact?', link: '/setup/' },
-              { text: 'Why Build Didact?', link: '/setup/what-is-displagent' },
-              { text: 'Platform vs. Library', link: '/setup/' },
-              { text: 'Compare Didact', link: '/setup/required-credentials' },
-              { text: 'Common Use Cases', link: '/setup/power-bi-service-account' },
-              { text: 'Licensing', link: '/setup/azure-app-registration' },
+              { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
+              { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
+              { text: 'Platform vs. Library', link: '/getting-started/platform-vs-library' },
+              { text: 'Compare Didact', link: '/geting-started/compare-didact' },
+              { text: 'Use Cases', link: '/getting-started/use-cases' },
+              { text: 'Licensing', link: '/getting-started/licensing' },
               { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
             ]
           },
