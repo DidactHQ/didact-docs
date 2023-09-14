@@ -35,3 +35,12 @@ Even though Didact Core is a nuget package, it is still not meant to be added to
 These applications are designed in such a way that your background job processing, data pipelines, and workflows work more as a plug-and-play system. Your only concern should be deploying these applications as-is and then designing your Flows in your class library project.
 
 I go into a deep dive of the architecture on the dedicated [Architecture](/concepts/architecture-survey) pages.
+
+## Open Source
+
+Didact's codebase is open source and available for inspection, forking, and modification on [GitHub](https://www.github.com/DidactHQ). It is offered under the AGPL3.0 open source license, and I am attempting to monetize the project with paid support and cloud hosting which you can view on the main site's [Pricing](https://www.didact.dev/pricing) page.
+::: warning Deep breath
+If you recoiled from seeing the AGPL3.0 license, I have some good news for you: **don't worry**.
+
+I mentioned above that Didact *is not a library*, **it is a standalone platform**. This means that there is a 99.9% chance the AGPL3.0 license will not affect you whatsoever. Read more about it on the [Licensing and Monetization](/getting-started/licensing-and-monetization) page.
+:::
