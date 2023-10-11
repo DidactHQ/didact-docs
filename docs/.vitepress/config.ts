@@ -56,12 +56,11 @@ export default defineConfig({
           {
             text: 'Architecture',
             items: [
-              { text: 'Survey', link: '/concepts/survey' },
+              { text: 'Survey', link: '/concepts/architecture' },
               { text: 'Didact Engine', link: '/concepts/didact-engine' },
               { text: 'Didact UI', link: '/concepts/didact-ui' },
               { text: 'Didact Sentinel', link: '/concepts/didact-sentinnel' },
               { text: 'Didact Core', link: '/concepts/didact-core' },
-              { text: 'Class Library Project', link: '/concepts/class-library-project' }
             ]
           },
           {
@@ -73,7 +72,6 @@ export default defineConfig({
           {
             text: 'Core Concepts',
             items: [
-              { text: 'Class Library Project', link: '/setup/' },
               { text: 'Flows', link: '/setup/what-is-displagent' },
               { text: 'Execution Blocks', link: '/setup/required-credentials' },
               { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
@@ -83,6 +81,15 @@ export default defineConfig({
         '/deployments/': [
           {
             text: 'Self-hosted',
+            items: [
+              { text: 'Deploy Didact Engine', link: '/setup/' },
+              { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
+              { text: 'Deploy Didact Sentinel', link: '/setup/' },
+              { text: 'Multiple Engines', link: '/setup/required-credentials' },
+            ]
+          },
+          {
+            text: 'Containerization',
             items: [
               { text: 'Deploy Didact Engine', link: '/setup/' },
               { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
