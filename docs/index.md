@@ -4,7 +4,7 @@ titleTemplate: The official docsite of the Didact platform
 hero:
   name: Didact Docs
   # text: Welcome
-  tagline: The modern, standalone, fullstack, and atomic background job orchestrator that .NET has been missing.
+  tagline: The open source, standalone, fullstack .NET job orchestrator that we've been missing.
   actions:
     - theme: brand
       text: Get Started
