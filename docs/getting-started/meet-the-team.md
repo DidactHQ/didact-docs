@@ -71,7 +71,7 @@ As you can see, I have a natural gravitation towards solving problems in Microso
 
 ### Solo and Bootstrapped
 
-As I said, I'm a solo, bootstrapped founder, meaning I have not taken **any** funding whatsoever, not from venture capitalists, not from angel investors, and not from anyone else. Didact is funded from my own pocket and from any monetization models that I can pull off for it (shameless reminder to checkout Didact's [Pricing](https://www.didact.dev/pricing) page).
+As I said, I'm a solo, bootstrapped founder, meaning I have not taken **any** funding whatsoever, not from venture capitalists, not from angel investors, and not from anyone else. Didact is funded from my own pocket and from any monetization models that I can pull off for it on Didact's [Pricing](https://www.didact.dev/pricing) page.
 
 I think this makes Didact, and by extension, myself, rather unique in the job orchestration community as whole, because if you look at any other platform similar to Didact, such as:
 
@@ -82,8 +82,8 @@ I think this makes Didact, and by extension, myself, rather unique in the job or
 
 They all have two things in common:
 
-* They are venture-capital funded.
-* They have an entire team of fulltime engineers.
+1. They are venture-capital funded.
+2. They have an entire team of fulltime engineers.
 
 And then there's me and Didact. But I'm confident and positive about what the future holds. Indie hackers have a knack for pulling off what otherwise seems impossible, and with the open source community behind me, I'm confident that I can make Didact a fulltime gig for myself.
 
