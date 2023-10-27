@@ -3,7 +3,11 @@ import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
 import { SitemapStream } from 'sitemap'
 
-const hostname = 'https://docs.didact.dev';
+// WARNING: This should be an environment variable, but VitePress does not support it.
+const hostname = 'https://docs.didact.dev'
+const ogImagePath = '/didact-docs-og.png';
+const twitterSite = '@DidactPlatform';
+const twitterImageAlt = 'Didact Docs'
 const links = [];
 
 export default defineConfig({
