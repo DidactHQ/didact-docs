@@ -1,6 +1,6 @@
 ---
 layout: home
-titleTemplate: The official docsite of the Didact platform
+titleTemplate: The open source, standalone, fullstack .NET job orchestrator that we've been missing.
 hero:
   name: Didact Docs
   # text: Welcome

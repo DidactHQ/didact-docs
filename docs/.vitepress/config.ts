@@ -12,7 +12,7 @@ const links = [];
 
 export default defineConfig({
   title: 'Didact Docs',
-  description: 'The official docsite for the Didact .NET job orchestration platform.',
+  description: 'The open source, standalone, fullstack .NET job orchestrator that we\'ve been missing.',
   cleanUrls: true,
   lastUpdated: true,
   head: [
