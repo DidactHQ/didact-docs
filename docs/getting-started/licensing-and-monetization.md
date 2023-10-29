@@ -6,7 +6,7 @@ title: Licensing and Monetization
 
 Didact is an open source platform licensed under the [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) and has a few different monetization options.
 
-::: tip
+::: tip Happy to talk
 If you have any questions about licensing or monetization, I'm just an email away: reach out to me at `daniel@didact.dev`, I'm happy to discuss your needs or concerns.
 :::
 
