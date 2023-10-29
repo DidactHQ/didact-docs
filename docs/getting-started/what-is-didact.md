@@ -44,12 +44,20 @@ These applications are designed in such a way that your background job processin
 
 I go into a deep dive of the code organization and architecture on the dedicated [Open Source Structure](/getting-started/open-source-structure) and [Architecture](/concepts/architecture-survey) pages.
 
+## Isolated
+
+The actual magic where your background jobs and data pipelines run is defined in an isolated, central class library project. This is where you define your Flows, a term synonymous in the Didact Platform with background job, data pipeline, or workflow.
+
+Your Flows exist in this class library project, totally separate from the rest of your codebase.
+
 ## Open Source
 
-Didact's codebase is open source and available for inspection, forking, and modification on [GitHub](https://www.github.com/DidactHQ). It is offered under the AGPLv3 open source license, and I am attempting to sustain the project with a few different monetization options. See the [Licensing and Monetization page](/getting-started/licensing-and-monetization) for more details.
+Didact's codebase is open source and available for inspection, forking, and modification on [GitHub](https://www.github.com/DidactHQ). It is released under the AGPLv3 open source license and offers a few different monetization options for project sustainability.
+
+See the [Licensing and Monetization](/getting-started/licensing-and-monetization) page for more details.
 
 ::: warning Deep breath
-If you recoiled from seeing the AGPLv3 license, I have some good news for you: **don't worry**.
+If you recoiled from seeing the AGPLv3 license, **don't worry**. Chances are it will not affect you.
 
-I mentioned above that Didact *is not a library*, **it is a standalone platform**. This means that there is a 99.9% chance the AGPL3.0 license will not affect you whatsoever. Read more about it on the [Licensing and Monetization](/getting-started/licensing-and-monetization) page.
+Make sure to read the [Licensing and Monetization](/getting-started/licensing-and-monetization) page for more details.
 :::
