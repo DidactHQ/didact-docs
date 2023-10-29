@@ -13,7 +13,13 @@ As a developer myself, I love using code to solve problems. Although they have t
 
 As such, when you are designing your background jobs, data pipelines, and workflows, Didact is a code-first solution: no drag-and-drop builders, no complicated GUI, just raw C# code.
 
-## Platform vs. Library
+## Fullstack
+
+Many background job libraries and job orchestrators in .NET don't ship with a user interface of any kind. There are a few exceptions here and there like Hangfire, but often times you are lucky if you even find a legible README.md in the project's repo.
+
+Didact ships with a VueJS web dashboard, powered by Tailwind CSS (because I stink at raw CSS) and Flowbite. It's aptly named [Didact UI](https://github.com/DidactHQ/didact-ui).
+
+## Standalone
 
 One very important distinction that I would like to make right from the beginning is that Didact is a **platform**, *not a library*.
 
@@ -36,7 +42,7 @@ And for simplicity's sake, all of these applications are aggregated and offered 
 
 These applications are designed in such a way that your background job processing, data pipelines, and workflows work more as a plug-and-play system. Your only concern should be deploying these applications as-is and then designing your Flows in your class library project.
 
-I go into a deep dive of the architecture on the dedicated [Architecture](/concepts/architecture-survey) pages.
+I go into a deep dive of the code organization and architecture on the dedicated [Open Source Structure](/getting-started/open-source-structure) and [Architecture](/concepts/architecture-survey) pages.
 
 ## Open Source
 
