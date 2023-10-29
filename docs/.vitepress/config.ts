@@ -55,6 +55,13 @@ export default defineConfig({
               { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
             ]
           },
+          {
+            text: 'Open Source',
+            items: [
+              { text: 'Structure', link: '/getting-started/open-source-structure' },
+              { text: 'Contributing', link: '/getting-started/contributing' },
+            ]
+          },
         ],
         '/concepts/': [
           {
