@@ -35,11 +35,11 @@ export default defineConfig({
     ],
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
-        { text: 'Concepts', link: '/concepts/' },
-        { text: 'Deployments', link: '/deployments/' },
-        { text: 'Guide', link: '/guide/' },
-        { text: 'Recipes', link: '/recipes/'},
-        { text: 'API', link: '/api/' },
+        // { text: 'Concepts', link: '/concepts/' },
+        // { text: 'Deployments', link: '/deployments/' },
+        // { text: 'Guide', link: '/guide/' },
+        // { text: 'Recipes', link: '/recipes/'},
+        // { text: 'API', link: '/api/' },
     ],
     sidebar: {
         '/getting-started/': [
@@ -48,8 +48,7 @@ export default defineConfig({
             items: [
               { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
               { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
-              { text: 'Platform vs. Library', link: '/getting-started/platform-vs-library' },
-              { text: 'Compare Didact', link: '/geting-started/compare-didact' },
+              { text: 'Compare Didact', link: '/getting-started/compare-didact' },
               { text: 'Use Cases', link: '/getting-started/use-cases' },
               { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
               { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
