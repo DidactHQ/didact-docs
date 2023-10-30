@@ -17,6 +17,22 @@ They are large, well-documented, and VC-funded, so naturally, as a solo dev/indi
 
 Moreoever, as someone whose career started in data analytics and data engineering before becoming engulfed with fullstack software development, I have a particular passion for managing background jobs, data pipelines, and workflows.
 
+## SSIS
+
+I think a great number of .NET developers and SQL Server users are not exactly *thrilled* with the developer experience of SSIS.
+
+Without a doubt, there are still SSIS developer jobs out there, and if a company simply refuses to move away from it, it's completely reasonable to learn the tool if necessary.
+
+But emphasis on the words "if necessary".
+
+Though it may still exist as a critical tool in some enterprises, it does not change the fact that SSIS is horrendously outdated. Even something as simple as a HTTP REST API call are not pleasant to use in SSIS. SSIS exists primarily as a GUI-based ETL tool, and I would be remiss if I didn't acknowledge that it has some nice parts like prebuilt actions for JOINs.
+
+And if that's enough for you: no judgement, that's completely fine.
+
+But, I think, when you look at the tool in its entirety and evaluate its overall developer experience, it generally ranks pretty poorly. It is so difficult for any GUI-based ETL tool to compete with a code-first job orchestrator, especially if that GUI-based tool is so old.
+
+Speaking of that, Microsoft doesn't seem very interested in bringing SSIS up to modern standards. When you look at the new features developed in a year's time for Power BI vs. SSIS, it's clear where Microsoft is and is not allocating their development resources.
+
 ## Tired of Windows Task Scheduler
 
 Being a developer who has worked in .NET/Microsoft shops his entire career, I soon learned about Windows task scheduler once I started building out data pipelines in .NET console applications.
@@ -60,6 +76,6 @@ It would be nice if people like me - whose entire careers have been in .NET shop
 
 At the same time, I fully recognize that many .NET shops these days use Linux servers for all sorts of purposes, and Docker has exploded in the last few years.
 
-So while I have been wanting something that's easy and simple for traditional Windows-based shops to use, I still very much want a cross-platform solution that's easy for everyone to work with.
+So while I have been wanting something that's easy and simple for traditional Windows-based shops to use, I still very much want a cross-platform solution that's easy for *everyone* to work with.
 
 I can't think of a better cross-platform supported language than modern .NET, it is absolutely superb.

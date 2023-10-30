@@ -10,7 +10,7 @@ In other words:
 
 - For issues with the REST API and execution engine, please open up issues in the [didact-engine](https://github.com/DidactHQ/didact-engine) repo.
 - For issues with the VueJS web dashboard, please open up issues in the [didact-ui](https://github.com/DidactHQ/didact-ui) repo.
-- For issues with the console application, please open up issues in the [didact-sentinel](https://github.com/DidactHQ/didact-sentinel).
+- For issues with the console application, please open up issues in the [didact-sentinel](https://github.com/DidactHQ/didact-sentinel) repo.
 - For issues with core nuget package, please open up issues in the [didact-core](https://github.com/DidactHQ/didact-core) repo.
 
 It's not the end of the world by any means if you don't follow this guideline, but it will save me work and issue duplication if this general guide is followed.
