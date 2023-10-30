@@ -42,7 +42,7 @@ And for simplicity's sake, all of these applications are aggregated and offered 
 
 These applications are designed in such a way that your background job processing, data pipelines, and workflows work more as a plug-and-play system. Your only concern should be deploying these applications as-is and then designing your Flows in your class library project.
 
-I go into a deep dive of the code organization and architecture on the dedicated [Open Source Structure](/getting-started/open-source-structure) and [Architecture](/concepts/architecture-survey) pages.
+<!-- I go into a deep dive of the code organization and architecture on the dedicated [Open Source Structure](/getting-started/open-source-structure) and [Architecture](/concepts/architecture-survey) pages. -->
 
 ## Isolated
 

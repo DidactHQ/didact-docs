@@ -62,55 +62,55 @@ export default defineConfig({
             ]
           },
         ],
-        '/concepts/': [
-          {
-            text: 'Architecture',
-            items: [
-              { text: 'Survey', link: '/concepts/architecture' },
-              { text: 'Didact Engine', link: '/concepts/didact-engine' },
-              { text: 'Didact UI', link: '/concepts/didact-ui' },
-              { text: 'Didact Sentinel', link: '/concepts/didact-sentinnel' },
-              { text: 'Didact Core', link: '/concepts/didact-core' },
-            ]
-          },
-          {
-            text: 'Class Library Project',
-            items: [
-              { text: 'Survey', link: '/setup/' },
-            ]
-          },
-          {
-            text: 'Core Concepts',
-            items: [
-              { text: 'Flows', link: '/setup/what-is-displagent' },
-              { text: 'Execution Blocks', link: '/setup/required-credentials' },
-              { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
-            ]
-          }
-        ],
-        '/deployments/': [
-          {
-            text: 'Self-hosted',
-            items: [
-              { text: 'Deploy Didact Engine', link: '/setup/' },
-              { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
-              { text: 'Deploy Didact Sentinel', link: '/setup/' },
-              { text: 'Multiple Engines', link: '/setup/required-credentials' },
-            ]
-          },
-          {
-            text: 'Containerization',
-            items: [
-              { text: 'Deploy Didact Engine', link: '/setup/' },
-              { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
-              { text: 'Deploy Didact Sentinel', link: '/setup/' },
-              { text: 'Multiple Engines', link: '/setup/required-credentials' },
-            ]
-          },
-          {
-            text: 'Didact Cloud'
-          }
-        ],
+        // '/concepts/': [
+        //   {
+        //     text: 'Architecture',
+        //     items: [
+        //       { text: 'Survey', link: '/concepts/architecture' },
+        //       { text: 'Didact Engine', link: '/concepts/didact-engine' },
+        //       { text: 'Didact UI', link: '/concepts/didact-ui' },
+        //       { text: 'Didact Sentinel', link: '/concepts/didact-sentinnel' },
+        //       { text: 'Didact Core', link: '/concepts/didact-core' },
+        //     ]
+        //   },
+        //   {
+        //     text: 'Class Library Project',
+        //     items: [
+        //       { text: 'Survey', link: '/setup/' },
+        //     ]
+        //   },
+        //   {
+        //     text: 'Core Concepts',
+        //     items: [
+        //       { text: 'Flows', link: '/setup/what-is-displagent' },
+        //       { text: 'Execution Blocks', link: '/setup/required-credentials' },
+        //       { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
+        //     ]
+        //   }
+        // ],
+        // '/deployments/': [
+        //   {
+        //     text: 'Self-hosted',
+        //     items: [
+        //       { text: 'Deploy Didact Engine', link: '/setup/' },
+        //       { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
+        //       { text: 'Deploy Didact Sentinel', link: '/setup/' },
+        //       { text: 'Multiple Engines', link: '/setup/required-credentials' },
+        //     ]
+        //   },
+        //   {
+        //     text: 'Containerization',
+        //     items: [
+        //       { text: 'Deploy Didact Engine', link: '/setup/' },
+        //       { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
+        //       { text: 'Deploy Didact Sentinel', link: '/setup/' },
+        //       { text: 'Multiple Engines', link: '/setup/required-credentials' },
+        //     ]
+        //   },
+        //   {
+        //     text: 'Didact Cloud'
+        //   }
+        // ],
     },
     search: {
       provider: 'local'
