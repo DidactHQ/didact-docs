@@ -1,5 +1,6 @@
 ---
 title: Use Cases
+description: In this article, we explore the various use cases of Didact as a .NET job orchestrator. In particular, we observe that Didact is perfectly built for background jobs, data pipelines, etl, and microservice adoption.
 ---
 
 # Uses Cases
