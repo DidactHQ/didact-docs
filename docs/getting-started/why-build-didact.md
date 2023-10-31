@@ -33,6 +33,14 @@ But, I think, when you look at the tool in its entirety and evaluate its overall
 
 Speaking of that, Microsoft doesn't seem very interested in bringing SSIS up to modern standards. When you look at the new features developed in a year's time for Power BI vs. SSIS, it's clear where Microsoft is and is not allocating their development resources.
 
+## SQL Server Agent Limitations
+
+SQL Server has a very nice builtin system for handling scheduled SQL jobs, called SQL Server Agents. I've used these agents extensively in my own career, and they are an excellent tool for automation.
+
+The problem is, they are *really* limited to only SQL-based operations. *Technically*, you can run Powershell commands, command line scripts, SSIS packages, and .NET CLR stuff inside of SQL Server agents, but I wouldn't call it a painless experience; it's usually quite the opposite.
+
+There is also still the issue of realtime visibility. You can observe the logs of SQL Server agents as they run in a SQL Server instance, but you don't have a degree of observability even remotely close to what you find in a job orchestrator like Apache Airflow.
+
 ## Tired of Windows Task Scheduler
 
 Being a developer who has worked in .NET/Microsoft shops his entire career, I soon learned about Windows task scheduler once I started building out data pipelines in .NET console applications.
