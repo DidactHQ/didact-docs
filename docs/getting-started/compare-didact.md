@@ -1,5 +1,6 @@
 ---
 title: Compare Didact
+description: In this article, we observe various tools to compare Didact with and offer it as an alternative to other solutions like Hangfire.
 ---
 
 # Compare Didact
