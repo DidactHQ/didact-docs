@@ -1,6 +1,6 @@
 ---
 title: What Is Didact?
-description: An introduction to what the Didact platform is.
+description: In this article, we introduce Didact as the premiere .NET job orchestrator. We note that Didact is code-first, fullstack, standalone, and open source. We also briefly survery its architecture.
 ---
 
 # What Is Didact?
