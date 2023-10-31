@@ -23,7 +23,7 @@ Didact ships with a VueJS web dashboard, powered by Tailwind CSS (because I stin
 
 One very important distinction that I would like to make right from the beginning is that Didact is a **platform**, *not a library*.
 
-Contrary to other .NET background job libraries like Hangfire, Quartz.NET, and Coravel, Didact is **not** meant to be a set of nuget packages that you add to a pre-existing application. Rather, Didact is self-contained, entirely independent of and separate from other applications. This opens up a plethora of interesting use cases and implementations for Didact which you can read more about on the [Use Cases](/getting-started/use-cases) page.
+Contrary to other .NET background job libraries like Hangfire, Quartz.NET, and Coravel, Didact is **not** meant to be a set of nuget packages that you add to a pre-existing application. Rather, Didact is self-contained, entirely independent of and separate from other applications. This opens up an array of interesting use cases and implementations for Didact which you can read more about on the [Use Cases](/getting-started/use-cases) page.
 
 ## Architecture
 
