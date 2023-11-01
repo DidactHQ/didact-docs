@@ -10,6 +10,28 @@ const twitterSite = '@DidactPlatform';
 const twitterImageAlt = 'Didact Docs'
 const links = [];
 
+const universalSidebarNavArray =
+[
+  {
+    text: 'Introduction',
+    items: [
+      { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
+      { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
+      { text: 'Compare Didact', link: '/getting-started/compare-didact' },
+      { text: 'Use Cases', link: '/getting-started/use-cases' },
+      { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
+      { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
+    ]
+  },
+  {
+    text: 'Open Source',
+    items: [
+      { text: 'Structure', link: '/getting-started/open-source-structure' },
+      { text: 'Contributing', link: '/getting-started/contributing' },
+    ]
+  },
+];
+
 export default defineConfig({
   title: 'Didact Docs',
   description: 'The open source, standalone, fullstack .NET job orchestrator that we\'ve been missing.',
@@ -35,33 +57,37 @@ export default defineConfig({
     ],
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
-        // { text: 'Concepts', link: '/concepts/' },
+        { text: 'Concepts', link: '/concepts/' },
         // { text: 'Deployments', link: '/deployments/' },
         // { text: 'Guide', link: '/guide/' },
         // { text: 'Recipes', link: '/recipes/'},
         // { text: 'API', link: '/api/' },
     ],
     sidebar: {
-        '/getting-started/': [
-          {
-            text: 'Introduction',
-            items: [
-              { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
-              { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
-              { text: 'Compare Didact', link: '/getting-started/compare-didact' },
-              { text: 'Use Cases', link: '/getting-started/use-cases' },
-              { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
-              { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
-            ]
-          },
-          {
-            text: 'Open Source',
-            items: [
-              { text: 'Structure', link: '/getting-started/open-source-structure' },
-              { text: 'Contributing', link: '/getting-started/contributing' },
-            ]
-          },
-        ],
+        '/getting-started/': universalSidebarNavArray,
+        '/concepts/': universalSidebarNavArray
+
+        // [
+        //   {
+        //     text: 'Introduction',
+        //     items: [
+        //       { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
+        //       { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
+        //       { text: 'Compare Didact', link: '/getting-started/compare-didact' },
+        //       { text: 'Use Cases', link: '/getting-started/use-cases' },
+        //       { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
+        //       { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
+        //     ]
+        //   },
+        //   {
+        //     text: 'Open Source',
+        //     items: [
+        //       { text: 'Structure', link: '/getting-started/open-source-structure' },
+        //       { text: 'Contributing', link: '/getting-started/contributing' },
+        //     ]
+        //   },
+        // ],
+
         // '/concepts/': [
         //   {
         //     text: 'Architecture',
