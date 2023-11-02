@@ -30,6 +30,52 @@ const universalSidebarNavArray =
       { text: 'Contributing', link: '/getting-started/contributing' },
     ]
   },
+
+  {
+    text: 'Quickstarts',
+    items: [
+      { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
+      { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
+      { text: 'Compare Didact', link: '/getting-started/compare-didact' },
+      { text: 'Use Cases', link: '/getting-started/use-cases' },
+      { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
+      { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
+    ]
+  },
+  {
+    text: 'Core Concepts',
+    items: [
+      { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
+      { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
+      { text: 'Compare Didact', link: '/getting-started/compare-didact' },
+      { text: 'Use Cases', link: '/getting-started/use-cases' },
+      { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
+      { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
+    ]
+  },
+  {
+    text: 'Introduction',
+    items: [
+      { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
+      { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
+      { text: 'Compare Didact', link: '/getting-started/compare-didact' },
+      { text: 'Use Cases', link: '/getting-started/use-cases' },
+      { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
+      { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
+    ]
+  },
+  {
+    text: 'Introduction',
+    items: [
+      { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
+      { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
+      { text: 'Compare Didact', link: '/getting-started/compare-didact' },
+      { text: 'Use Cases', link: '/getting-started/use-cases' },
+      { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
+      { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
+    ]
+  },
+
 ];
 
 export default defineConfig({
