@@ -13,6 +13,14 @@ Asynchronous, parallelizable, reliable, and persistent background jobs are often
 
 Software designed to handle this job function (pun intended) needs to be highly performant, expose a high degree of observability, capture critical logging events, and be well-documented.
 
+## Long Running Jobs
+
+Long running tasks are also a common need for many industries. Rather than hang up an HTTP request for an overextended amount of time, many developers prefer to offload long running tasks to an asynchronous, queue-based process. Didact provides a powerful SQL-based queue with maximum obervability through Didact UI, allowing you to offload expensive operations and time-consuming work to a dedicated service on your backend and free up your client.
+
+## Scheduled Jobs
+
+Ask any .NET developer about reoccurring scheduled jobs, and chances are they have built and launched a .NET console application on Windows task scheduler or as a Windows service. Whether it's every X minutes, the first of the month, or some obscure CRON schedule, it's a common need for a team of any industry, for customers or for internal use, and often times very critical to business operations. Scheduled jobs are an essential piece of any job orchestrator and a direct use case for what Didact as your .NET job orchestrator.
+
 ## Data Pipelines and ETL
 
 Perhaps under the umbrella of background jobs, many a .NET developer or data engineer find themselves needing to build some sort of data pipeline.
