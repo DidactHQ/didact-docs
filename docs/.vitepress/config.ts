@@ -35,6 +35,7 @@ export default defineConfig({
     ],
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
+        { text: 'Quickstarts', link: '/quickstarts/class-library-project' }
         // { text: 'Concepts', link: '/concepts/' },
         // { text: 'Deployments', link: '/deployments/' },
         // { text: 'Guide', link: '/guide/' },
@@ -60,8 +61,16 @@ export default defineConfig({
               { text: 'Structure', link: '/getting-started/open-source-structure' },
               { text: 'Contributing', link: '/getting-started/contributing' },
             ]
-          },
+          }
         ],
+        '/quickstarts/': [
+          {
+            text: 'Quickstarts',
+            items: [
+              { text: 'Class Library Project', link: '/quickstarts/class-library-project' }
+            ]
+          }
+        ]
         // '/concepts/': [
         //   {
         //     text: 'Architecture',
