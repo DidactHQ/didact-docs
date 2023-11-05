@@ -40,7 +40,7 @@ The delegate input is the central part of the `Block` and can be a multitude of 
 
 1. To use a `Block` in your `Flow`, you first need to add `IServiceProvider` in the `Flow's` constructor. Returning to `SomeFlow`, modify its class constructor as below:
 
-```cs
+```cs{5,7,9}
 using DidactCore;
 
 public class SomeFlow: IFlow
@@ -56,7 +56,7 @@ public class SomeFlow: IFlow
 
 2. Next, add the `Microsoft.Extensions.DependencyInjection` package to the `Flow Library`. Then add its namespace to the top of your class, like so:
 
-```cs
+```cs{2}
 using DidactCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -73,7 +73,7 @@ public class SomeFlow: IFlow
 
 3. Then, in your Flow's `ExecuteAsync` method that is implemented from the `IFlow` interface, instantiate a new `Block` with the injected `IServiceProvider` as well as the static `ActivatorUtilities.CreateInstance<>` method from the `Microsoft.Extensions.DependencyInjection` package.
 
-```cs
+```cs{15}
 using DidactCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -88,7 +88,32 @@ public class SomeFlow: IFlow
 
     public async Task ExecuteAsync()
     {
-        var block = ActivatorUtilities.CreateInstance<ActionBlock>(_serviceProvider);
+        var actionBlock = ActivatorUtilities.CreateInstance<ActionBlock>(_serviceProvider);
     }
 }
 ```
+
+4. Next, add the delegate, or `executor`, to `actionBlock`.
+
+```cs{15}
+using DidactCore;
+using Microsoft.Extensions.DependencyInjection;
+
+public class SomeFlow: IFlow
+{
+    private readonly IServiceProvider _serviceProvider;
+
+    public SomeFlow(IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
+    }
+
+    public async Task ExecuteAsync()
+    {
+        var actionBlock = ActivatorUtilities.CreateInstance<ActionBlock>(_serviceProvider);
+        actionBlock
+            .WithExecutor(() => { _logger.LogInformation("This is a test log event from a block.") })
+            .WithName("Action Block 1")
+            .
+    }
+}
