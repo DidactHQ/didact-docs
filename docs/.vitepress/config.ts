@@ -67,7 +67,8 @@ export default defineConfig({
           {
             text: 'Quickstarts',
             items: [
-              { text: 'Class Library Project', link: '/quickstarts/class-library-project' }
+              { text: 'Class Library Project', link: '/quickstarts/class-library-project' },
+              { text: 'Write a Flow', link: '/quickstarts/write-a-flow' }
             ]
           }
         ]
