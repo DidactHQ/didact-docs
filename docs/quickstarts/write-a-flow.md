@@ -20,11 +20,39 @@ public class SomeFlow : IFlow
 }
 ```
 
-## Flow constructor
+## Constructor Injection
 
-Your new `Flow`
+Now `SomeFlow` exists as a class in the `Flow Library` project, but we need to take a moment and discuss its constructor.
 
-Something
+Flows are *not* meant to be manually instantiated. Whether they are triggered on a schedule, an API call, via Didact UI, or some other way, Didact Engine is meant to launch and execute your Flows internally.
+
+Moreover, one of the greatest advantages of Didact is allowing you to utilize the full .NET dependency injection system in your Flows. Since your Flows are executed within Didact Engine, the dependency injection system from Didact Engine is what intertwines with them.
+
+::: tip
+As for *how* this is accomplished, I would encourage you to read about Didact Engine, the dependency injection system, and extension methods in the Core Concepts section.
+:::
+
+::: warning Depedency Injection in a class library?
+You might be wondering how we "inject" `IServiceProvider` into `SomeFlow` when `SomeFlow` exists in a class library project. But remember: Didact Engine will grab the library's `.dll` files and execute your `Flow` within the context of *its own* dependency system.
+:::
+
+Per the usual method of modern dependency injection in C#, dependencies are injected into a class via its constructor (often termed **constructor injection**) and stored in `private readonly` fields.
+
+We will inject a generic `ILogger` into `SomeFlow` and store it in a field, as indicated below:
+
+```cs
+using DidactCore;
+
+public class SomeFlow : IFlow
+{
+    private readonly ILogger _logger;
+
+    public SomeFlow(ILogger logger)
+    {
+        _logger = logger;
+    }
+}
+```
 
 ## Create a Block
 
@@ -53,10 +81,6 @@ public class SomeFlow: IFlow
     }
 }
 ```
-
-::: warning Depedency Injection in a class library?
-You might be wondering how we "inject" `IServiceProvider` into `SomeFlow` when `SomeFlow` exists in a class library project. But remember: Didact Engine will grab the library's `.dll` files and execute your `Flow` within the context of *its own* dependency system.
-:::
 
 2. Next, add the `Microsoft.Extensions.DependencyInjection` package to the `Flow Library`. Then add its namespace to the top of your class, like so:
 
@@ -130,3 +154,37 @@ public class SomeFlow: IFlow
                 });
     }
 }
+```
+
+5. Finally, we want to actually execute our `Block` within the Flow. After configuring the `Block`, execute it via its `ExecuteAsync` method:
+
+```cs
+using DidactCore;
+using Microsoft.Extensions.DependencyInjection;
+
+public class SomeFlow: IFlow
+{
+    private readonly ILogger _logger;
+    private readonly IServiceProvider _serviceProvider;
+
+    public SomeFlow(ILogger logger, IServiceProvider serviceProvider)
+    {
+        _logger = logger;
+        _serviceProvider = serviceProvider;
+    }
+
+    public async Task ExecuteAsync()
+    {
+        var actionBlock = ActivatorUtilities.CreateInstance<ActionBlock>(_serviceProvider);
+        actionBlock
+            .WithName("Action Block 1")
+            .WithSoftTimeout(5000)
+            .WithExecutor(() =>
+                {
+                    _logger.LogInformation("This is a test log event from a block.")
+                });
+
+        await actionBlock.ExecuteAsync().ConfigureAwait(false);
+    }
+}
+```
