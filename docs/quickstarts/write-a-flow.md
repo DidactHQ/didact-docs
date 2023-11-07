@@ -6,7 +6,7 @@ title: Write a Flow
 
 Now comes the main part of Didact: constructing your first `Flow`. A `Flow` is a class that represents your background job/data pipeline/workflow. It implements the `IFlow` interface from the `Didact Core` nuget package.
 
-## Create a Flow
+## Create the Class
 
 1. In your class library project, create a new class file. For this example, we will create a new class named `SomeFlow`.
 2. At the top of your class, add a reference to the `DidactCore` namespace and implement the `IFlow` interface onto your class.
@@ -16,7 +16,9 @@ using DidactCore;
 
 public class SomeFlow : IFlow
 {
+    public SomeFlow() { }
 
+    public async Task ExecuteAsync() { }
 }
 ```
 
@@ -24,23 +26,19 @@ public class SomeFlow : IFlow
 
 Now `SomeFlow` exists as a class in the `Flow Library` project, but we need to take a moment and discuss its constructor.
 
-Flows are *not* meant to be manually instantiated. Whether they are triggered on a schedule, an API call, via Didact UI, or some other way, Didact Engine is meant to launch and execute your Flows internally.
+Flows are *not* meant to be manually instantiated. Whether they are triggered on a schedule, an API call, via Didact UI, or some other way, Didact Engine is meant to launch and execute your Flows internally *without explicit instantiation from you*.
 
 Moreover, one of the greatest advantages of Didact is allowing you to utilize the full .NET dependency injection system in your Flows. Since your Flows are executed within Didact Engine, the dependency injection system from Didact Engine is what intertwines with them.
 
-::: tip
-As for *how* this is accomplished, I would encourage you to read about Didact Engine, the dependency injection system, and extension methods in the Core Concepts section.
+::: warning Dependency Injection in a class library?
+I would encourage you to read about Didact Engine, the dependency injection system, and extension methods in the Core Concepts section to fully understand how dependency injection is wired up to your Flows.
 :::
 
-::: warning Depedency Injection in a class library?
-You might be wondering how we "inject" `IServiceProvider` into `SomeFlow` when `SomeFlow` exists in a class library project. But remember: Didact Engine will grab the library's `.dll` files and execute your `Flow` within the context of *its own* dependency system.
-:::
+Per the usual method of modern dependency injection in C#, dependencies are injected into a class via its constructor (termed **constructor injection**) and stored in `private readonly` fields.
 
-Per the usual method of modern dependency injection in C#, dependencies are injected into a class via its constructor (often termed **constructor injection**) and stored in `private readonly` fields.
+We will inject a generic `ILogger` into `SomeFlow` via its constructor and store it in a field, as indicated below:
 
-We will inject a generic `ILogger` into `SomeFlow` and store it in a field, as indicated below:
-
-```cs
+```cs{5,7,9}
 using DidactCore;
 
 public class SomeFlow : IFlow
@@ -101,7 +99,7 @@ public class SomeFlow: IFlow
 }
 ```
 
-3. Then, in your Flow's `ExecuteAsync` method that is implemented from the `IFlow` interface, instantiate a new `Block` with the injected `IServiceProvider` as well as the static `ActivatorUtilities.CreateInstance<>` method from the `Microsoft.Extensions.DependencyInjection` package.
+3. Then, in your Flow's `ExecuteAsync` method that is implemented from the `IFlow` interface, instantiate a new `Block` called `actionBlock` with the injected `IServiceProvider` as well as the static `ActivatorUtilities.CreateInstance<>` method from the `Microsoft.Extensions.DependencyInjection` package.
 
 ```cs{17}
 using DidactCore;
@@ -156,9 +154,9 @@ public class SomeFlow: IFlow
 }
 ```
 
-5. Finally, we want to actually execute our `Block` within the Flow. After configuring the `Block`, execute it via its `ExecuteAsync` method:
+5. Let's create another ActionBlock called `anotherActionBlock` and add an `executor` and a few configurations to it. For simplicity, we will use another lambda function for the `executor`:
 
-```cs
+```cs{26-33}
 using DidactCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -181,10 +179,60 @@ public class SomeFlow: IFlow
             .WithSoftTimeout(5000)
             .WithExecutor(() =>
                 {
-                    _logger.LogInformation("This is a test log event from a block.")
+                    _logger.LogInformation("This is a test log event from the first Action Block.")
+                });
+
+        var anotherActionBlock = ActivatorUtilities.CreateInstance<ActionBlock>(_serviceProvider);
+        actionBlock
+            .WithName("Action Block 2")
+            .WithSoftTimeout(5000)
+            .WithExecutor(() =>
+                {
+                    _logger.LogInformation("This is a test log event from the second Action Block.")
+                });
+    }
+}
+```
+
+6. Configuring our blocks is not enough: we need to **actually execute them**. We do so by calling their `ExecuteAsync` method inside of the Flow's `ExecuteAsync` method. Since the blocks are merely objects, we can run them however we like. If they are dependent upon each other, then we need to run them sequentially. Conversely, if they are not dependent upon each other, then we can run them in parallel. For the sake of this example, we will run the blocks sequentially and assume they have a necessary ordering:
+
+```cs{35-36}
+using DidactCore;
+using Microsoft.Extensions.DependencyInjection;
+
+public class SomeFlow: IFlow
+{
+    private readonly ILogger _logger;
+    private readonly IServiceProvider _serviceProvider;
+
+    public SomeFlow(ILogger logger, IServiceProvider serviceProvider)
+    {
+        _logger = logger;
+        _serviceProvider = serviceProvider;
+    }
+
+    public async Task ExecuteAsync()
+    {
+        var actionBlock = ActivatorUtilities.CreateInstance<ActionBlock>(_serviceProvider);
+        actionBlock
+            .WithName("Action Block 1")
+            .WithSoftTimeout(5000)
+            .WithExecutor(() =>
+                {
+                    _logger.LogInformation("This is a test log event from the first Action Block.")
+                });
+
+        var anotherActionBlock = ActivatorUtilities.CreateInstance<ActionBlock>(_serviceProvider);
+        actionBlock
+            .WithName("Action Block 2")
+            .WithSoftTimeout(5000)
+            .WithExecutor(() =>
+                {
+                    _logger.LogInformation("This is a test log event from the second Action Block.")
                 });
 
         await actionBlock.ExecuteAsync().ConfigureAwait(false);
+        await anotherActionBlock.ExecuteAsync().ConfigureAwait(false);
     }
 }
 ```
