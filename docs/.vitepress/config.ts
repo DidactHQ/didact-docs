@@ -71,7 +71,7 @@ export default defineConfig({
               { text: 'Write a Flow', link: '/quickstarts/write-a-flow' }
             ]
           }
-        ]
+        ],
         // '/concepts/': [
         //   {
         //     text: 'Architecture',
@@ -81,6 +81,13 @@ export default defineConfig({
         //       { text: 'Didact UI', link: '/concepts/didact-ui' },
         //       { text: 'Didact Sentinel', link: '/concepts/didact-sentinnel' },
         //       { text: 'Didact Core', link: '/concepts/didact-core' },
+        //     ]
+        //   },
+        //   {
+        //     text: 'Multitenancy',
+        //     items: [
+        //       { text: 'Multiorganizations', link: '/concepts/multiorganizations' },
+        //       { text: 'Multienvironments', link: '/concepts/multienvironments' },
         //     ]
         //   },
         //   {
