@@ -11,7 +11,7 @@ Now comes the main part of Didact: constructing your first `Flow`. A `Flow` is a
 1. In your class library project, create a new class file. For this example, we will create a new class named `SomeFlow`.
 2. At the top of your class, add a reference to the `DidactCore` namespace and implement the `IFlow` interface onto your class.
 
-```cs
+```cs{1,3}
 using DidactCore;
 
 public class SomeFlow : IFlow
@@ -28,7 +28,11 @@ Now `SomeFlow` exists as a class in the `Flow Library` project, but we need to t
 
 Flows are *not* meant to be manually instantiated. Whether they are triggered on a schedule, an API call, via Didact UI, or some other way, Didact Engine is meant to launch and execute your Flows internally *without explicit instantiation from you*.
 
-Moreover, one of the greatest advantages of Didact is allowing you to utilize the full .NET dependency injection system in your Flows. Since your Flows are executed within Didact Engine, the dependency injection system from Didact Engine is what intertwines with them.
+::: warning Say goodbye to new
+In other words, you are not meant to instantiate the class with the `new` keyword.
+:::
+
+Moreover, one of the greatest advantages of Didact is allowing you to utilize the full .NET dependency injection system in your Flows. Since your Flows are executed within Didact Engine, Didact Engine's dependency injection system is what intertwines with them.
 
 ::: warning Dependency Injection in a class library?
 I would encourage you to read about Didact Engine, the dependency injection system, and extension methods in the Core Concepts section to fully understand how dependency injection is wired up to your Flows.
@@ -52,14 +56,14 @@ public class SomeFlow : IFlow
 }
 ```
 
-## Create a Block
+## Create Blocks
 
 `Blocks` are another essential part of `Flows`. The short and easy version is that they are execution wrappers for your methods. Technically, they wrap around a `delegate`, so your execution code could be a method, lambda expression, an `Action`, or something else. They are strongly typed and offer logging, time tracking, and some other nice characteristics.
 
 Ideally, you want to wrap each piece of your execution logic inside a separate `Block` and chain them together in your Flow's `ExecuteAsync` method.
 
 ::: tip The long
-To learn more of the low level details about how `Blocks` work, you can read about them on the Blocks core concepts page.
+To learn more of the low level details about how `Blocks` work, you can read about them in the core concepts.
 :::
 
 1. To use a `Block` in your `Flow`, you first need to inject `IServiceProvider` into the `Flow's` constructor and add a new field:
