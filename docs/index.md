@@ -10,6 +10,9 @@ hero:
       text: Get Started
       link: /getting-started/what-is-didact
     - theme: alt
+      text: Quickstarts
+      link: /quickstarts/class-library-project
+    - theme: alt
       text: Primary Website
       link: https://www.didact.dev
 ---
