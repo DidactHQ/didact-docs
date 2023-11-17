@@ -15,6 +15,9 @@ export default defineConfig({
   description: 'The open source, standalone, fullstack .NET job orchestrator that we\'ve been missing.',
   cleanUrls: true,
   lastUpdated: true,
+  markdown: {
+    lineNumbers: true
+  },
   head: [
     [
       'script',
