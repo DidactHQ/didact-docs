@@ -2,7 +2,7 @@
 title: Class Library Project
 ---
 
-# Class Library Project
+# Create Flow Library
 
 The magic of Didact's orchestration happens in your dedicated .NET class library project. This class library project contains your `Flows`, which are container classes for your background jobs/data pipelines/workflows. For simplicity, we will refer to it from here on out as the `Flow Library`.
 
