@@ -5,7 +5,7 @@ description: In this article, we introduce Didact as the premiere .NET job orche
 
 # What Is Didact?
 
-Didact is an open source, standalone, fullstack .NET job orchestation platform. Almost the entire platform is written exclusively in C# with the exception of Didact UI, which is a VueJS-powered web dashboard.
+Didact is an open source, standalone, fullstack .NET job orchestration platform. Almost the entire platform is written exclusively in C# with the exception of Didact UI, which is a VueJS-powered web dashboard.
 
 ## Code First
 
