@@ -75,39 +75,56 @@ export default defineConfig({
             ]
           }
         ],
-        // '/concepts/': [
-        //   {
-        //     text: 'Architecture',
-        //     items: [
-        //       { text: 'Survey', link: '/concepts/architecture' },
-        //       { text: 'Didact Engine', link: '/concepts/didact-engine' },
-        //       { text: 'Didact UI', link: '/concepts/didact-ui' },
-        //       { text: 'Didact Sentinel', link: '/concepts/didact-sentinnel' },
-        //       { text: 'Didact Core', link: '/concepts/didact-core' },
-        //     ]
-        //   },
-        //   {
-        //     text: 'Multitenancy',
-        //     items: [
-        //       { text: 'Multiorganizations', link: '/concepts/multiorganizations' },
-        //       { text: 'Multienvironments', link: '/concepts/multienvironments' },
-        //     ]
-        //   },
-        //   {
-        //     text: 'Class Library Project',
-        //     items: [
-        //       { text: 'Survey', link: '/setup/' },
-        //     ]
-        //   },
-        //   {
-        //     text: 'Core Concepts',
-        //     items: [
-        //       { text: 'Flows', link: '/setup/what-is-displagent' },
-        //       { text: 'Execution Blocks', link: '/setup/required-credentials' },
-        //       { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
-        //     ]
-        //   }
-        // ],
+        '/core-concepts/': [
+          {
+            text: 'Architecture',
+            items: [
+              { text: 'Survey', link: '/core-concepts/architecture' },
+              { text: 'Didact Engine', link: '/core-concepts/didact-engine' },
+              { text: 'Didact UI', link: '/core-concepts/didact-ui' },
+              { text: 'Didact Sentinel', link: '/core-concepts/didact-sentinnel' },
+              { text: 'Didact Core', link: '/core-concepts/didact-core' },
+            ]
+          },
+          {
+            text: 'Persistent Storage',
+            items: [
+              { text: 'Storage Providers', link: '/core-concepts/storage-providers' },
+              { text: 'Distributed Locks', link: '/core-concepts/distributed-locks'}
+            ]
+          },
+          {
+            text: 'Didact Engine',
+            items: [
+              { text: 'Appsettings.json', link: '/core-concepts/storage-providers' },
+            ]
+          },
+          {
+            text: 'Multitenancy',
+            items: [
+              { text: 'Multiorganizations', link: '/core-concepts/multiorganizations' },
+              { text: 'Multienvironments', link: '/core-concepts/multienvironments' },
+            ]
+          },
+          {
+            text: 'Flow Library',
+            items: [
+              { text: 'Survey', link: '/setup/' },
+              { text: 'Didactsettings.json', link: '/'},
+              { text: 'Flow Storage', link: '/' }
+            ]
+          },
+          {
+            text: 'Flow Concepts',
+            items: [
+              { text: 'Flows', link: '/setup/what-is-displagent' },
+              { text: 'Execution Blocks', link: '/setup/required-credentials' },
+              { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
+              { text: 'Logging', link: '/' },
+              { text: 'Retry Policies', link: '/' }
+            ]
+          }
+        ],
         // '/deployments/': [
         //   {
         //     text: 'Self-hosted',

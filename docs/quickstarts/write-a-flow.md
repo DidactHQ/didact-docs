@@ -22,6 +22,8 @@ public class SomeFlow : IFlow
 }
 ```
 
+## ConfigureAsync
+
 ## Constructor Injection
 
 Now `SomeFlow` exists as a class in the `Flow Library` project, but we need to take a moment and discuss its constructor.
