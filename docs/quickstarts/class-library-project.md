@@ -10,7 +10,7 @@ The magic of Didact's orchestration happens in your dedicated .NET class library
 You can read more about `Flows` and other critical concepts in the Core Concepts section.
 :::
 
-## Create The Library
+## Create a Class Library Project
 
 First, you need to create your `Flow Library`.
 
