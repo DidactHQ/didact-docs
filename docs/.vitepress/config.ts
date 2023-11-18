@@ -38,7 +38,7 @@ export default defineConfig({
     ],
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
-        { text: 'Quickstarts', link: '/quickstarts/class-library-project' }
+        { text: 'Quickstarts', link: '/quickstarts/create-flow-library' }
         // { text: 'Concepts', link: '/concepts/' },
         // { text: 'Deployments', link: '/deployments/' },
         // { text: 'Guide', link: '/guide/' },
@@ -70,7 +70,7 @@ export default defineConfig({
           {
             text: 'Quickstarts',
             items: [
-              { text: 'Class Library Project', link: '/quickstarts/class-library-project' },
+              { text: 'Create Flow Library', link: '/quickstarts/create-flow-library' },
               { text: 'Write a Flow', link: '/quickstarts/write-a-flow' }
             ]
           }
