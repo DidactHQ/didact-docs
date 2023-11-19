@@ -17,12 +17,25 @@ using DidactCore;
 public class SomeFlow : IFlow
 {
     public SomeFlow() { }
-
-    public async Task ExecuteAsync() { }
 }
 ```
 
 ## ConfigureAsync
+
+Before we define *what* the Flow will do, we first need to define some top-level configurations and metadata for the Flow. These configurations will be saved to persistent storage during Didact Engine's startup, but to do that, we must implement the `ConfigureAsync` method from the `IFlow` interface.
+
+This method accepts a `FlowConfigurator` class in its constructor.
+
+```cs{7}
+using DidactCore;
+
+public class SomeFlow : IFlow
+{
+    public SomeFlow() { }
+
+    public async Task ConfigureAsync(FlowConfigurator flowConfigurator) { }
+}
+```
 
 ## Constructor Injection
 
