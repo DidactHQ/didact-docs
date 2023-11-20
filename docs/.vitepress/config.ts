@@ -117,7 +117,7 @@ export default defineConfig({
           {
             text: 'Flow Concepts',
             items: [
-              { text: 'Flows', link: '/setup/what-is-displagent' },
+              { text: 'Flows', link: '/core-concepts/flows' },
               { text: 'Execution Blocks', link: '/setup/required-credentials' },
               { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
               { text: 'Logging', link: '/' },
