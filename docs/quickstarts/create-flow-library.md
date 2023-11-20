@@ -27,7 +27,7 @@ First, you need to create your `Flow Library`.
     <img src="./class-library-project-type-selection.png" />
 </P>
 
-4. Give a name to your new project. The name can be whatever you would like. For our example, we will use `Flows Library`.
+4. Give a name to your new project. The name can be whatever you would like. For our example, we will use `Flow Library`.
 5. When asked to choose a framework, please choose a .NET version that is .NET 2.1 compatible.
 
 ::: tip
@@ -45,3 +45,9 @@ In simple terms, that means to choose literally `.NET Standard 2.1` or `.NET 3.0
 As you will see on the [Write a Flow](/quickstarts/write-a-flow) page, each `Flow` is a separate C# class. When your `Flows` are loaded into Didact Engine, they will be fetched using reliable methods from `System.Reflection`, so *technically*, you are free to organize your C# `Flow` classes as you see fit.
 
 However, simply because it is the common standard in C#, I would recommend breaking your classes out into one class per `.cs` file.
+
+Additionally, if you are going to have other helper interfaces, classes, methods, or anything else inside of `Flow Library`, I would recommend making a `Flows` directory inside of the library to store all of your Flows in one, easy to find location.
+
+::: tip
+This is not required by Didact Engine, but it will help you stay organized.
+:::
