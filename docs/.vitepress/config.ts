@@ -98,6 +98,10 @@ export default defineConfig({
             text: 'Didact Engine',
             items: [
               { text: 'Appsettings.json', link: '/core-concepts/storage-providers' },
+              { text: 'Flow Storage Poller', link: '/core-concepts/flow-storage-poller' },
+              { text: 'Flow Scheduler', link: '/core-concepts/scheduler' },
+              { text: 'Flow Enqueuer', link: '/core-concepts/flow-enqueuer' },
+              { text: 'Flow Workers', link: '/core-concepts/retriever' }
             ]
           },
           {
