@@ -47,6 +47,7 @@ export default defineConfig({
             text: 'Introduction',
             items: [
               { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
+              { text: 'Job Orchestrator', link: '/getting-started/job-orchestrator' },
               { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
               { text: 'Compare Didact', link: '/getting-started/compare-didact' },
               { text: 'Use Cases', link: '/getting-started/use-cases' },
