@@ -1,5 +1,6 @@
 ---
 title: What Is A Job Orchestrator?
+description: "In this article, we ask what is a job orchestrator and why we do we need a job orchestrator? We define what a Flow is and discuss defining, executing, and observing Flows."
 ---
 
 # Job Orchestrator
@@ -26,7 +27,11 @@ The purpose, then, of Didact as a job orchestrator is to provide a centralized p
 
 ### Define Flows
 
+Since Flows are code-first artifacts, we need a way to easily define Flows inside of raw C# code. No GUI builders, no over-complicated drag-n-drop user interfaces: just good, reliable C# code written inside of our favorite IDE.
 
+Moreover, it would be great to decouple this code and isolate it to its own C# project and code repository. This helps us with organization, separation of concerns, and easy version control via git.
+
+This is why Didact is architected in such a way that you define your Flows inside of a dedicated, separate class library project.
 
 ### Execute Flows
 
@@ -53,10 +58,12 @@ Your team, your managers, or your customers will expect you to properly manage y
 - What is the status of Flow X now?
 - How many worker queues do I have available, and are they load balanced?
 
-This becomes increasingly cumbersome as you have to scale the number of Flows upwards as well as increase their complexity.
+This becomes increasingly cumbersome as you have to scale up the number of Flows as well as increase their complexity.
 
-Proper observation, then, provides you with execution metrics, exposes line-by-line logs, allows you to manually trigger Flow actions.
+Proper observation, then, provides you with aggregate execution metrics, persists and retrieves Flow Runs, exposes line-by-line logs, allows you to manually trigger Flow actions, and more.
 
-<!-- ::: warning Tomato, tomoto
-A job orchestrator is also sometimes called a **durable task engine**. The terms are synonymous.
-::: -->
+As for the display vehicle, in this age of web apps and cross-platform software, we want to see and manipulate all of this information in a clean, intuitive web dashboard.
+
+::: tip Psst... checkout Didact UI
+This is exactly what [Didact UI](https://github.com/DidactHQ/didact-ui) is for. Read on to learn more.
+:::
