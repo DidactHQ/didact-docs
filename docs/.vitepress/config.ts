@@ -115,6 +115,7 @@ export default defineConfig({
             text: 'Flow Library',
             items: [
               { text: 'Survey', link: '/setup/' },
+              { text: 'Extension Method', link: '/' },
               { text: 'Didactsettings.json', link: '/'},
               { text: 'Flow Storage', link: '/' }
             ]
