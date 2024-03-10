@@ -15,5 +15,5 @@ hero:
 features:
   - icon: 🛠️
     title: Work In Progress
-    details: Didact is not complete yet - same as this docsite - but a working version will be ready soon! If you'd like to be notified of when Didact is ready, feel free to drop your email on the main site. We are getting close!
+    details: Didact is not complete yet - same as this docsite - but a working version will be ready soon! If you'd like to be notified of when Didact is ready, feel free to drop your email on the main site. We are getting close! 
 ---
