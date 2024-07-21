@@ -2,52 +2,53 @@
 title: Class Library Project
 ---
 
+<script setup>
+const targetFrameworkVersion = import.meta.env.VITE_TARGET_FRAMEWORK_VERSION;
+</script>
+
 # Create Flow Library
 
-The magic of Didact's orchestration happens in your dedicated .NET class library project. This class library project contains your `Flows`, which are container classes for your background jobs/data pipelines/workflows. For simplicity, we will refer to it from here on out as the `Flow Library`.
-
-::: tip
-You can read more about `Flows` and other critical concepts in the Core Concepts section.
-:::
+The magic of Didact's orchestration happens in your dedicated .NET class library project. This class library project contains your `Flows`, which are container classes for your jobs. For simplicity, we will refer to it from here on out as the `Flow Library`.
 
 ## Create class library project
 
-First, you need to create your `Flow Library`.
+First, you need to create your `Flow Library`. These instructions will utilize the [dotnet CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/) for cross-platform support, but you are welcome to use Visual Studio if you are more comfortable with it.
 
-1. Open Visual Studio 2022.
-2. Select `Create a new project` from the get started box on the right side.
+1. Open a terminal on your machine.
+2. In the terminal, type the following command:
 
-<p align="center">
-    <img src="./visual-studio-create-new-project.png" />
-</p>
+```bash-vue
+dotnet new classlib -o FlowLibrary -f {{ targetFrameworkVersion }}
+```
 
-3. Type `class library` in the project types searchbar and select the `Class Library` project type.
-
-<p align="center">
-    <img src="./class-library-project-type-selection.png" />
-</P>
-
-4. Give a name to your new project. The name can be whatever you would like. For our example, we will use `Flow Library`.
-5. When asked to choose a framework, please choose a .NET version that is .NET 2.1 compatible.
-
-::: tip
-In simple terms, that means to choose literally `.NET Standard 2.1` or `.NET 3.0+`. However, I would **strongly recommend** choosing a .NET version that is still supported by Microsoft.
+::: tip What is this?
+This command will create a new class library project for you. The `-o` command specifies the project name and folder name, and the `-f` specifies the target framework version.
 :::
 
-<p align="center">
-    <img src="./visual-studio-project-dotnet-version.png" />
-</p>
+::: warning Why not .NET Standard 2.1?
+If you are familiar with class library projects, you may be puzzled as to why you need to specify `{{ targetFrameworkVersion }}` as the target framework version rather than `netstandard2.1`. This is explained later in the docs (see Plugins), but for the moment, just know that this is both **intentional** and **required**.
+:::
 
-6. Once the project is loaded, add the `Didact Core` nuget package.
+3. Navigate to the folder containing your new class library project with the following command:
+
+```bash
+cd FlowLibrary
+```
+
+4. Now add the `DidactCore` nuget package with the following command:
+
+```bash
+dotnet add package DidactCore
+```
 
 ## Flow organization
 
 As you will see on the [Write a Flow](/quickstarts/write-a-flow) page, each `Flow` is a separate C# class. When your `Flows` are loaded into Didact Engine, they will be fetched using reliable methods from `System.Reflection`, so *technically*, you are free to organize your C# `Flow` classes as you see fit.
 
-However, simply because it is the common standard in C#, I would recommend breaking your classes out into one class per `.cs` file.
+However, simply because it is the common practice in C# to do so, I would recommend breaking your classes into one class per `.cs` file.
 
 Additionally, if you are going to have other helper interfaces, classes, methods, or anything else inside of `Flow Library`, I would recommend making a `Flows` directory inside of the library to store all of your Flows in one, easy to find location.
 
 ::: tip
-This is not required by Didact Engine, but it will help you stay organized.
+This is **not** required by Didact, but it will help you stay organized.
 :::
