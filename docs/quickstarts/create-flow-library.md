@@ -10,7 +10,7 @@ The magic of Didact's orchestration happens in your dedicated .NET class library
 You can read more about `Flows` and other critical concepts in the Core Concepts section.
 :::
 
-## Create a Class Library Project
+## Create class library project
 
 First, you need to create your `Flow Library`.
 
@@ -40,7 +40,7 @@ In simple terms, that means to choose literally `.NET Standard 2.1` or `.NET 3.0
 
 6. Once the project is loaded, add the `Didact Core` nuget package.
 
-## Flow Organization
+## Flow organization
 
 As you will see on the [Write a Flow](/quickstarts/write-a-flow) page, each `Flow` is a separate C# class. When your `Flows` are loaded into Didact Engine, they will be fetched using reliable methods from `System.Reflection`, so *technically*, you are free to organize your C# `Flow` classes as you see fit.
 
