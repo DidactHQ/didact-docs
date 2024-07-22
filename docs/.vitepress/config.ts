@@ -15,6 +15,9 @@ export default defineConfig({
   description: 'The open source, standalone, fullstack .NET job orchestrator that we\'ve been missing.',
   cleanUrls: true,
   lastUpdated: true,
+  markdown: {
+    lineNumbers: true
+  },
   head: [
     [
       'script',
@@ -35,7 +38,10 @@ export default defineConfig({
     ],
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
-        // { text: 'Concepts', link: '/concepts/' },
+        { text: 'Quickstarts', link: '/quickstarts/create-flow-library' },
+        // { text: 'Core concepts', link: '/core-concepts/index' },
+        // { text: 'Deployments', link: '/deployments/index' },
+        // { text: 'FAQ', link: '/faq/index' }
         // { text: 'Deployments', link: '/deployments/' },
         // { text: 'Guide', link: '/guide/' },
         // { text: 'Recipes', link: '/recipes/'},
@@ -61,34 +67,84 @@ export default defineConfig({
               { text: 'Structure', link: '/getting-started/open-source-structure' },
               { text: 'Contributing', link: '/getting-started/contributing' },
             ]
-          },
+          }
         ],
-        // '/concepts/': [
-        //   {
-        //     text: 'Architecture',
-        //     items: [
-        //       { text: 'Survey', link: '/concepts/architecture' },
-        //       { text: 'Didact Engine', link: '/concepts/didact-engine' },
-        //       { text: 'Didact UI', link: '/concepts/didact-ui' },
-        //       { text: 'Didact Sentinel', link: '/concepts/didact-sentinnel' },
-        //       { text: 'Didact Core', link: '/concepts/didact-core' },
-        //     ]
-        //   },
-        //   {
-        //     text: 'Class Library Project',
-        //     items: [
-        //       { text: 'Survey', link: '/setup/' },
-        //     ]
-        //   },
-        //   {
-        //     text: 'Core Concepts',
-        //     items: [
-        //       { text: 'Flows', link: '/setup/what-is-displagent' },
-        //       { text: 'Execution Blocks', link: '/setup/required-credentials' },
-        //       { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
-        //     ]
-        //   }
-        // ],
+        '/quickstarts/': [
+          {
+            text: 'Flow Library',
+            items: [
+              { text: 'Create flow library', link: '/quickstarts/create-flow-library' },
+              { text: 'Write a Flow', link: '/quickstarts/write-a-flow' }
+            ]
+          }
+        ],
+        '/core-concepts/': [
+          {
+            text: 'Architecture',
+            items: [
+              { text: 'Survey', link: '/core-concepts/architecture' },
+              { text: 'Didact Engine', link: '/core-concepts/didact-engine' },
+              { text: 'Didact UI', link: '/core-concepts/didact-ui' },
+              { text: 'Didact Sentinel', link: '/core-concepts/didact-sentinnel' },
+              { text: 'Didact Core', link: '/core-concepts/didact-core' },
+              { text: 'Flow Library', link: '/core-concepts/flow-library'}
+            ]
+          },
+          {
+            text: 'Persistent Storage',
+            items: [
+              { text: 'Storage Providers', link: '/core-concepts/storage-providers' },
+              { text: 'Distributed Locks', link: '/core-concepts/distributed-locks'}
+            ]
+          },
+          {
+            text: 'Versioning',
+            items: [
+              { text: 'Flow Library Version', link: '/core-concepts/storage-providers' },
+              { text: 'Flow Version', link: '/core-concepts/distributed-locks'}
+            ]
+          },
+          {
+            text: 'Threadpool',
+            items: [
+              { text: 'Summary', link: '/' }
+            ]
+          },
+          {
+            text: 'Didact Engine',
+            items: [
+              { text: 'Plugin System', link: '/' },
+              { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
+              { text: 'Appsettings.json', link: '/core-concepts/storage-providers' },
+              { text: 'Directives', link: '/core-concepts/directives' }
+            ]
+          },
+          {
+            text: 'Multitenancy',
+            items: [
+              { text: 'Organizations', link: '/core-concepts/multiorganizations' },
+              { text: 'Environments', link: '/core-concepts/multienvironments' },
+            ]
+          },
+          {
+            text: 'Flow Library',
+            items: [
+              { text: 'Survey', link: '/setup/' },
+              { text: 'Extension Method', link: '/' },
+              { text: 'Didactsettings.json', link: '/'},
+              { text: 'Flow Storage', link: '/' }
+            ]
+          },
+          {
+            text: 'Flow Concepts',
+            items: [
+              { text: 'Flows', link: '/core-concepts/flows' },
+              { text: 'Execution Blocks', link: '/setup/required-credentials' },
+              { text: 'Logging', link: '/' },
+              { text: 'Retry Policies', link: '/' }
+            ]
+          }
+        ],
         // '/deployments/': [
         //   {
         //     text: 'Self-hosted',
