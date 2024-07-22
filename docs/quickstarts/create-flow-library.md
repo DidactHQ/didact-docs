@@ -52,3 +52,7 @@ Additionally, if you are going to have other helper interfaces, classes, methods
 ::: tip
 This is **not** a requirement from Didact; I'm just trying to help you stay organized.
 :::
+
+## Version Control
+
+This is discussed in greater detail within the Core Concepts section of the docs, but since your `Flows` are contained within a class library project, is is extremely easy for you to add version control - just the same as you would any other class library project! This is one of the primary benefits of having your `Flows` decoupled from the applications and other architecture within the Didact Platform.
