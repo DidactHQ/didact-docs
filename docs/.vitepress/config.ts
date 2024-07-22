@@ -87,6 +87,7 @@ export default defineConfig({
               { text: 'Didact UI', link: '/core-concepts/didact-ui' },
               { text: 'Didact Sentinel', link: '/core-concepts/didact-sentinnel' },
               { text: 'Didact Core', link: '/core-concepts/didact-core' },
+              { text: 'Flow Library', link: '/core-concepts/flow-library'}
             ]
           },
           {
@@ -97,8 +98,23 @@ export default defineConfig({
             ]
           },
           {
+            text: 'Versioning',
+            items: [
+              { text: 'Flow Library Version', link: '/core-concepts/storage-providers' },
+              { text: 'Flow Version', link: '/core-concepts/distributed-locks'}
+            ]
+          },
+          {
+            text: 'Threadpool',
+            items: [
+              { text: 'Summary', link: '/' }
+            ]
+          },
+          {
             text: 'Didact Engine',
             items: [
+              { text: 'Plugin System', link: '/' },
+              { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
               { text: 'Appsettings.json', link: '/core-concepts/storage-providers' },
               { text: 'Directives', link: '/core-concepts/directives' }
             ]
@@ -106,8 +122,8 @@ export default defineConfig({
           {
             text: 'Multitenancy',
             items: [
-              { text: 'Multiorganizations', link: '/core-concepts/multiorganizations' },
-              { text: 'Multienvironments', link: '/core-concepts/multienvironments' },
+              { text: 'Organizations', link: '/core-concepts/multiorganizations' },
+              { text: 'Environments', link: '/core-concepts/multienvironments' },
             ]
           },
           {
@@ -124,7 +140,6 @@ export default defineConfig({
             items: [
               { text: 'Flows', link: '/core-concepts/flows' },
               { text: 'Execution Blocks', link: '/setup/required-credentials' },
-              { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
               { text: 'Logging', link: '/' },
               { text: 'Retry Policies', link: '/' }
             ]
