@@ -39,9 +39,9 @@ export default defineConfig({
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
         { text: 'Quickstarts', link: '/quickstarts/create-flow-library' },
-        { text: 'Core concepts', link: '/core-concepts/index' },
-        { text: 'Deployments', link: '/deployments/index' },
-        { text: 'FAQ', link: '/faq/index' }
+        // { text: 'Core concepts', link: '/core-concepts/index' },
+        // { text: 'Deployments', link: '/deployments/index' },
+        // { text: 'FAQ', link: '/faq/index' }
         // { text: 'Deployments', link: '/deployments/' },
         // { text: 'Guide', link: '/guide/' },
         // { text: 'Recipes', link: '/recipes/'},
