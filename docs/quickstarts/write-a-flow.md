@@ -11,7 +11,7 @@ Now comes the main part of Didact: constructing your first `Flow`. A `Flow` is a
 1. In your class library project, create a new class file. For this example, we will create a new class named `SomeFlow`.
 2. At the top of your class, add a reference to the `DidactCore.Flows` namespace and implement the `IFlow` interface onto your class.
 
-```cs{1,3}
+```cs
 using DidactCore.Flows;
 
 public class SomeFlow : IFlow
