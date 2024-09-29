@@ -115,8 +115,8 @@ Right now, I am not requiring an API key/login to access these enhanced librarie
 The commercial license basically states that:
 1. The enhanced libraries can ONLY be used with the official Didact source code from the official Didact code repositories.
 2. The enhanced libraries can NOT be used with any forks of Didact's codebase, even if the forks are legitimate AGPLv3 or LGPL forks.
-3. The enhanced libraries can NOT be used with any versions of Didact's programs where someone has removed the license checker modules.
+3. The enhanced libraries can NOT be used with any versions of Didact's programs where someone has removed or modified the license checker modules.
 
-This approach is more risky for me because bad actors might try to abuse my platform, but it's more convenient for you because it's dead simple to get Didact up and running. With this approach, I do not have to dispense private API keys to library files and so on.
+This approach is more risky for me because bad actors might try to abuse my platform and licensing structure, but it's more convenient for you because it's dead simple to get Didact up and running. With this approach, I do not have to dispense private API keys to library files and so on.
 
 I will accept this risk for now and will only change this approach if Didact suffers from widespread abuse (which will hopefully not happen).
