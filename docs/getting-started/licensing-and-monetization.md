@@ -2,58 +2,121 @@
 title: Licensing and Monetization
 ---
 
+<script setup>
+const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
+</script>
+
 # Licensing and Monetization
-
-Didact is an open source platform licensed under the [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) and has a few different monetization options.
-
-::: tip Happy to talk
-If you have any questions about licensing or monetization, I'm just an email away: reach out to me at `daniel@didact.dev`, I'm happy to discuss your needs or concerns.
-:::
-
-## AGPLv3
-
-Sometimes GPL-based licenses can make developers wary of adopting open source tech for their own use, but that will likely not be an issue for you here.
-
-### Platform vs Library
-
-Again, this is because Didact is offered as an entire, prebuilt platform - not a *library* to be added to your larger software work.
-
-### Isolated Class Library Project
-
-Recall that the central place where your Flows are defined is in a separate, isolated class library project - completely outside of any other code you may be writing. That should sufficiently isolate the rest of your codebase from having to be open sourced per the typical requirements of the AGPLv3.
-
-### Prebuilt Applications
-
-As for Didact Engine, Didact UI, and Didact Sentinel: these are all prebuilt applications already available to you. Ideally, they should exist in a form that is plug-and-play ready where you won't need to modify any of their code. The most you should have to do is modify environment variables in `appsettings.json` files as well as the `didactsettings.json` file from your central class library.
-
-### Benefits
-
-Choosing the AGPLv3 is extremely helpful to me as an open source author. This will help prevent large corporations from taking or redistributing the work without any sort of contribution back to the original source. It should also encourage the community to open up issues and pull requests through Didact's original repos, benefiting the entire community at large.
-
-Chances are, the AGPLv3 license will not affect you or your team in the slightest.
 
 ## Sustainability
 
-To help sustain the project long-term, I have a few different ideas for monetization.
+I am a firm believer in open source sustainability and am aware of how many devs in the open source community struggle with this. Open source software has fundamentally changed this world for the better, but the fact remains that its quite difficult for most people to work on free open source software for years on end with no compensation.
 
-### Dedicated Support
+I also think creating and maintaining a software product of this immense a magnitude would be infeasible in the long-term without some sort of monetization plan.
 
-I would very much like to see Didact used by developers, teams, and organizations of all sizes. Per the nature of what Didact is, if Didact is adopted into your company, then it will become a central piece of your production infrastructure. No doubt, you and your company will want to ensure that Didact - and myself as its author - stick around to support your company and team's efforts.
+A little about me:
+* I am a solo founder and solo dev.
+* I am bootstrapped. I have raised $0.00 of funding, my personal money is what has kickstarted this product.
+* I have no cofounders and no employees.
 
-On top of the free resources that you can already utilize like GitHub issues, GitHub discussions, and this docsite, I am also offering dedicated, paid support for your team.
+Contrast that with any of the other job orchestrators in existence - such as the Pythonic job orchestrators - and you will find that they are maintained by entire engineering teams who are funded by organizations having raised **tens of millions of dollars** in venture capital funding.
 
-See the [Pricing page](https://www.didact.dev/pricing) for details.
+Unless that needs to change for some drastic reason one day, **that is not the path I am on**. And in many senses, I actually believe being a solo founder is a massive advantage. However, I simply do not have the financial cushion to live for years on end building Didact without a solid business model empowering it.
 
-### Enhanced Packages
+## Monetization
 
-I am currently undecided on this avenue of monetization at the moment, but as is often the case with open source job orchestrators and background job engines, you can purchase enhanced libraries or code repositories from the author to expose advanced, business-friendly or enterprise-critical features in the base-level open source app.
+### Open Core
 
-I have not setup a system like this as of yet, and there is no mention of paid packages on the [Pricing page](https://www.didact.dev/pricing) right now. I will continue thinking this over.
+Concordantly, I have chosen to create an open core business model to sustain Didact long-term. Open core software is a subsect of commercial open source software (COSS) where the core software product is licensed under a standard open source license (more on that below) and monetized with enhancements, dedicated support, alternative licensing if necessary, and so on. After a great deal of consideration, research, and learning how the other solopreneur bootstrapper pros have done it, I feel that this is the optimal path forward for my business.
 
-### Didact Cloud
+I want a powerful, game-changing, almost addictively-pleasant-to-use open source core product that individuals, hobbyists, and businesses can use to their hearts' delight under a trustworthy open source license. And then, if they want some enhancements, dedicated support, and so on, I want to offer that as an incentive to both **get more value from the software product** while also **helping me sustain it long-term**.
 
-And finally, I am also considering offering a cloud-hosting option for you and your company. I want .NET shops and other companies of all sizes to be able to use Didact, and it may very well be the case that you are not interested in self-hosting Didact, whether it be for time constraints, capacity constraints, or some other reason.
+### Bootstrapped
 
-I don't necessarily want to ignore this possibility if you and your company are in this position, so I am considering hosting Didact for you myself via Azure.
+And here's the great thing about being a bootstrapper like me: **I do not *need*** and **I do not *want*** a billion-dollar, mega-unicorn company. I don't need billions of dollars or a 1,000x return for this product to be a success. If I can, at the very least, get my bills paid with this product, and then some, that will be more than *I ever dreamed possible* with an open source product.
 
-See the [Pricing page](https://www.didact.dev/pricing) for details.
+Another great thing about being a bootstrapper: if not by skills or luck, I win by war of attrition. I have no choice but to figure out the business side from day one, but once I do, I'm good to go for a very, very, very long time. And if the goings get tough, if the economy sucks, whatever - I won't get shutdown by an investor who hasn't gotten a big enough return for their portfolio.
+
+This is a passion project, a labor of my deepest love for dotnet and data engineering: **I am not going anywhere anytime soon**.
+
+### Support
+
+You can see more details on the [Pricing page](https://www.didact.dev/pricing), but under the core product, you have GitHub issues and GitHub discussions to help you report bugs, request feature enhancements, and so on. And for some of you, that may be more than sufficient to get you going.
+
+However, I suspect that at least some of you - I think many of you - will want to run Didact in a live, production environment **where a real business is depending on it**. I know how absolutely critical a job orchestrator like this is to a business's success. I also know that some businesses are afraid of open source software because they don't want to adopt unsupported software that may leave them backed into a corner if something breaks and they don't have anyone to reach out to.
+
+I get it, and I wanted to dispell any fears you or your business may have by something in Didact breaking, so that's why I offer dedicated support for the paid versions of Didact.
+
+### Self-Hosted
+
+One more thing: I think I made this pretty clear in the rest of the documentation, but just to clarify once more: Didact is not a SaaS product, **it's a self-hosted product**. All of my early adopters and users have indicated that they would rather host and run Didact themselves on their own infrastructure, and I completely understand why.
+
+### Pricing Page
+
+So if you'd like to see what incentives I have for the paid versions of Didact, come check out the [Pricing page](https://www.didact.dev/pricing) on the main site.
+
+## Licensing
+
+Which finally brings us to the licensing part.
+
+tl;dr;
+
+Didact is a dual-licensed, open core software product where the core/majority of the software is licensed under [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) and the enhanced parts of the software are licensed under a separate, commercial license.
+
+### AGPLv3
+
+I could hear some of you wincing when you read "AGPLv3", but don't freak out! Let me explain this license and how it works with Didact because it will be perfectly fine to use for 99.99999999% of you.
+
+Thankfully, as the years have passed by, more and more people have come to understand the proper implications of AGPLv3, but unfortunately there are still misinterpretations of it floating around on the internet. What we have to establish, in my non-lawyer terminology, is the "scope".
+
+#### Application Space
+
+Perhaps the most important question to ask when using an AGPLv3 product is this: is the software in question a *library* (that is meant to be integrated into your larger software work) or is it a standalone, self-contained *application* or *platform*?
+
+In Didact's case, Didact is a standalone, self-contained *platform* of multiple, prebuilt *applications* that you are supposed to take as is, without needing to modify any source code, and get them up and running on your server infrastructure. [Didact is *not* a library](/getting-started/what-is-didact#standalone).
+
+Because Didact falls under application space, the scope of the AGPLv3 license stops with Didact's own programs, meaning the AGPLv3's copyleft clauses will not "infect" your other proprietary software.
+
+#### Example Scenarios
+
+For example, let's say you setup Didact to run on some Windows or Linux server at your company for internal use. No problem, feel free to setup Didact's applications and get to orchestrating! Didact will be running as a self-contained microservice in this example, so all of the AGPLv3 copyleft restrictions remain scoped only to Didact's own programs.
+
+Another example, let's say that your company runs a SaaS app, and on some backend server somewhere, you have Didact running CRON jobs for you *all of which is invisible to your end users*. Didact's AGPLv3 license is scoped only to Didact's own programs in this case, so you are free to use it to your heart's delight without worry of the copyleft clauses "infecting" your SaaS product.
+
+This is why I said above that for 99.99999999% of you, the AGPLv3 license will be perfectly fine.
+
+#### Configuration vs Modification
+
+One other clarification: for environment variable files like an `appsettings.json` file or an `.env` file, that is considered a configuration and not a modification of Didact's applications, so these files will not trigger the copyleft restrictions of AGPLv3.
+
+On the other hand, if you were to open and modify the `Program.cs` file of Didact Engine, for example, then that *would* be considered a modification to the application's source code and would trigger the copyleft. Instead, if you want something like that changed, I would encourage you to either:
+1. Open a GitHub issue and request a feature enhancement.
+2. Email me if you are a paid customer and ask for a prioritized feature enhancement (one of the benefits of purchasing a paid plan).
+3. Modify the source code and distribute it under the terms of the AGPLv3.
+
+#### Contact Me
+
+Of course, if you have a scenario that you feel is highly unusual, or if you just want to ask some questions about the licensing, feel free to reach out to me at {{ contactEmail }}.
+
+### LGPL
+
+Didact does in fact have a few libraries for you to use, namely, the Didact Core nuget package that you have to use to actually create your Flows.
+
+Not to worry, though: Didact's nuget packages are [LGPL licensed](https://choosealicense.com/licenses/lgpl-3.0/), meaning you are free to use them to create your Flows and Flow Libraries. No copyleft restrictions will befall you unless, for example, you wanted to modify the source code of these nuget packages.
+
+Otherwise, feel free to use the nuget packages as is. They will **NOT** force you to open source your Flow Libraries (after all, that would be kind of insane for me to expect).
+
+### Commercial license
+
+And finally, we have the commercial license for the enhanced parts of the Didact Platform. This commerial license restricts the usage of Didact's enhanced features which have been modularized into separate libraries for the frontend and backend applications.
+
+Right now, I am not requiring an API key/login to access these enhanced libraries. Instead, what I have elected to do is provide their build artifacts publicly (meaning you do not need an API key/login to download them at build time or in CICD pipelines), but the build artifacts are licensed under this commercial license rather than AGPLv3 or LGPL.
+
+The commercial license basically states that:
+1. The enhanced libraries can ONLY be used with the official Didact source code from the official Didact code repositories.
+2. The enhanced libraries can NOT be used with any forks of Didact's codebase, even if the forks are legitimate AGPLv3 or LGPL forks.
+3. The enhanced libraries can NOT be used with any versions of Didact's programs where someone has removed the license checker modules.
+
+This approach is more risky for me because bad actors might try to abuse my platform, but it's more convenient for you because it's dead simple to get Didact up and running. With this approach, I do not have to dispense private API keys to library files and so on.
+
+I will accept this risk for now and will only change this approach if Didact suffers from widespread abuse (which will hopefully not happen).
