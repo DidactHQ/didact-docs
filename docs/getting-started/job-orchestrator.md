@@ -23,7 +23,7 @@ Do not confuse Flows with execution blocks. Execution blocks run inside of Flows
 
 ## Why Do I Need A Job Orchestrator?
 
-The purpose, then, of Didact as a job orchestrator is to provide a centralized platform to define, execute, and observe these Flows.
+The purpose of Didact as a job orchestrator, then, is to provide a centralized platform to define, execute, and observe these Flows.
 
 ### Define Flows
 
