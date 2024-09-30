@@ -51,6 +51,17 @@ I get it, and I wanted to dispell any fears you or your business may have by som
 
 One more thing: I think I made this pretty clear in the rest of the documentation, but just to clarify once more: Didact is not a SaaS product, **it's a self-hosted product**. All of my early adopters and users have indicated that they would rather host and run Didact themselves on their own infrastructure, and I completely understand why.
 
+#### License Server
+
+The only SaaS part of Didact is the license checker mechnism built into the platform: when you purchase paid versions of Didact, one of the benefits you purchase are enhanced features and functionality. You receive an API key from me that makes periodic checks to a license server that I host to confirm you are a paid customer, and upon validation, the enhanced parts of the platform are unlocked for you.
+
+I know that some users or businesses might be a little concerned about requiring periodic checks with a license server in my cloud, but I have several mitigations for these concerns:
+1. I will be launching a public status page for the licensing server where you can see server uptimes.
+2. I will be hosting my license server on highly available Azure resources. Azure is a world-class, enterprise-grade hosting platform, so it can certainly handle a miniscule license server.
+3. I am building **failsafe modes** into Didact's applications where, for example, if my server goes offline for some reason or you lose internet connection temporarily, your enhanced version of Didact will continue functioning as is for a certain duration. The higher-tier paid plan you purchase, the more liberally-extended failsafe duration your Didact uses. The mechanics of this are discussed in more detail elsewhere in the docs.
+4. I am building a notification system within Didact itself for you to configure so that you can be instantly notified if any license checks fail.
+5. I will also provide a reporting page in Didact UI for you to observe the license server validation attempt history.
+
 ### Pricing Page
 
 So if you'd like to see what incentives I have for the paid versions of Didact, come check out the [Pricing page](https://www.didact.dev/pricing) on the main site.
