@@ -181,187 +181,197 @@ export default defineConfig({
       copyright: 'Copyright © 2023-present Daniel Miradakis'
     }
   },
-  transformPageData(pageData, context) {
+  // transformPageData(pageData, context) {
 
-    ////////////////////////////////////////////////////////////////////
-    // Get dynamic title
-    ////////////////////////////////////////////////////////////////////
-    const dynamicTitle = !pageData.title
-      ? context.siteConfig.site.title
-      : pageData.title;
+  //   ////////////////////////////////////////////////////////////////////
+  //   // Get dynamic title
+  //   ////////////////////////////////////////////////////////////////////
+  //   const dynamicTitle = !pageData.title
+  //     ? context.siteConfig.site.title
+  //     : pageData.title;
 
-    ////////////////////////////////////////////////////////////////////
-    // Get dynamic titleTemplate
-    ////////////////////////////////////////////////////////////////////
-    const dynamicTitleTemplate = !pageData.titleTemplate
-      ? context.siteConfig.site.title
-      : pageData.titleTemplate;
+  //   ////////////////////////////////////////////////////////////////////
+  //   // Get dynamic titleTemplate
+  //   ////////////////////////////////////////////////////////////////////
+  //   const dynamicTitleTemplate = !pageData.titleTemplate
+  //     ? context.siteConfig.site.title
+  //     : pageData.titleTemplate;
 
-    ////////////////////////////////////////////////////////////////////
-    // Get dynamic description
-    ////////////////////////////////////////////////////////////////////
-    const dynamicDescription = !pageData.description
-      ? context.siteConfig.site.description
-      : pageData.description
+  //   ////////////////////////////////////////////////////////////////////
+  //   // Get dynamic description
+  //   ////////////////////////////////////////////////////////////////////
+  //   const dynamicDescription = !pageData.description
+  //     ? context.siteConfig.site.description
+  //     : pageData.description
 
-    ////////////////////////////////////////////////////////////////////
-    // Get dynamic route
-    ////////////////////////////////////////////////////////////////////
-    let route;
+  //   ////////////////////////////////////////////////////////////////////
+  //   // Get dynamic route
+  //   ////////////////////////////////////////////////////////////////////
+  //   let route;
 
-    // This returns the file extension.
-    const pageRelativePathRaw = pageData.relativePath;
-    // Handle the home page.
-    if (pageRelativePathRaw === 'index.md') {
-      route = hostname;
-    }
-    // Handle all other pages.
-    else {
-      // Remove the file extension.
-      const pageRelativePathWithoutFileExtension = pageRelativePathRaw.replace('.md', '');
-      // Remove the sub-home-page 'index' indicators.
-      const pageRelativePathWithoutIndexInName = pageRelativePathWithoutFileExtension.replace('/index', '');
-      const pageRelativePath = pageRelativePathWithoutIndexInName;
-      // The hostname does not have a trailing slash, so add it here manually.
-      route = hostname + '/' + pageRelativePath;
-    }
+  //   // This returns the file extension.
+  //   const pageRelativePathRaw = pageData.relativePath;
+  //   // Handle the home page.
+  //   if (pageRelativePathRaw === 'index.md') {
+  //     route = hostname;
+  //   }
+  //   // Handle all other pages.
+  //   else {
+  //     // Remove the file extension.
+  //     const pageRelativePathWithoutFileExtension = pageRelativePathRaw.replace('.md', '');
+  //     // Remove the sub-home-page 'index' indicators.
+  //     const pageRelativePathWithoutIndexInName = pageRelativePathWithoutFileExtension.replace('/index', '');
+  //     const pageRelativePath = pageRelativePathWithoutIndexInName;
+  //     // The hostname does not have a trailing slash, so add it here manually.
+  //     route = hostname + '/' + pageRelativePath;
+  //   }
 
-    // pageData.frontmatter.head = [];
+  //   // pageData.frontmatter.head = [];
+  //   pageData.frontmatter.head ??= []
+  //   pageData.frontmatter.head.push([
+  //     'meta',
+  //     { name: 'og:test', content: `${dynamicTitle}` }
+  //   ])
+
+  //   // return {
+  //   //   frontmatter: {
+  //   //     ...pageData.frontmatter,
+  //   //     head: [
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add og:title
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'og:title',
+  //   //           content: `${dynamicTitle}`
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add og:description
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'og:description',
+  //   //           content: `${dynamicDescription}`
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add og:type
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'og:type',
+  //   //           content: 'website'
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add og:image
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'og:image',
+  //   //           content: `${hostname + ogImagePath}`
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add og:url
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'og:url',
+  //   //           content: `${route}`
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add twitter:card
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'twitter:card',
+  //   //           content: 'summary_large_image'
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add twitter:title
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'twitter:title',
+  //   //           content: `${dynamicTitle}`
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add twitter:description
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'twitter:description',
+  //   //           content: `${dynamicDescription}`
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add twitter:site
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'twitter:site',
+  //   //           content: `${twitterSite}`
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add twitter:image
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'twitter:image',
+  //   //           content: `${hostname + ogImagePath}`
+  //   //         }
+  //   //       ],
+
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       // Add twitter:image:alt
+  //   //       ////////////////////////////////////////////////////////////////////
+  //   //       [
+  //   //         'meta',
+  //   //         {
+  //   //           name: 'twitter:image:alt',
+  //   //           content: `${twitterImageAlt}`
+  //   //         }
+  //   //       ],
+
+  //   //     ],
+  //   //   },
+  //   // };
+  // },
+  transformPageData(pageData) {
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push([
       'meta',
-      { name: 'og:test', content: `${dynamicTitle}` }
+      {
+        name: 'og:test2',
+        content: `${pageData.title}`
+      }
     ])
-
-    // return {
-    //   frontmatter: {
-    //     ...pageData.frontmatter,
-    //     head: [
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add og:title
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'og:title',
-    //           content: `${dynamicTitle}`
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add og:description
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'og:description',
-    //           content: `${dynamicDescription}`
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add og:type
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'og:type',
-    //           content: 'website'
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add og:image
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'og:image',
-    //           content: `${hostname + ogImagePath}`
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add og:url
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'og:url',
-    //           content: `${route}`
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add twitter:card
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'twitter:card',
-    //           content: 'summary_large_image'
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add twitter:title
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'twitter:title',
-    //           content: `${dynamicTitle}`
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add twitter:description
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'twitter:description',
-    //           content: `${dynamicDescription}`
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add twitter:site
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'twitter:site',
-    //           content: `${twitterSite}`
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add twitter:image
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'twitter:image',
-    //           content: `${hostname + ogImagePath}`
-    //         }
-    //       ],
-
-    //       ////////////////////////////////////////////////////////////////////
-    //       // Add twitter:image:alt
-    //       ////////////////////////////////////////////////////////////////////
-    //       [
-    //         'meta',
-    //         {
-    //           name: 'twitter:image:alt',
-    //           content: `${twitterImageAlt}`
-    //         }
-    //       ],
-
-    //     ],
-    //   },
-    // };
   },
   // From https://github.com/vuejs/vitepress/issues/520#issuecomment-1566062351
   transformHtml: (_, id, { pageData }) => {
