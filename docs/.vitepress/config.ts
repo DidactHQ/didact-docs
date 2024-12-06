@@ -27,6 +27,13 @@ export default defineConfig({
       'script',
       {},
       "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Y85QWRX1XL')"
+    ],
+    [
+      'meta',
+      {
+        name: 'og:test2',
+        content: `Default og:test2 content`
+      }
     ]
   ],
   themeConfig: {
