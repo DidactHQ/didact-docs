@@ -1,10 +1,10 @@
 ---
 layout: home
-titleTemplate: The open source, standalone, fullstack .NET job orchestrator that we've been missing.
+titleTemplate: The open core .NET job orchestrator
 hero:
   name: Didact Docs
   # text: Welcome
-  tagline: The open source, standalone, fullstack .NET job orchestrator that we've been missing.
+  tagline: The open core .NET job orchestrator
   actions:
     - theme: brand
       text: Get Started
