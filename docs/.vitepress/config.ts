@@ -4,6 +4,7 @@ import { resolve } from 'node:path'
 import { SitemapStream } from 'sitemap'
 
 // WARNING: This should be an environment variable, but VitePress does not support it.
+const copyrightHolderName = 'Didact';
 const hostname = 'https://docs.didact.dev'
 const ogImagePath = '/didact-docs-og.png';
 const twitterSite = '@DidactPlatform';
@@ -12,7 +13,7 @@ const links = [];
 
 export default defineConfig({
   title: 'Didact Docs',
-  description: 'The open source, standalone, fullstack .NET job orchestrator that we\'ve been missing.',
+  description: 'The open core .NET job orchestrator.',
   cleanUrls: true,
   lastUpdated: true,
   markdown: {
@@ -178,7 +179,7 @@ export default defineConfig({
     },
     footer: {
       message: 'Proudly powered by <a style="color: #f97316;" target="_blank" href="https://www.vitepress.dev">VitePress</a>',
-      copyright: 'Copyright © 2023-present Daniel Miradakis'
+      copyright: `Copyright © 2023-present ${copyrightHolderName}`
     }
   },
   transformPageData(pageData, context) {
