@@ -76,7 +76,7 @@ Didact is a dual-licensed, open core software product where the core/majority of
 
 ### AGPLv3
 
-I could hear some of you wincing when you read "AGPLv3", but don't freak out! Let me explain this license and how it works with Didact because it will be perfectly fine to use for 99.99999999% of you.
+I could hear some of you wincing when you read "AGPLv3", but don't freak out! Let me explain this license and how it works with Didact because it will be perfectly fine to use for 99% of you.
 
 Thankfully, as the years have passed by, more and more people have come to understand the proper implications of AGPLv3, but unfortunately there are still misinterpretations of it floating around on the internet. What we have to establish, in my non-lawyer terminology, is the "scope".
 
@@ -94,7 +94,7 @@ For example, let's say you setup Didact to run on some Windows or Linux server a
 
 Another example, let's say that your company runs a SaaS app, and on some backend server somewhere, you have Didact running CRON jobs for you *all of which is invisible to your end users*. Didact's AGPLv3 license is scoped only to Didact's own programs in this case, so you are free to use it to your heart's delight without worry of the copyleft clauses "infecting" your SaaS product.
 
-This is why I said above that for 99.99999999% of you, the AGPLv3 license will be perfectly fine.
+This is why I said above that for 99% of you, the AGPLv3 license will be perfectly fine.
 
 #### Configuration vs Modification
 
