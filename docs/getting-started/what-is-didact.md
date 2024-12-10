@@ -17,7 +17,7 @@ As such, when you are designing your background jobs, data pipelines, and workfl
 
 Many background job libraries and job orchestrators in .NET don't ship with a user interface of any kind. There are a few exceptions here and there like Hangfire, but often times you are lucky if you even find a legible README.md in the project's repo.
 
-Didact ships with a VueJS web dashboard, powered by Tailwind CSS (because I stink at raw CSS) and Flowbite. It's aptly named [Didact UI](https://github.com/DidactHQ/didact-ui).
+Didact ships with a VueJS web dashboard, powered by Tailwind CSS and some nice UI libraries. It's aptly named [Didact UI](https://github.com/DidactHQ/didact-ui).
 
 ## Standalone
 
@@ -31,7 +31,6 @@ Specifically, Didact has several different sub-applications that are **pre-writt
 
 * [Didact Engine](https://github.com/DidactHQ/didact-engine): the .NET Web API that doubles as both the REST API and the main execution engine for your background jobs, called Flows.
 * [Didact UI](https://github.com/DidactHQ/didact-ui): the VueJS web dashboard frontend.
-* [Didact Sentinel](https://github.com/DidactHQ/didact-sentinel): the console application that functions as a watcher and helper for Didact Engine.
 * [Didact Core](https://github.com/DidactHQ/didact-core): the primary nuget package that exposes important classes and interfaces for your Flows and Blocks.
 
 ::: info
@@ -42,8 +41,6 @@ And for simplicity's sake, all of these applications are aggregated and offered 
 
 These applications are designed in such a way that your background job processing, data pipelines, and workflows work more as a plug-and-play system. Your only concern should be deploying these applications as-is and then designing your Flows in your class library project.
 
-<!-- I go into a deep dive of the code organization and architecture on the dedicated [Open Source Structure](/getting-started/open-source-structure) and [Architecture](/concepts/architecture-survey) pages. -->
-
 ## Isolated
 
 The actual magic where your background jobs and data pipelines run is defined in an isolated, central class library project. This is where you define your Flows, a term synonymous in the Didact Platform with background job, data pipeline, or workflow.
@@ -52,12 +49,10 @@ Your Flows exist in this class library project, totally separate from the rest o
 
 ## Open Source
 
-Didact's codebase is open source and available for inspection, forking, and modification on [GitHub](https://www.github.com/DidactHQ). It is released under the AGPLv3 open source license and offers a few different monetization options for project sustainability.
+Didact is a commercial open source platform whose source code is available on several different [GitHub repositories](https://www.github.com/DidactHQ). It is released under the AGPLv3 open source license and offers a few different monetization options for project sustainability.
 
 See the [Licensing and Monetization](/getting-started/licensing-and-monetization) page for more details.
 
 ::: warning Deep breath
-If you recoiled from seeing the AGPLv3 license, **don't worry**. Chances are it will not affect you.
-
-Make sure to read the [Licensing and Monetization](/getting-started/licensing-and-monetization) page for more details.
+If you recoiled from seeing the AGPLv3 license, **don't worry**. Chances are it will not affect you. Make sure to read the [Licensing and Monetization](/getting-started/licensing-and-monetization) page for more details.
 :::
