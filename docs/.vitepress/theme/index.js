@@ -1,6 +1,7 @@
 // .vitepress/theme/index.js
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
+import './style.css'
 import { onMounted, watch, nextTick } from 'vue';
 import { useRoute } from 'vitepress';
 import mediumZoom from 'medium-zoom';
