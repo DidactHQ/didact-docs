@@ -53,6 +53,6 @@ Didact is a commercial open source platform whose source code is available on se
 
 See the [Licensing and Monetization](/getting-started/licensing-and-monetization) page for more details.
 
-::: warning Deep breath
+::: warning Fear not
 If you recoiled from seeing the AGPLv3 license, **don't worry**. Chances are it will not affect you. Make sure to read the [Licensing and Monetization](/getting-started/licensing-and-monetization) page for more details.
 :::
