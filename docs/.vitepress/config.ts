@@ -50,7 +50,7 @@ export default defineConfig({
     ]
   ],
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/didact-logo.png',
     socialLinks: [
       { icon: 'github', link: 'https://github.com/DidactHQ' },
       { icon: 'twitter', link: 'https://twitter.com/DidactPlatform' },
