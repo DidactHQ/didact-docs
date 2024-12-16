@@ -12,7 +12,7 @@ They are a work in progress, and several still have yet to be written.
 | Comparisons |
 | --- |
 | [Didact vs. Hangfire](https://www.didact.dev/compare/didact-vs-hangfire) |
-| Didact vs. Quartz.NET (coming soon) |
+| [Didact vs. Quartz .NET](https://www.didact.dev/compare/didact-vs-quartz) |
 | Didact vs. Coravel (coming soon) |
 | Didact vs. Temporal.io (coming soon) |
 | Didact vs. Apache Airflow (coming soon) |
