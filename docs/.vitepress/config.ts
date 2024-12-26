@@ -59,7 +59,7 @@ export default defineConfig({
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
         { text: 'Quickstarts', link: '/quickstarts/create-flow-library' },
-        // { text: 'Core concepts', link: '/core-concepts/index' },
+        { text: 'Core concepts', link: '/core-concepts/architecture-survey' },
         // { text: 'Deployments', link: '/deployments/index' },
         // { text: 'FAQ', link: '/faq/index' }
         // { text: 'Deployments', link: '/deployments/' },
@@ -102,32 +102,29 @@ export default defineConfig({
           {
             text: 'Architecture',
             items: [
-              { text: 'Survey', link: '/core-concepts/architecture' },
+              { text: 'Survey', link: '/core-concepts/architecture-survey' },
+              { text: 'Metadata Database', link: '/core-concepts/metadata-database' },
               { text: 'Didact Engine', link: '/core-concepts/didact-engine' },
               { text: 'Didact UI', link: '/core-concepts/didact-ui' },
-              { text: 'Didact Sentinel', link: '/core-concepts/didact-sentinnel' },
               { text: 'Didact Core', link: '/core-concepts/didact-core' },
               { text: 'Flow Library', link: '/core-concepts/flow-library'}
             ]
           },
           {
-            text: 'Persistent Storage',
+            text: 'Flow Library',
             items: [
-              { text: 'Storage Providers', link: '/core-concepts/storage-providers' },
-              { text: 'Distributed Locks', link: '/core-concepts/distributed-locks'}
+              { text: 'Survey', link: '/setup/' },
+              { text: 'Didactsettings.json', link: '/'},
+              { text: 'Flow Storage', link: '/' }
             ]
           },
           {
-            text: 'Versioning',
+            text: 'Flow Concepts',
             items: [
-              { text: 'Flow Library Version', link: '/core-concepts/storage-providers' },
-              { text: 'Flow Version', link: '/core-concepts/distributed-locks'}
-            ]
-          },
-          {
-            text: 'Threadpool',
-            items: [
-              { text: 'Summary', link: '/' }
+              { text: 'Flows', link: '/core-concepts/flows' },
+              { text: 'Execution Blocks', link: '/setup/required-credentials' },
+              { text: 'Logging', link: '/' },
+              { text: 'Retry Policies', link: '/' }
             ]
           },
           {
@@ -140,28 +137,23 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Multitenancy',
+            text: 'Execution Mechanics',
             items: [
-              { text: 'Organizations', link: '/core-concepts/multiorganizations' },
-              { text: 'Environments', link: '/core-concepts/multienvironments' },
+              { text: 'Didact Threadpool', link: '/' },
+              { text: 'Didact Task Scheduler', link: '/' },
+              { text: 'Asynchronicity', link: '/' },
+              { text: 'Parallelism', link: '/' },
+              { text: 'Engine Tuning', link: '/' }
             ]
           },
           {
-            text: 'Flow Library',
+            text: 'Advanced Concepts',
             items: [
-              { text: 'Survey', link: '/setup/' },
-              { text: 'Extension Method', link: '/' },
-              { text: 'Didactsettings.json', link: '/'},
-              { text: 'Flow Storage', link: '/' }
-            ]
-          },
-          {
-            text: 'Flow Concepts',
-            items: [
-              { text: 'Flows', link: '/core-concepts/flows' },
-              { text: 'Execution Blocks', link: '/setup/required-credentials' },
-              { text: 'Logging', link: '/' },
-              { text: 'Retry Policies', link: '/' }
+              { text: 'Versioning', link: '/' },
+              { text: 'Multitenancy', link: '/' },
+              { text: 'Environment Variables', link: '/' },
+              { text: 'Secrets Storage', link: '/' },
+              { text: 'Queue Types', link: '/' }
             ]
           }
         ],
