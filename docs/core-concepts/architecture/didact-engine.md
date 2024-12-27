@@ -33,6 +33,10 @@ As you probably know, multiprocessing consumes large amounts of memory from your
 
 Ultimately, this results in more money spent on larger amounts of infrastructure for similar levels of job throughput. On the contrary, the C# language is naturally multithreaded, so this is not an issue for C# applications like Didact Engine.
 
+## Plug and Play
+
+I won't go into detail about this here, but Didact Engine is primarily responsible for the plug-and-play friendliness of the Didact platform. The engine is what gracefully consumes, integrates, and manages your flow library plugins. This enables extremely convenient modifications to your Flows while maintaining a convenient, always-running status for the engine itself.
+
 ## Ease of Deployment
 
 One of the major benefits of modern dotnet is the incredible ease of cross-platform deployment strategies.
