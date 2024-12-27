@@ -27,11 +27,11 @@ The REST API is also there for your convenience; if you have special reporting o
 
 ## Single Process
 
-One of the nice advantages of Didact Engine being built with C# is that it is a naturally multithreaded application. This means that Didact Engine does not require multiprocessing or the management of multiple subprocess constructs, such as node workers, in order to utilize multiple cpu cores on your host machine.
+One of the nice advantages of Didact Engine being built with C# is that it is a **truly multithreaded** application. Didact Engine does not require multiprocessing or the management of multiple subprocess constructs, such as worker threads in NodeJS, in order to utilize multiple cpu cores on your host machine.
 
-As you probably know, multiprocessing consumes large amounts of memory from your available RAM; to utilize multiple CPU cores on your host machine by way of multiprocessing, you must sacrifice a substantial amount of memory per additional process created. Multiprocessing, compared to naturally multithreaded languages like C#, Java, and Go, is an inefficient usage of resources that equates to a worse `memory : cpu core` ratio. Ultimately, this results in more money spent for similar levels of job throughput.
+As you probably know, multiprocessing consumes large amounts of memory from your available RAM; to utilize multiple CPU cores on your host machine by way of multiprocessing, you must sacrifice a substantial amount of memory per additional process created. Multiprocessing, compared to true multithreadedness in languages like C#, Java, and Go, is an inefficient usage of resources that equates to a worse `memory : cpu core` ratio.
 
-On the contrary, the C# language is naturally multithreaded, so this is not an issue for Didact Engine.
+Ultimately, this results in more money spent on larger amounts of infrastructure for similar levels of job throughput. On the contrary, the C# language is naturally multithreaded, so this is not an issue for C# applications like Didact Engine.
 
 ## Ease of Deployment
 
