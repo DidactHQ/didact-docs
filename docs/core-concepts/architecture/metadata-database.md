@@ -44,9 +44,9 @@ If you use another SQL provider outside of those three, please contact me to let
 
 ## Why Not Redis?
 
-Didact's data model is a **highly-relational** data model. It is designed to capture low-level, highly-detailed metadata and easily relate objects to each other within the various modules of the platform. Traditional relational database systems are better designed for this type of data model than Redis is.
+Didact's data model is a **highly-relational** data model. It is designed to capture low-level, highly-detailed metadata and easily relate objects to each other within the various modules of the platform. Primary keys are heavily used almost everywhere, as Didact's data model is heavily normalized. Traditional relational database systems are better designed for this type of data model than Redis is.
 
-Redis is optimized for fast retrieval and key-value lookups. Key-value lookups are an excellent pattern to use *where appropriate*, but this is of little use for a highly-relational data model like Didact's.
+Redis is optimized for fast retrieval and simple key-value lookups. Key-value lookups are an excellent pattern to use *where appropriate*, but this is of little use for a highly-relational data model like Didact's.
 
 This is drastically different from other background job libraries like Hangfire or Sidekiq, for example. In both of these libraries, the object relations are comparatively lightweight and focus more on the serialization of methods, method arguments, and simple configurations of the jobs.
 
