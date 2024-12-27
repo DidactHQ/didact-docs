@@ -1,3 +1,8 @@
+---
+title: Architecture Survey
+description: We outline a brief survey of Didact's architecture. Its architecture is comprised of several core components such as the metadata database, Didact Engine, and Didact UI.
+---
+
 # Architecture Survey
 
 The Didact platform is composed of a few different core components, namely:

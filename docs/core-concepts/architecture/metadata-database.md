@@ -1,3 +1,8 @@
+---
+title: Metadata Database
+description: One of the core components of the Didact platform is the metadata database. Here we discuss the supported SQL providers and database architecture.
+---
+
 # Metadata Database
 
 One of Didact's core components is a metadata SQL database.
