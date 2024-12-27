@@ -59,7 +59,7 @@ export default defineConfig({
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
         { text: 'Quickstarts', link: '/quickstarts/create-flow-library' },
-        // { text: 'Core concepts', link: '/core-concepts/index' },
+        { text: 'Core concepts', link: '/core-concepts/architecture/survey' },
         // { text: 'Deployments', link: '/deployments/index' },
         // { text: 'FAQ', link: '/faq/index' }
         // { text: 'Deployments', link: '/deployments/' },
@@ -102,68 +102,60 @@ export default defineConfig({
           {
             text: 'Architecture',
             items: [
-              { text: 'Survey', link: '/core-concepts/architecture' },
-              { text: 'Didact Engine', link: '/core-concepts/didact-engine' },
-              { text: 'Didact UI', link: '/core-concepts/didact-ui' },
-              { text: 'Didact Sentinel', link: '/core-concepts/didact-sentinnel' },
-              { text: 'Didact Core', link: '/core-concepts/didact-core' },
-              { text: 'Flow Library', link: '/core-concepts/flow-library'}
+              { text: 'Survey', link: '/core-concepts/architecture/survey' },
+              { text: 'Metadata Database', link: '/core-concepts/architecture/metadata-database' },
+              { text: 'Didact Engine', link: '/core-concepts/architecture/didact-engine' },
+              { text: 'Didact UI', link: '/core-concepts/architecture/didact-ui' },
+              { text: 'Didact Core', link: '/core-concepts/architecture/didact-core' },
+              { text: 'Flow Library', link: '/core-concepts/architecture/flow-library'}
             ]
           },
-          {
-            text: 'Persistent Storage',
-            items: [
-              { text: 'Storage Providers', link: '/core-concepts/storage-providers' },
-              { text: 'Distributed Locks', link: '/core-concepts/distributed-locks'}
-            ]
-          },
-          {
-            text: 'Versioning',
-            items: [
-              { text: 'Flow Library Version', link: '/core-concepts/storage-providers' },
-              { text: 'Flow Version', link: '/core-concepts/distributed-locks'}
-            ]
-          },
-          {
-            text: 'Threadpool',
-            items: [
-              { text: 'Summary', link: '/' }
-            ]
-          },
-          {
-            text: 'Didact Engine',
-            items: [
-              { text: 'Plugin System', link: '/' },
-              { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
-              { text: 'Appsettings.json', link: '/core-concepts/storage-providers' },
-              { text: 'Directives', link: '/core-concepts/directives' }
-            ]
-          },
-          {
-            text: 'Multitenancy',
-            items: [
-              { text: 'Organizations', link: '/core-concepts/multiorganizations' },
-              { text: 'Environments', link: '/core-concepts/multienvironments' },
-            ]
-          },
-          {
-            text: 'Flow Library',
-            items: [
-              { text: 'Survey', link: '/setup/' },
-              { text: 'Extension Method', link: '/' },
-              { text: 'Didactsettings.json', link: '/'},
-              { text: 'Flow Storage', link: '/' }
-            ]
-          },
-          {
-            text: 'Flow Concepts',
-            items: [
-              { text: 'Flows', link: '/core-concepts/flows' },
-              { text: 'Execution Blocks', link: '/setup/required-credentials' },
-              { text: 'Logging', link: '/' },
-              { text: 'Retry Policies', link: '/' }
-            ]
-          }
+          // {
+          //   text: 'Flow Library',
+          //   items: [
+          //     { text: 'Survey', link: '/setup/' },
+          //     { text: 'Didactsettings.json', link: '/'},
+          //     { text: 'Flow Storage', link: '/' }
+          //   ]
+          // },
+          // {
+          //   text: 'Flow Concepts',
+          //   items: [
+          //     { text: 'Flows', link: '/core-concepts/flows' },
+          //     { text: 'Execution Blocks', link: '/setup/required-credentials' },
+          //     { text: 'Logging', link: '/' },
+          //     { text: 'Retry Policies', link: '/' }
+          //   ]
+          // },
+          // {
+          //   text: 'Didact Engine',
+          //   items: [
+          //     { text: 'Plugin System', link: '/' },
+          //     { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
+          //     { text: 'Appsettings.json', link: '/core-concepts/storage-providers' },
+          //     { text: 'Directives', link: '/core-concepts/directives' }
+          //   ]
+          // },
+          // {
+          //   text: 'Execution Mechanics',
+          //   items: [
+          //     { text: 'Didact Threadpool', link: '/' },
+          //     { text: 'Didact Task Scheduler', link: '/' },
+          //     { text: 'Asynchronicity', link: '/' },
+          //     { text: 'Parallelism', link: '/' },
+          //     { text: 'Engine Tuning', link: '/' }
+          //   ]
+          // },
+          // {
+          //   text: 'Advanced Concepts',
+          //   items: [
+          //     { text: 'Versioning', link: '/' },
+          //     { text: 'Multitenancy', link: '/' },
+          //     { text: 'Environment Variables', link: '/' },
+          //     { text: 'Secrets Storage', link: '/' },
+          //     { text: 'Queue Types', link: '/' }
+          //   ]
+          // }
         ],
         // '/deployments/': [
         //   {
