@@ -1,6 +1,6 @@
 ---
 title: Flow Library
-description: The Flow Library is the dotnet class library project where you define your Flows. This is the only application within the Didact platform that you are meant to heavily modify.
+description: The Flow Library is the dotnet class library project where you define your Flows. Your Flow Library contains your Flow source code, Flow dependencies, and gets loaded into Didact Engine as a runtime plugin.
 ---
 
 # Flow Library
