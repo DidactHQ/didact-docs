@@ -118,15 +118,15 @@ export default defineConfig({
           //     { text: 'Flow Storage', link: '/' }
           //   ]
           // },
-          // {
-          //   text: 'Flow Concepts',
-          //   items: [
-          //     { text: 'Flows', link: '/core-concepts/flows' },
-          //     { text: 'Execution Blocks', link: '/setup/required-credentials' },
-          //     { text: 'Logging', link: '/' },
-          //     { text: 'Retry Policies', link: '/' }
-          //   ]
-          // },
+          {
+            text: 'Flows',
+            items: [
+              { text: 'Flows Overview', link: '/core-concepts/flows/flows-overview' },
+              // { text: 'Execution Blocks', link: '/setup/required-credentials' },
+              // { text: 'Logging', link: '/' },
+              // { text: 'Retry Policies', link: '/' }
+            ]
+          },
           // {
           //   text: 'Didact Engine',
           //   items: [
