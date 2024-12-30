@@ -20,11 +20,11 @@ public class SomeFlow : IFlow
 }
 ```
 
-## ConfigureAsync
+## Configure
 
-Before we define *what* the Flow will do, we first need to define some top-level configurations and metadata for the Flow. These configurations will be saved to persistent storage when your class library plugin is loaded into Didact Engine, but to do that, we must implement the `ConfigureAsync` method from the `IFlow` interface.
+Before we define *what* the Flow will do, we first need to define some top-level configurations and metadata for the Flow. These configurations will be saved to persistent storage when your class library plugin is loaded into Didact Engine, but to do that, we must implement the `Configure` method from the `IFlow` interface.
 
-This method requires the `IFlowConfigurator` interface to set and save the metadata. However, rather than instantiating this construct, we instead inject it into `SomeFlow`'s class constructor and save it as a field.
+This method requires the `IFlowConfigurator` interface to set and save the metadata. However, rather than instantiating this construct, we instead inject it into `SomeFlow`'s class constructor and save it as a field. Once the configurations are made, we return the `IFlowConfigurator`.
 
 ::: warning Look familiar?
 If you think this looks like **dependency injection**, then you would be absolutely correct. It might sound silly to talk about dependency injection in a class library project since class libraries are not executables and do not have hosts, but we are essentially setting up the `Flow` for dependency injection *when it is loaded into Didact Engine*. More on that later.
@@ -42,7 +42,7 @@ public class SomeFlow : IFlow
         _flowConfigurator = flowConfigurator;
     }
 
-    public async Task ConfigureAsync() { }
+    public IFlowConfigurator Configure() { }
 }
 ```
 
@@ -76,10 +76,10 @@ public class SomeFlow : IFlow
         _flowConfigurator = flowConfigurator;
     }
 
-    public async Task ConfigureAsync()
+    public IFlowConfigurator Configure()
     {
-        await _flowConfigurator
-            .WithTypeName(GetType().Name)
+        return _flowConfigurator
+            .WithTypeName(GetType().Name);
     }
 }
 ```
@@ -98,12 +98,12 @@ public class SomeFlow : IFlow
         _flowConfigurator = flowConfigurator;
     }
 
-    public async Task ConfigureAsync()
+    public IFlowConfigurator Configure()
     {
-        await _flowConfigurator
+        return _flowConfigurator
             .WithTypeName(GetType().Name)
             .WithName("SomeFlow Custom Name")
-            .WithDescription("A flow description.")
+            .WithDescription("A flow description.");
     }
 }
 ```
@@ -138,13 +138,13 @@ public class SomeFlow : IFlow
         _flowConfigurator = flowConfigurator;
     }
 
-    public async Task ConfigureAsync()
+    public IFlowConfigurator Configure()
     {
-        await _flowConfigurator
+        return _flowConfigurator
             .WithTypeName(GetType().Name)
             .WithName("SomeFlow Custom Name")
             .WithDescription("A flow description.")
-            .AsVersion("v1.0.0")
+            .AsVersion("v1.0.0");
     }
 }
 ```
@@ -174,34 +174,19 @@ public class SomeFlow : IFlow
         _flowConfigurator = flowConfigurator;
     }
 
-    public async Task ConfigureAsync()
+    public IFlowConfigurator Configure()
     {
-        await _flowConfigurator
+        return _flowConfigurator
             .WithTypeName(GetType().Name)
             .WithName("SomeFlow Custom Name")
             .WithDescription("A flow description.")
             .AsVersion("v1.0.0")
-            .ForQueue(QueueTypes.HyperQueue, "Default")
+            .ForQueue(QueueTypes.HyperQueue, "Default");
     }
 }
 ```
 
-### SaveConfigurationsAsync
-
-Finally, add the `.SaveConfigurationsAsync()` at the end of your method chain.
-
-::: danger
-If you forget to add `.SaveConfigurationsAsync`, none of your metadata will be saved to persistent storage - so don't forget!
-:::
-
-```cs
-await _flowConfigurator
-    .WithTypeName(GetType().Name)
-    // ...
-    .SaveConfigurationsAsync();
-```
-
-### Full Configurations Example
+### Full Configuration
 
 The full example of configurations is below:
 
@@ -218,15 +203,14 @@ public class SomeFlow : IFlow
         _flowConfigurator = flowConfigurator;
     }
 
-    public async Task ConfigureAsync()
+    public IFlowConfigurator Configure()
     {
-        await _flowConfigurator
+        return _flowConfigurator
             .WithTypeName(GetType().Name)
             .WithName("SomeFlow Custom Name")
             .WithDescription("A flow description.")
             .AsVersion("v1.0.0")
-            .ForQueue(QueueTypes.HyperQueue, "Default")
-            .SaveConfigurationsAsync();
+            .ForQueue(QueueTypes.HyperQueue, "Default");
     }
 }
 ```
@@ -254,15 +238,14 @@ public class SomeFlow : IFlow
         _dependencyB = dependencyB;
     }
 
-    public async Task ConfigureAsync()
+    public IFlowConfigurator Configure()
     {
-        await _flowConfigurator
+        return _flowConfigurator
             .WithTypeName(GetType().Name)
             .WithName("SomeFlow Custom Name")
             .WithDescription("A flow description.")
             .AsVersion("v1.0.0")
-            .ForQueue(QueueTypes.HyperQueue, "Default")
-            .SaveConfigurationsAsync();
+            .ForQueue(QueueTypes.HyperQueue, "Default");
     }
 }
 ```
@@ -290,18 +273,17 @@ public class SomeFlow : IFlow
         _dependencyB = dependencyB;
     }
 
-    public async Task ConfigureAsync()
+    public IFlowConfigurator Configure()
     {
-        await _flowConfigurator
+        return _flowConfigurator
             .WithTypeName(GetType().Name)
             .WithName("SomeFlow Custom Name")
             .WithDescription("A flow description.")
             .AsVersion("v1.0.0")
-            .ForQueue(QueueTypes.HyperQueue, "Default")
-            .SaveConfigurationsAsync();
+            .ForQueue(QueueTypes.HyperQueue, "Default");
     }
 
-    public async Task ExecuteAsync()
+    public async Task ExecuteAsync(IFlowExecutionContext context)
     {
         _dependencyA.DoSomething();
         await _dependencyB.DoSomethingAsync();
@@ -309,9 +291,9 @@ public class SomeFlow : IFlow
 }
 ```
 
-### Synchronous-Only Code
+### Synchronous Only
 
-In case the code that you define in `ExecuteAsync` is synchronous-only, add the following snippet to the end of your code to match the method signature:
+In case the code that you define in `ExecuteAsync` is synchronous only, add the following snippet to the end of your code to match the method signature:
 
 ```cs
 await Task.CompletedTask;
