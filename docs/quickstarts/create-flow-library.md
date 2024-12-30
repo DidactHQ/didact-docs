@@ -1,5 +1,6 @@
 ---
 title: Class Library Project
+description: To begin writing jobs in Didact, you first need a dotnet class library project and a reference to the DidactCore nuget package. We will refer to this as your Flow Library, and inside of it is where all of the Flow definitions reside for your jobs.
 ---
 
 <script setup>
