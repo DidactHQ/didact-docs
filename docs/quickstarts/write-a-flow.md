@@ -1,5 +1,6 @@
 ---
 title: Write a Flow
+description: Flows are very easy to get started with. We create a new class, implement the IFlow interface, and define the Configure and ExecuteAsync methods. The ExecuteAsync method is the heart of our job.
 ---
 
 # Write a Flow
