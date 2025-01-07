@@ -56,6 +56,7 @@ export default defineConfig({
       { icon: 'x', link: 'https://x.com/DidactPlatform' },
       { icon: 'youtube', link: 'https://www.youtube.com/channel/UCPYXvf2OvQku5HrOKYFsxHg' },
       { icon: 'facebook', link: 'https://www.facebook.com/DidactPlatform' },
+      { icon: 'bluesky', link: 'https://bsky.app/profile/didactplatform.bsky.social' }
       /* I couldn't get the LinkedIn social to work.
          Unfortunately, there is no LinkedIn icon on https://simpleicons.org/.
          I found a custom SVG icon, but it isn't working with VitePress for some reason.
@@ -67,14 +68,17 @@ export default defineConfig({
     ],
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
-        { text: 'Quickstarts', link: '/quickstarts/create-flow-library' },
         { text: 'Core concepts', link: '/core-concepts/architecture/survey' },
         // { text: 'Deployments', link: '/deployments/index' },
-        // { text: 'FAQ', link: '/faq/index' }
-        // { text: 'Deployments', link: '/deployments/' },
-        // { text: 'Guide', link: '/guide/' },
-        // { text: 'Recipes', link: '/recipes/'},
-        // { text: 'API', link: '/api/' },
+        { text: 'Guides', link: '/guides/index' },
+        { 
+          text: 'Resources',
+          items: [
+            { text: 'API Reference', link: '/api-reference/index' },
+            { text: 'Exceptions and Errors', link: '/exceptions-and-errors/index' },
+            { text: 'FAQ', link: '/faq/index' }
+          ]
+        }
     ],
     sidebar: {
         '/getting-started/': [
@@ -82,10 +86,26 @@ export default defineConfig({
             text: 'Introduction',
             items: [
               { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
-              { text: 'Job Orchestrator', link: '/getting-started/job-orchestrator' },
+              { text: 'What Is A Job Orchestrator?', link: '/getting-started/what-is-a-job-orchestrator' },
               { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
               { text: 'Compare Didact', link: '/getting-started/compare-didact' },
               { text: 'Use Cases', link: '/getting-started/use-cases' },
+            ]
+          },
+          {
+            text: 'Quickstart',
+            items: [
+              { text: 'Create a Flow Library', link: '/getting-started/quickstart/create-a-flow-library' },
+              { text: 'Write a Flow', link: '/getting-started/quickstart/write-a-flow' },
+              { text: 'Configure dependency injection', link: '/getting-started/quickstart/configure-dependency-injection' },
+              { text: 'Install Didact Engine', link: '/getting-started/quickstart/install-didact-engine' },
+              { text: 'Install Didact UI', link: '/getting-started/quickstart/install-didact-ui' },
+              { text: 'Deploy Flow Library', link: '/getting-started/quickstart/deploy-flow-library' }
+            ]
+          },
+          {
+            text: 'Business',
+            items: [
               { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
               { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
             ]
@@ -98,15 +118,49 @@ export default defineConfig({
             ]
           }
         ],
-        '/quickstarts/': [
-          {
-            text: 'Flow Library',
-            items: [
-              { text: 'Create flow library', link: '/quickstarts/create-flow-library' },
-              { text: 'Write a Flow', link: '/quickstarts/write-a-flow' }
-            ]
-          }
-        ],
+        // '/quickstarts/': [
+        //   {
+        //     text: 'Flow Library',
+        //     items: [
+        //       { text: 'New class library', link: '/' },
+        //       { text: 'Didact packages', link: '/' },
+        //       { text: 'Version', link: '/' }
+        //     ]
+        //   },
+        //   {
+        //     text: 'Flows',
+        //     items: [
+        //       { text: 'Write a Flow', link: '/' },
+        //       { text: 'Version', link: '/' }
+        //     ]
+        //   },
+        //   {
+        //     text: 'Configure Dependency Injection',
+        //     items: [
+        //       { text: 'Add dependencies', link: '/' },
+        //       { text: 'Plugin registrar', link: '/' },
+        //       { text: 'Constructor injection', link: '/' }
+        //     ]
+        //   },
+        //   {
+        //     text: 'Didact Engine',
+        //     items: [
+        //       { text: 'Get the code', link: '/' },
+        //       { text: 'Environment variables', link: '/' },
+        //       { text: 'Add Directive', link: '/' },
+        //       { text: 'Deploy', link: '/' }
+        //     ]
+        //   },
+        //   {
+        //     text: 'Didact UI',
+        //     items: [
+        //       { text: 'Get the code', link: '/' },
+        //       { text: 'Environment variables', link: '/' },
+        //       { text: 'Engine tuning', link: '/' },
+        //       { text: 'Deploy', link: '/' }
+        //     ]
+        //   },
+        // ],
         '/core-concepts/': [
           {
             text: 'Architecture',
@@ -136,15 +190,27 @@ export default defineConfig({
               // { text: 'Retry Policies', link: '/' }
             ]
           },
-          // {
-          //   text: 'Didact Engine',
-          //   items: [
-          //     { text: 'Plugin System', link: '/' },
-          //     { text: 'Dependency Injection', link: '/setup/power-bi-service-account' },
-          //     { text: 'Appsettings.json', link: '/core-concepts/storage-providers' },
-          //     { text: 'Directives', link: '/core-concepts/directives' }
-          //   ]
-          // },
+          {
+            text: 'Didact Engine',
+            items: [
+              { text: 'Plugin System', link: '/' },
+              { text: 'Appsettings.json', link: '/' },
+              { text: 'Dependency Injection', link: '/' },
+              { text: 'Directives', link: '/' },
+              { text: 'Engine Tunings', link: '/' }
+            ]
+          },
+          {
+            text: 'License Server',
+            items: [
+              { text: 'Needs and Motivations', link: '/' },
+              { text: 'License Key', link: '/' },
+              { text: 'Features Validator', link: '/' },
+              { text: 'Asymmetric Encryption', link: '/' },
+              { text: 'Failsafe Mechanics', link: '/' },
+              { text: 'Uptime and Alerting', link: '/' }
+            ]
+          }
           // {
           //   text: 'Execution Mechanics',
           //   items: [
@@ -166,6 +232,17 @@ export default defineConfig({
           //   ]
           // }
         ],
+        'guides': [
+          {
+            text: 'CI/CD', link: '/'
+          },
+          {
+            text: 'Deployments', link: '/',
+          },
+          {
+            text: 'Scaling', link: '/'
+          }
+        ],
         // '/deployments/': [
         //   {
         //     text: 'Self-hosted',
@@ -184,9 +261,6 @@ export default defineConfig({
         //       { text: 'Deploy Didact Sentinel', link: '/setup/' },
         //       { text: 'Multiple Engines', link: '/setup/required-credentials' },
         //     ]
-        //   },
-        //   {
-        //     text: 'Didact Cloud'
         //   }
         // ],
     },
