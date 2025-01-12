@@ -1,3 +1,8 @@
+---
+title: Create A Flow Library
+description:
+---
+
 <script setup>
 const targetFrameworkVersion = import.meta.env.VITE_TARGET_FRAMEWORK_VERSION;
 </script>
@@ -33,7 +38,7 @@ If you are familiar with class library projects, you may be puzzled as to why yo
 cd FlowLibrary
 ```
 
-## Didact NuGet packages
+## Add NuGet packages
 
 In order to create your Flows, you need Didact's NuGet packages. Specifically, you need to add one NuGet package called `Didact Core`.
 
@@ -42,5 +47,3 @@ Run the following command to add Didact Core as a NuGet package dependency in yo
 ```bash
 dotnet add package DidactCore
 ```
-
-## Versioning
