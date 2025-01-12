@@ -68,7 +68,7 @@ You may be wondering why `ConfigureAsync` is an asynchronous method if most - if
 
 I intentionally made this method async to avoid a painful code refactoring and breaking API change later on in order to enable advanced, dynamic metadata configurations for Flows.
 
-It's possible that you may never need asynchronous functionality in `ConfigureAsync`, but in that case, you will still need to satisy the method signature. No problem, just add `await Task.CompletedTask` as shown below:
+It's possible that you may never need asynchronous functionality in `ConfigureAsync`, but in that case, you will still need to satisfy the method signature. No problem, just add `await Task.CompletedTask` as shown below:
 
 ```cs{14}
 using DidactCore;
@@ -92,7 +92,9 @@ public class ExampleFlow : IFlow
 }
 ```
 
-Because of how `ConfigureAsync` is used in Didact Engine, this will not adversely affect the platform, and since `CompletedTask` represents an already-completed `Task`, .NET is not actually scheduling a continuation against a `TaskScheduler` when it is referenced. Instead, the code essentially runs as if it's synchronous while still satisfying the method signature.
+Normally, it is not recommended to make a method default asynhronous if it only runs synchronously, but because of how `ConfigureAsync` is used in Didact Engine, this will not adversely affect the platform, and since `CompletedTask` represents an already-completed `Task`, .NET is not actually scheduling a continuation against a `TaskScheduler` when it is referenced. Instead, the code essentially runs as if it's synchronous while still satisfying the method signature.
+
+In other words, I'm telling you not to worry about it.
 
 ### ExecuteAsync
 
