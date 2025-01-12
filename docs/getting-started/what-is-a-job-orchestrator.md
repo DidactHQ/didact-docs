@@ -1,13 +1,9 @@
 ---
 title: What Is A Job Orchestrator?
-description: "In this article, we ask what is a job orchestrator and why we do we need a job orchestrator? We define what a Flow is and discuss defining, executing, and observing Flows."
+description: In this article, we ask what is a job orchestrator and why we do we need a job orchestrator? We define what a Flow is and discuss defining, executing, and observing Flows.
 ---
 
-# Job Orchestrator
-
-Here we learn about what a job orchestrator is and why it's useful.
-
-## What Is A Job Orchestrator?
+# What Is A Job Orchestrator?
 
 A job orchestrator (sometimes called a durable task engine) is an execution platform to manage various types of jobs.
 
