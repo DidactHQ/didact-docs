@@ -69,14 +69,16 @@ export default defineConfig({
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
         { text: 'Core concepts', link: '/core-concepts/architecture/survey' },
-        // { text: 'Deployments', link: '/deployments/index' },
         { text: 'Guides', link: '/guides/index' },
+        { text: 'API', link: '/api/index' },
         { 
           text: 'Resources',
           items: [
-            { text: 'API Reference', link: '/api-reference/index' },
-            { text: 'Exceptions and Errors', link: '/exceptions-and-errors/index' },
-            { text: 'FAQ', link: '/faq/index' }
+            // { text: 'FAQ', link: '/faq/index' },
+            { text: 'Feedback', link: 'https://didact.featurebase.app' },
+            { text: 'Roadmap', link: 'https://didact.featurebase.app/roadmap' },
+            { text: 'Status', link: 'https://status.didact.dev' },
+            { text: 'Main site', link: 'https://www.didact.dev' }
           ]
         }
     ],
@@ -185,6 +187,8 @@ export default defineConfig({
             text: 'Flows',
             items: [
               { text: 'Flows Overview', link: '/core-concepts/flows/flows-overview' },
+              { text: 'Dependency Injection', link: '/core-concepts/flows/dependency-injection' },
+              { text: 'Synchronous Only', link: '/core-concepts/flows/synchronous-only' },
               // { text: 'Execution Blocks', link: '/setup/required-credentials' },
               // { text: 'Logging', link: '/' },
               // { text: 'Retry Policies', link: '/' }
@@ -210,7 +214,7 @@ export default defineConfig({
               { text: 'Failsafe Mechanics', link: '/' },
               { text: 'Uptime and Alerting', link: '/' }
             ]
-          }
+          },
           // {
           //   text: 'Execution Mechanics',
           //   items: [
@@ -221,16 +225,16 @@ export default defineConfig({
           //     { text: 'Engine Tuning', link: '/' }
           //   ]
           // },
-          // {
-          //   text: 'Advanced Concepts',
-          //   items: [
-          //     { text: 'Versioning', link: '/' },
-          //     { text: 'Multitenancy', link: '/' },
-          //     { text: 'Environment Variables', link: '/' },
-          //     { text: 'Secrets Storage', link: '/' },
-          //     { text: 'Queue Types', link: '/' }
-          //   ]
-          // }
+          {
+            text: 'Features',
+            items: [
+              { text: 'Versioning', link: '/' },
+              { text: 'Multitenancy', link: '/' },
+              { text: 'Environment Variables', link: '/' },
+              { text: 'Secrets Storage', link: '/' },
+              { text: 'Queue Types', link: '/' }
+            ]
+          }
         ],
         'guides': [
           {
@@ -241,6 +245,9 @@ export default defineConfig({
           },
           {
             text: 'Scaling', link: '/'
+          },
+          {
+            text: 'Updating', link: '/'
           }
         ],
         // '/deployments/': [
@@ -263,6 +270,12 @@ export default defineConfig({
         //     ]
         //   }
         // ],
+        '/api/': [
+          { text: 'Didact CLI', link: '/' },
+          { text: 'REST API', link: '/' },
+          { text: 'Didact Core', link: '/' },
+          { text: 'Errors and Exceptions', link: '/' }
+        ]
     },
     search: {
       provider: 'local'
