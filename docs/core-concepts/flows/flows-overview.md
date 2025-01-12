@@ -1,6 +1,6 @@
 ---
 title: Flows
-description: Flows are the core building blocks for your Didact jobs. Flows are created by implementing the IFlow interface and defining the Configure and ExecuteAsync methods.
+description: Flows are the core building blocks for your Didact jobs. Flows are created by implementing the IFlow interface and defining the ConfigureAsync and ExecuteAsync methods.
 ---
 
 # Flows Overview
@@ -34,21 +34,21 @@ public class ExampleFlow : IFlow
         _flowConfigurator = flowConfigurator;
     }
 
-    public IFlowConfigurator Configure() {}
+    public async Task<IFlowConfigurator> ConfigureAsync() {}
 
     public async Task ExecuteAsync(IFlowExecutionContext context) {}
 }
 ```
 
-The `IFlow` interface requires you to implement a few special methods, namely, `Configure` and `ExecuteAsync`.
+The `IFlow` interface requires you to implement a few special methods, namely, `ConfigureAsync` and `ExecuteAsync`.
 
 ::: tip Dependency injection
 Notice that we are using constructor-based dependency injection where we save the injected dependencies to `private readonly` fields in the class. As you likely know, this is standard practice in modern dotnet projects now.
 :::
 
-### Configure
+### ConfigureAsync
 
-The `Configure` method is where you define the metadata for your Flow, such as the name(s), versioning, scheduling, and so on.
+The `ConfigureAsync` method is where you define the metadata for your Flow, such as the name(s), versioning, scheduling, and so on.
 
 ::: warning Dependency injection
 Notice that the method returns an `IFlowConfigurator` object, so it is essential that you inject this object into your Flow's constructor and save it to a field as I have done in the code snippet above. Each `IFlowConfigurator` instance is transient, meaning it is isolated per Flow and per instance.
@@ -56,11 +56,43 @@ Notice that the method returns an `IFlowConfigurator` object, so it is essential
 
 This method is used in Didact Engine when it integrates your Flow Library and synchronizes its metadata to the Didact database. In simple terms, Didact Engine:
 
-* Identifies and loads your Flow Library.
-* Uses advanced reflection to instantiate each class from your Flow Library that implements the `IFlow` interface.
-* Runs the `Configure` method for each instantiated Flow.
+1. Identifies and loads your Flow Library.
+2. Uses advanced reflection to instantiate each class from your Flow Library that implements the `IFlow` interface.
+3. Runs the `ConfigureAsync` method for each instantiated Flow.
 
 So this method is only run by Didact Engine **during the integration process**, *not* each time that the Flow executes.
+
+#### Async signature
+
+You may be wondering why `ConfigureAsync` is an asynchronous method if most - if not all - of your metadata values are static, hard-coded, or synchronous.
+
+I intentionally made this method async to avoid a painful code refactoring and breaking API change later on in order to enable advanced, dynamic metadata configurations for Flows.
+
+It's possible that you may never need asynchronous functionality in `ConfigureAsync`, but in that case, you will still need to satisy the method signature. No problem, just add `await Task.CompletedTask` as shown below:
+
+```cs{14}
+using DidactCore;
+
+public class ExampleFlow : IFlow
+{
+    private readonly IFlowConfigurator _flowConfigurator;
+
+    public ExampleFlow(IFlowConfigurator flowConfigurator)
+    {
+        _flowConfigurator = flowConfigurator;
+    }
+
+    public async Task<IFlowConfigurator> ConfigureAsync()
+    {
+        await Task.CompletedTask;
+        return _flowConfigurator
+            // ...
+            ;
+    }
+}
+```
+
+Because of how `ConfigureAsync` is used in Didact Engine, this will not adversely affect the platform, and since `CompletedTask` represents an already-completed `Task`, .NET is not actually scheduling a continuation against a `TaskScheduler` when it is referenced. Instead, the code essentially runs as if it's synchronous while still satisfying the method signature.
 
 ### ExecuteAsync
 
