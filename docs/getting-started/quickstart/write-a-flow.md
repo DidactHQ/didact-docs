@@ -98,7 +98,7 @@ You may notice that `ConfigureAsync` is an asynchronous method that wraps `IFlow
 That's ok, just add `await Task.CompletedTask` above the `return` statement to satisfy the method signature.
 
 ::: tip Why async?
-I intentionally made this method asynchronous by default to satisfy advanced future configurations that users may be interested in doing; I don't want to deal with a painful async refactoring later on which would pose a major breaking change to the API. Often times, it's not recommended to make a method default asynchronous if it's only going to run synchronously, but in this case - and because I wrote how `ConfigureAsync` is used - I am telling you not to worry about it.
+If you're wondering why the configure method is asynchronous when your metadata is probably hard-coded, check out [Async signature](/core-concepts/flows/flows-overview#async-signature) in Core Concepts.
 :::
 
 ### ExecuteAsync
