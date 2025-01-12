@@ -163,4 +163,4 @@ public class SomeFlow : IFlow
 
 For the moment, let's not worry about the `IFlowExecutionContext` argument - we will come back to this in the Core Concepts and Guides.
 
-Congratulations, you now have a fully-prepared Flow!
+Congratulations, you just wrote your first Flow!
