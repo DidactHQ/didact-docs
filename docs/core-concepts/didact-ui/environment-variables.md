@@ -28,13 +28,13 @@ The full template for `uisettings.json` is shown below:
 | Required    | `true` |
 | Default     | N/A |
 
-::: warning Keep it simple
-Do not include the trailing slash nor any additional paths.
+::: danger Keep it simple
+Do **not** include the trailing slash nor any additional paths.
 :::
 
 For local development, this would be `http://localhost:<PORT_NUMBER>`.
 
-For Didact Engine clusters, this would be either:
+For deployments, this would be either:
 
 1. The URL of the `Leader` engine, or
-2. The URL of a reverse proxy / load balancer sitting in front of the engine cluster.
+2. The URL of a reverse proxy / load balancer sitting in front of an engine cluster.
