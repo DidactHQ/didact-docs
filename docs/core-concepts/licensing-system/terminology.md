@@ -1,3 +1,7 @@
+<script setup>
+const exampleDidactLicenseKey = import.meta.env.VITE_EXAMPLE_DIDACT_LICENSE_KEY;
+</script>
+
 # Terminology
 
 If you are a Didact customer who purchased a paid plan of the platform, there is some imporant terminology to learn so that you understand the various components of the licensing system. 
@@ -18,9 +22,13 @@ This key is tied to your organization account in Didact Hub and is necessary for
 
 An example license key is shown below:
 
-```text
-didact_someorg_73aafe0c-b882-4912-9422-4e7e8405f072_3Ji7hPaVXJfUtzID9mB2gWDsRayW2jcsn1oVL0cK
+```bash-vue
+{{ exampleDidactLicenseKey }}
 ```
+
+::: danger Keep it secret, keep it safe
+Your license key is a secret key that you should **not** share with anyone outside of your organization. It is a secret key used *only* in Didact Engine and/or Didact CLI, so don't expose it on the frontend, don't accidentally commit it to version control, and only use it in CI/CD systems when proper secret storage mechanisms are used.
+:::
 
 ## Smart key
 
