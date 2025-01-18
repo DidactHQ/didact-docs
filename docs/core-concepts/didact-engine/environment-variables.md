@@ -19,6 +19,7 @@ The full template for `enginesettings.json` is shown below:
         "ConnectionString": "<YOUR_CONNECTION_STRING_HERE>"
     },
     "LicenseKey": "<YOUR_LICENSE_KEY_HERE>",
+    "Directive": "Leader",
     "EngineTuningName": "Default"
 }
 ```
@@ -50,6 +51,19 @@ If you are not a Didact customer / only use the Community Edition, you can omit 
 
 If you *are* a Didact customer, make sure to include this license key or else your enhanced features may not be unlocked.
 :::
+
+### Directive
+
+The name of the Directive that you want Didact Engine to use.
+
+If omitted, the `Leader` directive will be used by default.
+
+The Directives are shown below:
+
+| Name |
+| --- |
+| Leader |
+| Worker |
 
 ### EngineTuningName
 
