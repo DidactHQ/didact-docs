@@ -1,6 +1,6 @@
 # Terminology
 
-If you are a Didact customer who purchased a paid plan of the platform, there is some imporant terminology to review so that you understand the various components of the licensing system. 
+If you are a Didact customer who purchased a paid plan of the platform, there is some imporant terminology to learn so that you understand the various components of the licensing system. 
 
 ## License server
 
@@ -30,7 +30,7 @@ Smart keys are asymmetrically-signed JSON payloads with important customer metad
 
 Didact Engine contains a hard-coded public key that is used to verify the cryptographic signature of your smart keys to ensure that they are legitimate and sourced from Didact's own license server.
 
-## Asymmetric Encryption
+## Asymmetric encryption
 
 Asymmetric encryption is a special form of encryption used to encrypt and validate data.
 
