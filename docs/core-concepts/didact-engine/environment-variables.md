@@ -28,23 +28,41 @@ However, feel free to read each field's corresponding doc section for more detai
 
 ### Database.Provider
 
-The key of the database provider that you want to use for Didact's database.
+| Descriptor | Value |
+| --- | --- |
+| Key         | Database.Provider |
+| Type        | `string` |
+| Description | Didact's database provider key. |
+| Required    | `true` |
+| Default     | `SQLServer` |
 
 The database provider names are shown below:
 
 | Provider Name | Provider Key | Status |
 | --- | --- | --- |
-| SQL Server | "SQLServer" | Supported |
-| Azure SQL Database | "SQLServer" | Supported |
-| PostgreSQL | "PostgreSQL" | Planned |
+| SQL Server | `SQLServer` | Supported |
+| Azure SQL Database | `SQLServer` | Supported |
+| PostgreSQL | `PostgreSQL` | Planned |
 
 ### Database.ConnectionString
 
-The connection string for Didact's database. Ensure that it matches the appropriate provider.
+| Descriptor | Value |
+| --- | --- |
+| Key         | Database.ConnectionString |
+| Type        | `string` |
+| Description | Didact's database connection string. |
+| Required    | `true` |
+| Default     | N/A |
 
 ### LicenseKey
 
-Your Didact paid plan's license key.
+| Descriptor | Value |
+| --- | --- |
+| Key         | LicenseKey |
+| Type        | `string` |
+| Description | The license key for your Didact paid plan. |
+| Required    | `true` for customers only |
+| Default     | N/A |
 
 ::: warning For customers only
 If you are not a Didact customer / only use the Community Edition, you can omit this field.
@@ -54,9 +72,13 @@ If you *are* a Didact customer, make sure to include this license key or else yo
 
 ### Directive
 
-The name of the Directive that you want Didact Engine to use.
-
-If omitted, the `Leader` directive will be used by default.
+| Descriptor | Value |
+| --- | --- |
+| Key         | Directive |
+| Type        | `string` |
+| Description | The Directive for Didact Engine. |
+| Required    | `false` |
+| Default     | `Leader` |
 
 The Directives are shown below:
 
@@ -67,6 +89,10 @@ The Directives are shown below:
 
 ### EngineTuningName
 
-The name of the Engine Tuning that you want Didact Engine to use.
-
-If omitted, the "Default" Engine Tuning will be used.
+| Descriptor | Value |
+| --- | --- |
+| Key         | EngineTuningName |
+| Type        | `string` |
+| Description | The name of the Engine Tuning for Didact Engine. |
+| Required    | `false` |
+| Default     | `Default` |

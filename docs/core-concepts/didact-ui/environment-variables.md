@@ -20,9 +20,15 @@ The full template for `uisettings.json` is shown below:
 
 ### EngineBaseUrl
 
-The base URL for Didact Engine.
+| Descriptor | Value |
+| --- | --- |
+| Key         | EngineBaseUrl |
+| Type        | `string` |
+| Description | The base URL for Didact Engine. |
+| Required    | `true` |
+| Default     | N/A |
 
-::: warning Be careful
+::: warning Keep it simple
 Do not include the trailing slash nor any additional paths.
 :::
 
