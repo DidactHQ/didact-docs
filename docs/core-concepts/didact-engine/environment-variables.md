@@ -18,9 +18,10 @@ The full template for `enginesettings.json` is shown below:
         "Provider": "SQLServer",
         "ConnectionString": "<YOUR_CONNECTION_STRING_HERE>"
     },
+    "EngineApiKey": "<YOUR_RANDOM_API_KEY_HERE>",
     "LicenseKey": "<YOUR_LICENSE_KEY_HERE>",
     "Directive": "Leader",
-    "EngineTuningName": "Default"
+    "EngineTuningName": "Default",
 }
 ```
 
@@ -54,6 +55,20 @@ The database provider names are shown below:
 | Required    | `true` |
 | Default     | N/A |
 
+### EngineApiKey
+
+| Descriptor | Value |
+| --- | --- |
+| Key         | EngineApiKey |
+| Type        | `string` |
+| Description | The API key that you generate to protect Didact Engine with authentication. |
+| Required    | `false` |
+| Default     | N/A |
+
+::: danger Danger close
+Please be aware that if you omit this setting, your instance of Didact Engine will not have authentication.
+:::
+
 ### LicenseKey
 
 | Descriptor | Value |
@@ -65,9 +80,7 @@ The database provider names are shown below:
 | Default     | N/A |
 
 ::: warning For customers only
-If you are not a Didact customer / only use the Community Edition, you can omit this field.
-
-If you *are* a Didact customer, make sure to include this license key or else your enhanced features may not be unlocked.
+If you are not a Didact customer / only use the Community Edition, you can omit this field. If you *are* a Didact customer, make sure to include this license key or else your enhanced features may not be unlocked.
 :::
 
 ### Directive
