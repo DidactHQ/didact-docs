@@ -12,7 +12,7 @@ I host a special license server up in the cloud for Didact customers / paid user
 
 The license server endpoints are used internally by Didact Engine, but they are documented for transparency in the [API section](/api).
 
-The license server is built with resilience and reliability in mind. If you would like to see its current uptime status, feel free to check out the [Didact status page](https://status.didact.dev) and read [Uptime and Alerting](/core-concepts/license-server/uptime-and-alerting).
+The license server is built with resilience and reliability in mind. If you would like to see its current uptime status, feel free to check out the [Didact status page](https://status.didact.dev) and read [Uptime and Alerting](/core-concepts/licensing-system/uptime-and-alerting).
 
 ## License key
 

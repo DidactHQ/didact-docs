@@ -219,7 +219,7 @@ export default defineConfig({
               { text: 'Validation', link: '/core-concepts/licensing-system/validation' },
               { text: 'Features Validator', link: '/' },
               { text: 'Failsafe Mechanics', link: '/' },
-              { text: 'Uptime and Alerting', link: '/' },
+              { text: 'Uptime and Alerting', link: '/core-concepts/licensing-system/uptime-and-alerting' },
               // { text: 'Airgapped Systems', link: '/' }
             ]
           },
