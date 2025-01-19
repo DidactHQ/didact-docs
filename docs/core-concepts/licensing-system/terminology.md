@@ -10,7 +10,7 @@ If you are a Didact customer who purchased a paid plan of the platform, there is
 
 I host a special license server up in the cloud for Didact customers / paid users. This license server is essentially a private REST API which is used for dispensing, authenticating, and validating API keys that your self-hosted instances of Didact use to unlock enhanced features of the platform.
 
-The license server endpoints are used internally by Didact Engine, but they are documented for transparency in the [API section](/api).
+The license server endpoints are used internally by Didact Engine, but they are documented for transparency in the API section.
 
 The license server is built with resilience and reliability in mind. If you would like to see its current uptime status, feel free to check out the [Didact status page](https://status.didact.dev) and read [Uptime and Alerting](/core-concepts/licensing-system/uptime-and-alerting).
 
