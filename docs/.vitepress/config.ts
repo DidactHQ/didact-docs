@@ -278,7 +278,23 @@ export default defineConfig({
         //   }
         // ],
         '/api/': [
-          { text: 'Didact CLI', link: '/' },
+          {
+            text: 'Didact CLI',
+            items: [
+              { text: 'version', link: '/api/didact-cli/version' },
+              { text: 'version update', link: '/api/didact-cli/version-update' },
+              { text: 'engine get', link: '/api/didact-cli/engine-get' },
+              { text: 'engine set', link: '/api/didact-cli/engine-set' },
+              { text: 'license get', link: '/api/didact-cli/license-get' },
+              { text: 'license set', link: '/api/didact-cli/license-set' },
+              { text: 'license authenticate', link: '/api/didact-cli/license-authenticate' },
+              { text: 'license validate', link: '/api/didact-cli/license-validate' },
+              { text: 'library list', link: '/api/didact-cli/library-list' },
+              { text: 'library add', link: '/api/didact-cli/library-add' },
+              { text: 'library remove', link: '/api/didact-cli/library-remove' },
+              { text: 'library deploy', link: '/api/didact-cli/library-deploy' },
+            ]
+          },
           { text: 'REST API', link: '/' },
           { text: 'License Server', link: '/' },
           { text: 'Didact Core', link: '/' },
