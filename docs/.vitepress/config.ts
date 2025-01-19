@@ -198,21 +198,29 @@ export default defineConfig({
             text: 'Didact Engine',
             items: [
               { text: 'Plugin System', link: '/' },
-              { text: 'Appsettings.json', link: '/' },
+              { text: 'Environment Variables', link: '/core-concepts/didact-engine/environment-variables' },
               { text: 'Dependency Injection', link: '/' },
               { text: 'Directives', link: '/' },
               { text: 'Engine Tunings', link: '/' }
             ]
           },
           {
-            text: 'License Server',
+            text: "Didact UI",
             items: [
-              { text: 'Needs and Motivations', link: '/' },
-              { text: 'License Key', link: '/' },
+              { text: "Environment Variables", link: '/core-concepts/didact-ui/environment-variables' }
+            ]
+          },
+          {
+            text: 'Licensing System',
+            items: [
+              // { text: 'Needs and Motivations', link: '/' },
+              { text: 'Terminology', link: '/core-concepts/licensing-system/terminology' },
+              { text: 'Authentication', link: '/core-concepts/licensing-system/authentication' },
+              { text: 'Validation', link: '/core-concepts/licensing-system/validation' },
               { text: 'Features Validator', link: '/' },
-              { text: 'Asymmetric Encryption', link: '/' },
               { text: 'Failsafe Mechanics', link: '/' },
-              { text: 'Uptime and Alerting', link: '/' }
+              { text: 'Uptime and Alerting', link: '/' },
+              // { text: 'Airgapped Systems', link: '/' }
             ]
           },
           // {
@@ -230,7 +238,6 @@ export default defineConfig({
             items: [
               { text: 'Versioning', link: '/' },
               { text: 'Multitenancy', link: '/' },
-              { text: 'Environment Variables', link: '/' },
               { text: 'Secrets Storage', link: '/' },
               { text: 'Queue Types', link: '/' }
             ]
@@ -271,8 +278,25 @@ export default defineConfig({
         //   }
         // ],
         '/api/': [
-          { text: 'Didact CLI', link: '/' },
+          {
+            text: 'Didact CLI',
+            items: [
+              { text: 'version', link: '/api/didact-cli/version' },
+              { text: 'version update', link: '/api/didact-cli/version-update' },
+              { text: 'engine get', link: '/api/didact-cli/engine-get' },
+              { text: 'engine set', link: '/api/didact-cli/engine-set' },
+              { text: 'license get', link: '/api/didact-cli/license-get' },
+              { text: 'license set', link: '/api/didact-cli/license-set' },
+              { text: 'license authenticate', link: '/api/didact-cli/license-authenticate' },
+              { text: 'license validate', link: '/api/didact-cli/license-validate' },
+              { text: 'library list', link: '/api/didact-cli/library-list' },
+              { text: 'library add', link: '/api/didact-cli/library-add' },
+              { text: 'library remove', link: '/api/didact-cli/library-remove' },
+              { text: 'library deploy', link: '/api/didact-cli/library-deploy' },
+            ]
+          },
           { text: 'REST API', link: '/' },
+          { text: 'License Server', link: '/' },
           { text: 'Didact Core', link: '/' },
           { text: 'Errors and Exceptions', link: '/' }
         ]
