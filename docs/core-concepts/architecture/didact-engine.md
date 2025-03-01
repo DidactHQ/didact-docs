@@ -33,9 +33,17 @@ As you probably know, multiprocessing consumes large amounts of memory from your
 
 Ultimately, this results in more money spent on larger amounts of infrastructure for similar levels of job throughput. On the contrary, the C# language is naturally multithreaded, so this is not an issue for C# applications like Didact Engine.
 
-## Plug and Play
+## Always On
 
-I won't go into detail about this here, but Didact Engine is primarily responsible for the plug-and-play friendliness of the Didact platform. The engine is what gracefully consumes, integrates, and manages your flow library plugins. This enables extremely convenient modifications to your Flows while maintaining a convenient, always-running status for the engine itself.
+One of my biggest gripes with dotnet background job libraries is the issue of deployments and downtime. If you want to add a new background job, then you have to make a change to your home-made engine app, shutdown the previous version that is already running, and redeploy the newer version. This introduces background job processing downtime which is a major disadvantage for many use cases.
+
+Didact Engine, on the other hand, solves this problem entirely. Because it dynamically absorbs and configures Flow Libraries *at runtime* and *after startup*, there is no downtime required for deployments of Flow updates, Flow deletions, Flow additions, or even entirely new Flow Libraries. All you need to do is simply deploy your Flow Library, and Didact Engine will automatically absorb and integrate it to begin FlowRun executions.
+
+## Multinode and Clustering
+
+Following the tenets of the [12 Factor App](https://12factor.net/), Didact Engine is a stateless process. All necessary state and metadata is strictly stored in the metadata database.
+
+Because of this architecture, Didact Engine can easily be scaled from a single node application to a multinode application cluster. If you want to add more Didact Engines to process your Flows, there is no special configurations or additional libraries required. All you have to do is spin up more Didact Engines and point them at the metadata database, and they will take care of themselves.
 
 ## Ease of Deployment
 
