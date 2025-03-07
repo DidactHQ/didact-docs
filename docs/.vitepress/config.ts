@@ -68,13 +68,14 @@ export default defineConfig({
     ],
     nav: [
         { text: 'Getting started', link: '/getting-started/what-is-didact' },
-        { text: 'Core concepts', link: '/core-concepts/architecture/survey' },
+        { text: 'Core concepts', link: '/core-concepts/architecture/how-it-works' },
         { text: 'Guides', link: '/guides/index' },
         { text: 'API', link: '/api/index' },
         { 
           text: 'Resources',
           items: [
             // { text: 'FAQ', link: '/faq/index' },
+            // { text: 'Internal Mechanics', link: '/resources/internal-mechanics' },
             { text: 'Feedback', link: 'https://didact.featurebase.app' },
             { text: 'Roadmap', link: 'https://didact.featurebase.app/roadmap' },
             { text: 'Status', link: 'https://status.didact.dev' },
@@ -100,8 +101,9 @@ export default defineConfig({
               { text: 'Create a Flow Library', link: '/getting-started/quickstart/create-a-flow-library' },
               { text: 'Write a Flow', link: '/getting-started/quickstart/write-a-flow' },
               { text: 'Configure dependency injection', link: '/getting-started/quickstart/configure-dependency-injection' },
-              { text: 'Install Didact Engine', link: '/getting-started/quickstart/install-didact-engine' },
-              { text: 'Install Didact UI', link: '/getting-started/quickstart/install-didact-ui' },
+              { text: 'Installation', link: '/getting-started/quickstart/installation'},
+              // { text: 'Install Didact Engine', link: '/getting-started/quickstart/install-didact-engine' },
+              // { text: 'Install Didact UI', link: '/getting-started/quickstart/install-didact-ui' },
               { text: 'Deploy Flow Library', link: '/getting-started/quickstart/deploy-flow-library' }
             ]
           },
@@ -167,31 +169,41 @@ export default defineConfig({
           {
             text: 'Architecture',
             items: [
-              { text: 'Survey', link: '/core-concepts/architecture/survey' },
+              { text: 'How It Works', link: '/core-concepts/architecture/how-it-works' },
+              // { text: 'Survey', link: '/core-concepts/architecture/survey' },
               { text: 'Metadata Database', link: '/core-concepts/architecture/metadata-database' },
               { text: 'Didact Engine', link: '/core-concepts/architecture/didact-engine' },
               { text: 'Didact UI', link: '/core-concepts/architecture/didact-ui' },
+              { text: 'Didact CLI' },
               { text: 'Didact Core', link: '/core-concepts/architecture/didact-core' },
-              { text: 'Flow Library', link: '/core-concepts/architecture/flow-library'}
+              { text: 'Flow Library', link: '/core-concepts/architecture/flow-library'},
             ]
           },
-          // {
-          //   text: 'Flow Library',
-          //   items: [
-          //     { text: 'Survey', link: '/setup/' },
-          //     { text: 'Didactsettings.json', link: '/'},
-          //     { text: 'Flow Storage', link: '/' }
-          //   ]
-          // },
           {
             text: 'Flows',
             items: [
               { text: 'Flows Overview', link: '/core-concepts/flows/flows-overview' },
               { text: 'Dependency Injection', link: '/core-concepts/flows/dependency-injection' },
               { text: 'Synchronous Only', link: '/core-concepts/flows/synchronous-only' },
+              { text: 'Versioning' },
+              { text: 'Flow Variables', link: '/core-concepts/flows/flow-variables' }
               // { text: 'Execution Blocks', link: '/setup/required-credentials' },
               // { text: 'Logging', link: '/' },
               // { text: 'Retry Policies', link: '/' }
+            ]
+          },
+          {
+            text: 'Flow Library',
+            items: [
+              { text: 'Dependencies', link: '/setup/' },
+              { text: 'Versioning' }
+            ]
+          },
+          {
+            text: 'Deployments',
+            items: [
+              { text: 'Workflow' },
+              { text: 'Targets' }
             ]
           },
           {
@@ -199,8 +211,9 @@ export default defineConfig({
             items: [
               { text: 'Plugin System', link: '/' },
               { text: 'Environment Variables', link: '/core-concepts/didact-engine/environment-variables' },
+              { text: 'Database Migrations', link: '/core-concepts/didact-engine/database-migrations' },
               { text: 'Dependency Injection', link: '/' },
-              { text: 'Directives', link: '/' },
+              { text: 'Directives', link: '/core-concepts/didact-engine/directives' },
               { text: 'Engine Tunings', link: '/' }
             ]
           },
@@ -248,7 +261,13 @@ export default defineConfig({
             text: 'CI/CD', link: '/'
           },
           {
-            text: 'Deployments', link: '/',
+            text: 'Deployments',
+            items: [
+              { text: 'Azure VM' },
+              { text: 'AWS EC2' },
+              { text: 'Docker' },
+              { text: 'Kubernetes' }
+            ]
           },
           {
             text: 'Scaling', link: '/'
@@ -282,17 +301,33 @@ export default defineConfig({
             text: 'Didact CLI',
             items: [
               { text: 'version', link: '/api/didact-cli/version' },
-              { text: 'version update', link: '/api/didact-cli/version-update' },
+              { text: 'update' },
+              // { text: 'version update', link: '/api/didact-cli/version-update' },
+              // { text: 'install', link: '/api/didact-cli/install' },
+              { text: 'database get' },
+              { text: 'database set', link: '/api/didact-cli/database-set' },
+              { text: 'engine install' },
               { text: 'engine get', link: '/api/didact-cli/engine-get' },
               { text: 'engine set', link: '/api/didact-cli/engine-set' },
+              { text: 'engine config' },
+              { text: 'ui install' },
+              { text: 'ui get', link: '/api/didact-cli/engine-get' },
+              { text: 'ui set', link: '/api/didact-cli/engine-set' },
+              { text: 'ui config' },
               { text: 'license get', link: '/api/didact-cli/license-get' },
               { text: 'license set', link: '/api/didact-cli/license-set' },
               { text: 'license authenticate', link: '/api/didact-cli/license-authenticate' },
               { text: 'license validate', link: '/api/didact-cli/license-validate' },
-              { text: 'library list', link: '/api/didact-cli/library-list' },
-              { text: 'library add', link: '/api/didact-cli/library-add' },
-              { text: 'library remove', link: '/api/didact-cli/library-remove' },
-              { text: 'library deploy', link: '/api/didact-cli/library-deploy' },
+              { text: 'environment get' },
+              { text: 'environment set' },
+              { text: 'environment list' },
+              // { text: 'library list', link: '/api/didact-cli/library-list' },
+              // { text: 'library add', link: '/api/didact-cli/library-add' },
+              // { text: 'library remove', link: '/api/didact-cli/library-remove' },
+              // { text: 'library deploy', link: '/api/didact-cli/library-deploy' },
+              { text: 'deployment add' },
+              { text: 'deployment remove' },
+              { text: 'deployment list' }
             ]
           },
           { text: 'REST API', link: '/' },

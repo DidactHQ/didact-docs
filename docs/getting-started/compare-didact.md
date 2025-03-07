@@ -15,6 +15,7 @@ They are a work in progress, and several still have yet to be written.
 | [Didact vs. Quartz .NET](https://www.didact.dev/compare/didact-vs-quartz) |
 | [Didact vs. Temporal.io](https://www.didact.dev/compare/didact-vs-temporal) |
 | Didact vs. Coravel (coming soon) |
+| Didact vs. Elsa (coming soon) |
 | Didact vs. Apache Airflow (coming soon) |
 
 ::: tip Something missing?

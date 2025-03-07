@@ -22,6 +22,14 @@ The full template for `enginesettings.json` is shown below:
     "LicenseKey": "<YOUR_LICENSE_KEY_HERE>",
     "Directive": "Leader",
     "EngineTuningName": "Default",
+    "FlowVariables": {
+        "Public": {
+            "PublicVariable1": "publicvalue1"
+        },
+        "Secret": {
+            "SecretVariable1": "secretvalue1"
+        }
+    }
 }
 ```
 
@@ -109,3 +117,13 @@ The Directives are shown below:
 | Description | The name of the Engine Tuning for Didact Engine. |
 | Required    | `false` |
 | Default     | `Default` |
+
+### FlowVariables
+
+| Descriptor | Value |
+| --- | --- |
+| Key         | FlowVariables |
+| Type        | `object` |
+| Description | See [Flow Variables](/core-concepts/flows/flow-variables). |
+| Required    | `false` |
+| Default     | N/A |

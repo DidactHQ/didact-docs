@@ -1,0 +1,3 @@
+# Database Migrations
+
+Upon startup, and as long as it is assigned the `Leader` [directive](/core-concepts/didact-engine/directives), Didact Engine will create and/or run automatic database migrations against the Didact database. No special configurations are required on your part other than to set the database connection string in Didact Engine's [runtime environment variables](/core-concepts/didact-engine/environment-variables).
