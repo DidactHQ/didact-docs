@@ -41,11 +41,15 @@ And for simplicity's sake, all of these applications are aggregated and offered 
 
 These applications are designed in such a way that your background job processing, data pipelines, and workflows work more as a plug-and-play system. Your only concern should be deploying these applications as-is and then designing your Flows in your class library project.
 
-## Isolated
+## Isolation
 
-The actual magic where your background jobs and data pipelines run is defined in an isolated, central class library project. This is where you define your Flows, a term synonymous in the Didact Platform with background job, data pipeline, or workflow.
+The actual magic where your background jobs and data pipelines run is defined in an isolatec class library project. This is where you define your Flows, a term synonymous in the Didact Platform with background job, data pipeline, or workflow. In Didact, we term this project a flow library.
 
-Your Flows exist in this class library project, totally separate from the rest of your codebase.
+Your Flows exist in a flow library, totally separate from the rest of your codebase.
+
+## Plugin
+
+Following from the [isolation](/getting-started/what-is-didact#isolation) aspect of flow libraries, they are dynamically loaded into Didact Engine *at runtime as plugins*. This yields an extremely adept, nimble, and highly flexible job management and reference system where Didact Engine can absorb and dispose of flow libraries as needed. Many benefits follow from this approach, like zero-downtime flow library deployments and making Didact Engine an ["Always On" application](/core-concepts/architecture/didact-engine#always-on).
 
 ## Open Source
 
