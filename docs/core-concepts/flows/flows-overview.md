@@ -84,7 +84,7 @@ public class ExampleFlow : IFlow
 
 Normally, it is not recommended to make a method default asynhronous if it only runs synchronously, but because of how `ConfigureAsync` is used in Didact Engine, this will not adversely affect the platform, and since `Task.FromResult` represents an already-completed `Task`, .NET is not actually scheduling a continuation against a `TaskScheduler` when it is referenced. Instead, the code essentially runs as if it's synchronous while still satisfying the method signature.
 
-In other words, **I'm telling you not to worry about it**. And on the plus side, if you end up wanting *dynamic* flow configurations at some point - something that is not easily doable with something like attributes - then the method signature requires no factoring!
+In other words, **I'm telling you not to worry about it**. And on the plus side, if you end up wanting *dynamic* flow configurations at some point - something that is not easily doable with something like attributes - then the method signature does not require refactoring!
 
 ### ExecuteAsync
 
