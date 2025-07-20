@@ -27,14 +27,9 @@ using DidactCore;
 
 public class ExampleFlow : IFlow
 {
-    private readonly IFlowConfigurator _flowConfigurator;
+    public ExampleFlow() { }
 
-    public ExampleFlow(IFlowConfigurator flowConfigurator)
-    {
-        _flowConfigurator = flowConfigurator;
-    }
-
-    public async Task<IFlowConfigurator> ConfigureAsync() {}
+    public Task<IFlowConfigurator> ConfigureAsync(IFlowConfigurator flowConfigurator) {}
 
     public async Task ExecuteAsync(IFlowExecutionContext context) {}
 }
@@ -70,24 +65,19 @@ I intentionally made this method async to avoid a painful code refactoring and b
 
 It's possible that you may never need asynchronous functionality in `ConfigureAsync`, but in that case, you will still need to satisfy the method signature. No problem, just add `await Task.CompletedTask` as shown below:
 
-```cs{14}
+```cs
 using DidactCore;
 
 public class ExampleFlow : IFlow
 {
-    private readonly IFlowConfigurator _flowConfigurator;
+    public ExampleFlow() { }
 
-    public ExampleFlow(IFlowConfigurator flowConfigurator)
+    public async Task<IFlowConfigurator> ConfigureAsync(IFlowConfigurator flowConfigurator)
     {
-        _flowConfigurator = flowConfigurator;
-    }
+        flowConfigurator
+            .WithTypeName(GetType().Name);
 
-    public async Task<IFlowConfigurator> ConfigureAsync()
-    {
-        await Task.CompletedTask;
-        return _flowConfigurator
-            // ...
-            ;
+        return Task.FromResult(flowConfigurator);
     }
 }
 ```
