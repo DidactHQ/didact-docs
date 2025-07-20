@@ -45,10 +45,10 @@ Following the tenets of the [12 Factor App](https://12factor.net/), Didact Engin
 
 Because of this architecture, Didact Engine can easily be scaled from a single node application to a multinode application cluster. If you want to add more Didact Engines to process your Flows, there is no special configurations or additional libraries required. All you have to do is spin up more Didact Engines and point them at the metadata database, and they will take care of themselves.
 
-## Ease of Deployment
+## Easy Deployment
 
 One of the major benefits of modern dotnet is the incredible ease of cross-platform deployment strategies.
 
-Since Didact is built with modern dotnet versions, it can be built and published as a self-contained, single-file executable. As is typical with self-contained executables, you don't even need dotnet installed on the target machine: the required framework .dll files are packaged into the executable!
+Since Didact is built with modern dotnet versions, it is prebuilt and published as a self-contained, single-file executable. As is typical with self-contained executables, you don't even need dotnet installed on the target machine: the required framework .dll files are packaged into the executable!
 
-This makes Didact **extremely easy** to get up and running on essentially any infrastructure with little effort on your part. Simple infrastructure requirements should make your adoption of Didact that much easier.
+This makes Didact **extremely easy** to get up and running on essentially any infrastructure with little effort on your part. One binary, one Docker image, [one process](/core-concepts/architecture/didact-engine#single-process). Simple infrastructure requirements should make your adoption of Didact that much easier.

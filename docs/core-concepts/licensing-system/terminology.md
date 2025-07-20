@@ -16,9 +16,9 @@ The license server is built with resilience and reliability in mind. If you woul
 
 ## License key
 
-The license key is the unencrypted, simple API key that you get from Didact Hub once you purchase a paid plan for Didact.
+The license key is the unencrypted, simple API key that you get from Didact Console once you purchase a paid plan for Didact.
 
-This key is tied to your organization account in Didact Hub and is necessary for you to unlock the paid features of Didact.
+This key is tied to your organization account in Didact Console and is necessary for you to unlock the paid features of Didact.
 
 An example license key is shown below:
 
