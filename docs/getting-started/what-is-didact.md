@@ -43,7 +43,7 @@ These applications are designed in such a way that your background job processin
 
 ## Isolation
 
-The actual magic where your background jobs and data pipelines run is defined in an isolatec class library project. This is where you define your Flows, a term synonymous in the Didact Platform with background job, data pipeline, or workflow. In Didact, we term this project a flow library.
+The actual magic where your background jobs and data pipelines run is defined in an isolated class library project. This is where you define your Flows, a term synonymous in the Didact Platform with background job, data pipeline, or workflow. In Didact, we term this project a flow library.
 
 Your Flows exist in a flow library, totally separate from the rest of your codebase.
 
