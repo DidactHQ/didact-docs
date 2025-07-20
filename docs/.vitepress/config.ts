@@ -52,6 +52,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/didact-logo.png',
     socialLinks: [
+      { icon: 'discord', link: 'https://discord.gg/uamswkyRFn' },
       { icon: 'github', link: 'https://github.com/DidactHQ' },
       { icon: 'x', link: 'https://x.com/DidactPlatform' },
       { icon: 'youtube', link: 'https://www.youtube.com/channel/UCPYXvf2OvQku5HrOKYFsxHg' },
