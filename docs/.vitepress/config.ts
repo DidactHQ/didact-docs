@@ -207,8 +207,16 @@ export default defineConfig({
             ]
           },
           {
+            text: 'Didact CLI',
+            items: [
+              { text: 'Installation' },
+              { text: 'Environment Variables', link: '/core-concepts/didact-cli/environment-variables'}
+            ]
+          },
+          {
             text: 'Didact Engine',
             items: [
+              { text: 'Installation' },
               { text: 'Plugin System', link: '/' },
               { text: 'Environment Variables', link: '/core-concepts/didact-engine/environment-variables' },
               { text: 'Database Migrations', link: '/core-concepts/didact-engine/database-migrations' },
@@ -220,6 +228,7 @@ export default defineConfig({
           {
             text: "Didact UI",
             items: [
+              { text: 'Installation' },
               { text: "Environment Variables", link: '/core-concepts/didact-ui/environment-variables' }
             ]
           },
@@ -261,7 +270,17 @@ export default defineConfig({
             text: 'CI/CD', link: '/'
           },
           {
-            text: 'Deployments',
+            text: 'Reverse Proxies',
+            items: [
+              { text: 'Nginx' },
+              { text: 'Apache' },
+              { text: 'IIS' },
+              { text: 'Caddy' },
+              { text: 'YARP' }
+            ]
+          },
+          {
+            text: 'Infrastructure Deployments',
             items: [
               { text: 'Azure VM' },
               { text: 'AWS EC2' },
@@ -299,6 +318,7 @@ export default defineConfig({
         '/api/': [
           {
             text: 'Didact CLI',
+            collapsed: true,
             items: [
               { text: 'version', link: '/api/didact-cli/version' },
               { text: 'update' },
@@ -314,8 +334,6 @@ export default defineConfig({
               { text: 'ui get', link: '/api/didact-cli/engine-get' },
               { text: 'ui set', link: '/api/didact-cli/engine-set' },
               { text: 'ui config' },
-              { text: 'license get', link: '/api/didact-cli/license-get' },
-              { text: 'license set', link: '/api/didact-cli/license-set' },
               { text: 'license authenticate', link: '/api/didact-cli/license-authenticate' },
               { text: 'license validate', link: '/api/didact-cli/license-validate' },
               { text: 'environment get' },
@@ -325,14 +343,17 @@ export default defineConfig({
               // { text: 'library add', link: '/api/didact-cli/library-add' },
               // { text: 'library remove', link: '/api/didact-cli/library-remove' },
               // { text: 'library deploy', link: '/api/didact-cli/library-deploy' },
-              { text: 'deployment add' },
-              { text: 'deployment remove' },
-              { text: 'deployment list' }
+              { text: 'deployment init', link: '/api/didact-cli/deployment-init' },
+              { text: 'deployment config' },
+              { text: 'deployment push' },
+              { text: 'deployment deactivate' },
+              { text: 'cron validate' }
             ]
           },
           { text: 'REST API', link: '/' },
           { text: 'License Server', link: '/' },
           { text: 'Didact Core', link: '/' },
+          { text: 'Didact Cron', link: '/' },
           { text: 'Errors and Exceptions', link: '/' }
         ]
     },
