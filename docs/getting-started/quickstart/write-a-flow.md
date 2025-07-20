@@ -36,27 +36,9 @@ The first method that you need to implement for the `IFlow` interface is the `Co
 
 The `ConfigureAsync` method enables you to set crucial metadata for your Flow that is then synchronized to the metadata database by Didact Engine when it consumes a Flow Library.
 
-#### Dependency injection
-
-First, you need a special dependency from Didact Core, so inject the `IFlowConfigurator` interface into SomeFlow's constructor and save it to a field, as shown below:
-
-```cs
-using DidactCore.Flows;
-
-public class SomeFlow : IFlow
-{
-    private readonly IFlowConfigurator _flowConfigurator;
-
-    public SomeFlow(IFlowConfigurator flowConfigurator)
-    {
-        _flowConfigurator = flowConfigurator;
-    }
-}
-```
-
 #### Fluent API
 
-After injecting the required dependency, you now need to define the `ConfigureAsync` method and set SomeFlow's metadata. The `IFlowConfigurator` interface provides some convenient metadata builder methods to call in a sleek, easy-to-use fluent API.
+You now need to define the `ConfigureAsync` method and set SomeFlow's metadata. The `IFlowConfigurator` interface provides some convenient metadata builder methods to call in a sleek, easy-to-use fluent API.
 
 The metadata fluent API has many different methods that you can call, but for this Quickstart, I will only show the essential ones below:
 
@@ -65,20 +47,14 @@ using DidactCore.Flows;
 
 public class SomeFlow : IFlow
 {
-    private readonly IFlowConfigurator _flowConfigurator;
+    public SomeFlow() { }
 
-    public SomeFlow(IFlowConfigurator flowConfigurator)
+    public Task<IFlowConfigurator> ConfigureAsync(IFlowConfigurator flowConfigurator)
     {
-        _flowConfigurator = flowConfigurator;
-    }
+        flowConfigurator
+            .WithTypeName(GetType().Name);
 
-    public async Task<IFlowConfigurator> ConfigureAsync()
-    {
-        await Task.CompletedTask;
-        return _flowConfigurator
-            .WithTypeName(GetType().Name)
-            .AsVersion("v1.0.0")
-            .ForQueue(QueueTypes.HyperQueue, "Default");
+        return Task.FromResult(flowConfigurator);
     }
 }
 ```
@@ -95,7 +71,7 @@ It is **extremely important** that you call `GetType().Name` in the `WithTypeNam
 
 You may notice that `ConfigureAsync` is an asynchronous method that wraps `IFlowConfigurator` in a `Task`, but many - if not all - of your metadata values will likely be static, hard-coded, or synchronous values.
 
-That's ok, just add `await Task.CompletedTask` above the `return` statement to satisfy the method signature.
+That's ok, just use `return Task.FromResult()` to satisfy the method signature.
 
 ::: tip Why async?
 If you're wondering why the configure method is asynchronous when your metadata is probably hard-coded, check out [Async signature](/core-concepts/flows/flows-overview#async-signature) in Core Concepts.
@@ -116,13 +92,11 @@ using DidactCore.Flows;
 
 public class SomeFlow : IFlow
 {
-    private readonly IFlowConfigurator _flowConfigurator;
-    private readonly IFlowLogger _logger;
+    private readonly IFlowLogger _flowLogger;
 
-    public SomeFlow(IFlowConfigurator flowConfigurator, IFlowLogger logger)
+    public SomeFlow(IFlowLogger flowLogger)
     {
-        _flowConfigurator = flowConfigurator;
-        _logger = logger;
+        _flowLogger = flowLogger;
     }
 }
 ```
@@ -134,29 +108,26 @@ using DidactCore.Flows;
 
 public class SomeFlow : IFlow
 {
-    private readonly IFlowConfigurator _flowConfigurator;
-    private readonly IFlowLogger _logger;
+    private readonly IFlowLogger _flowLogger;
 
-    public SomeFlow(IFlowConfigurator flowConfigurator, IFlowLogger logger)
+    public SomeFlow(IFlowLogger flowLogger)
     {
-        _flowConfigurator = flowConfigurator;
-        _logger = logger;
+        _flowLogger = flowLogger;
     }
 
-    public async Task<IFlowConfigurator> ConfigureAsync()
+    public Task<IFlowConfigurator> ConfigureAsync(IFlowConfigurator flowConfigurator)
     {
-        await Task.CompletedTask;
-        return _flowConfigurator
-            .WithTypeName(GetType().Name)
-            .AsVersion("v1.0.0")
-            .ForQueue(QueueTypes.HyperQueue, "Default");
+        flowConfigurator
+            .WithTypeName(GetType().Name);
+
+        return Task.FromResult(flowConfigurator);
     }
 
     public async Task ExecuteAsync(IFlowExecutionContext context)
     {
-        _logger.LogInformation("Starting execution...");
+        _flowLogger.LogInformation("Starting execution...");
         await Task.Delay(5000);
-        _logger.LogInformation("Execution complete.");
+        _flowLogger.LogInformation("Execution complete.");
     }
 }
 ```
