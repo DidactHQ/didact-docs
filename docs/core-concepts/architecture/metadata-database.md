@@ -72,11 +72,11 @@ So what I've landed on, at least for the moment, is a hybrid system for using *b
 
 * EF Core will manage database migrations.
 * EF Core will generate *only* the most simple CRUD queries, queries that have no chance of being poorly optimized by EF Core's engine that would just be a simple waste of time for me to hand write.
-* All other concerns will, by default, resort to hand-written SQL statements and the Dapper micro ORM.
+* All other concerns will, by default, resort to hand-written SQL statements and the Dapper micro ORM. SQL is my first love, so I'm OK with this.
 
 ## Distributed Locks
 
-Since Didact's metadata is centrally stored in a relational database, requirements like distributed locks are automatically provided by and synchronized within the platform. This is one of the nice advantages for Didact's chosen architecture: it is extremely simple to run both a single node or multiple nodes/clusters of Didact Engine without requiring cumbersome infrastructure changes.
+Since Didact's metadata is centrally stored in a relational database, requirements like distributed locks are automatically provided by and synchronized within the platform. This is one of the nice advantages for Didact's chosen architecture: it is extremely simple to run both a single node or [multiple nodes/clusters of Didact Engine](/core-concepts/architecture/didact-engine#multinode-and-clustering) without requiring cumbersome infrastructure changes.
 
 ## Performance Optimizations
 
