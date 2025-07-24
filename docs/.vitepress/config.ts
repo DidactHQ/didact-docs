@@ -352,7 +352,6 @@ export default defineConfig({
             ]
           },
           { text: 'REST API', link: '/' },
-          { text: 'License Server', link: '/' },
           { text: 'Didact Core', link: '/' },
           { text: 'Didact Cron', link: '/' },
           { text: 'Errors and Exceptions', link: '/' }
