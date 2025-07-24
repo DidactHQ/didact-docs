@@ -4,13 +4,25 @@ const exampleDidactLicenseKey = import.meta.env.VITE_EXAMPLE_DIDACT_LICENSE_KEY;
 
 # Terminology
 
-If you are a Didact customer who purchased a paid plan of the platform, there is some imporant terminology to learn so that you understand the various components of the licensing system. 
+If you are a Didact customer who purchased a paid plan of the platform, there is some imporant terminology to learn so that you understand the various components of the licensing system.
+
+## Didact Console
+
+To assist paid users/customers with various activities, the Didact Platform provides a SaaS application called Didact Console. Didact Console is comprised of both a web dashboard application and a backend REST API. Its various functions include:
+
+* Hosting the licensing server for automated license key generation.
+* Hosting the licensing server for license key checks.
+* Billing and subscription management.
+
+Didact Console might be used for other customer-facing features later on that don't really belong in the main applications of the platform as well.
+
+Didact Console is **required** for customers to acquire their license keys; however, it is **not required** for free/Community Edition users.
 
 ## License server
 
-I host a special license server up in the cloud for Didact customers / paid users. This license server is essentially a private REST API which is used for dispensing, authenticating, and validating API keys that your self-hosted instances of Didact use to unlock enhanced features of the platform.
+As mentioned above, Didact Console exposes a license server for customers that require license keys. This license server is essentially a REST API that dispenses, authenticates, and validates license keys for Didact Engine to allow it to unlock enhanced features.
 
-The license server endpoints are used internally by Didact Engine, but they are documented for transparency in the API section.
+The license server is exposed as a set of endpoints in Didact Console's REST API. As a Didact user, you should not have a need to call these endpoints directly; instead, Didact Engine communicates with them internally.
 
 The license server is built with resilience and reliability in mind. If you would like to see its current uptime status, feel free to check out the [Didact status page](https://status.didact.dev) and read [Uptime and Alerting](/core-concepts/licensing-system/uptime-and-alerting).
 
