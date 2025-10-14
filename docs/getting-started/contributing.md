@@ -1,20 +1,11 @@
 ---
-title: Open Source Contributing
+title: Contributing
 ---
 
-# Open Source Contributing
+# Contributions
 
-Since Didact is currently taking the polyrepo approach to code organization, it will make everyone's lives much easier if issues are opened *with respect to what repository they belong with*.
+At this time, I am not placing much emphasis on community contributions; I have been deeply focused on architecture, API-design, application configurations, and data modeling, and on multiple occasions I have made tweaks to the data model in particular to better conform Didact to the vision that I have for it.
 
-In other words:
+As a result, **I would gently recommend withholding contributions for the time being** while I finalize the APIs and data model in these first versions. Instead, [ open up issues](https://github.com/DidactHQ/didact/issues), [create discussions](https://github.com/DidactHQ/didact/discussions), or [request new features on the roadmap](https://didact.featurebase.app/roadmap).
 
-- For issues with the REST API and execution engine, please open up issues in the [didact-engine](https://github.com/DidactHQ/didact-engine) repo.
-- For issues with the VueJS web dashboard, please open up issues in the [didact-ui](https://github.com/DidactHQ/didact-ui) repo.
-- For issues with the console application, please open up issues in the [didact-sentinel](https://github.com/DidactHQ/didact-sentinel) repo.
-- For issues with core nuget package, please open up issues in the [didact-core](https://github.com/DidactHQ/didact-core) repo.
-
-It's not the end of the world by any means if you don't follow this guideline, but it will save me work and issue duplication if this general guide is followed.
-
-::: info No need to die on that hill
-Again, I want to emphasize that I am **not** anti-monorepo: if the issue tracking becomes unmaintainable, I'm happy to consider an alternative approach to code organization.
-:::
+I apologize for this temporary inconvenience, but I'd rather you not expend energy on writing source code for a PR right now.
