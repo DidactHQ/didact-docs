@@ -5,7 +5,7 @@ description: In this article, we introduce Didact as the premiere .NET job orche
 
 # What Is Didact?
 
-Didact is an open source, standalone, fullstack .NET job orchestration platform. Almost the entire platform is written exclusively in C# with the exception of Didact UI, which is a VueJS-powered web dashboard.
+Didact is an open source, standalone, fullstack .NET job orchestration platform. Almost the entire platform is written exclusively in C# with the exception of Didact UI, which is a VueJS-powered web dashboard - though it is still wrappped within a C# app.
 
 ## Code First
 
@@ -29,34 +29,45 @@ Contrary to other .NET background job libraries like Hangfire, Quartz.NET, and C
 
 Specifically, Didact has several different sub-applications that are **pre-written** and offered to you **as is**, namely:
 
-* [Didact Engine](https://github.com/DidactHQ/didact-engine): the .NET Web API that doubles as both the REST API and the main execution engine for your background jobs, called Flows.
-* [Didact UI](https://github.com/DidactHQ/didact-ui): the VueJS web dashboard frontend.
-* [Didact Core](https://github.com/DidactHQ/didact-core): the primary nuget package that exposes important classes and interfaces for your Flows and Blocks.
+* Didact Engine: the .NET Web API that doubles as both the REST API and the main execution engine for your background jobs, called Flows.
+* Didact UI: the VueJS web dashboard frontend.
+* Didact CLI: the .NET CLI that allows you to manipulate both your flow libraries and Didact's application components.
+* Didact Core: the primary nuget package that exposes important classes and interfaces for your Flows and Blocks.
 
 ::: info
-Even though Didact Core is a nuget package, it is still not meant to be added to a pre-existing application. Rather, it will be used in your new class library project where you create your Flows. More on that later.
+Even though Didact Core is a nuget package, it is still not meant to be added to a pre-existing application. Rather, it will be used in new class library projects, called **Flow Libraries**, where you write your Flows. More on that later.
 :::
 
-And for simplicity's sake, all of these applications are aggregated and offered under a primary, release repository simply named [Didact](https://github.com/DidactHQ/didact).
+All of this content is aggregated under a primary, release repository simply named [Didact](https://github.com/DidactHQ/didact).
 
-These applications are designed in such a way that your background job processing, data pipelines, and workflows work more as a plug-and-play system. Your only concern should be deploying these applications as-is and then designing your Flows in your class library project.
+These applications are designed in such a way that your background job processing, data pipelines, and workflows work more as a plug-and-play system. Your only concern should be deploying these applications as-is and then designing your Flows in your flow libraries.
 
 ## Isolation
 
-The actual magic where your background jobs and data pipelines run is defined in an isolated class library project. This is where you define your Flows, a term synonymous in the Didact Platform with background job, data pipeline, or workflow. In Didact, we term this project a flow library.
+The actual magic where your background jobs and data pipelines run is defined in separate class library projects called flow libraries. These class libraries are where you define your Flows, a term synonymous in the Didact Platform with background job, data pipeline, or workflow.
 
-Your Flows exist in a flow library, totally separate from the rest of your codebase.
+::: info
+I emphasize the word **isolation** because these class libraries exist *outside of* any pre-existing application source code that you have; they are standalone .csproj's.
+:::
 
 ## Plugin
 
 Following from the [isolation](/getting-started/what-is-didact#isolation) aspect of flow libraries, they are dynamically loaded into Didact Engine *at runtime as plugins*. This yields an extremely adept, nimble, and highly flexible job management and reference system where Didact Engine can absorb and dispose of flow libraries as needed. Many benefits follow from this approach, like zero-downtime flow library deployments and making Didact Engine an ["Always On" application](/core-concepts/architecture/didact-engine#always-on).
 
-## Open Source
+## Open Core
 
-Didact is a commercial open source platform whose source code is available on several different [GitHub repositories](https://www.github.com/DidactHQ). It is released under the AGPLv3 open source license and offers a few different monetization options for project sustainability.
+Didact is an **open core** platform of, primarily, prebuilt software applications and a user-facing nuget package library. The source code for the applications is dual-licensed, where proprietary parts of the code are licensed under a COMM license and where the rest of the code is licensed under the AGPLv3. The nuget package library is licensed under the more-permissive LGPL which is typical for user-facing nuget packages.
 
-See the [Licensing and Monetization](/getting-started/licensing-and-monetization) page for more details.
+Open core dual-licensing is a business strategy for founders who, like myself, want to build powerful, open source-friendly* software but want to do so responsibly and sustainably by backing the product with an actual business model.
+
+::: warning Words matter*
+To try and respect the differences between free open source software (FOSS) and commercial open source software (COSS), and to prevent any confusion amongst users, I usually refer to Didact as **open core** so that everyone is on the same page.
+:::
+
+I have chosen the open core approach not to scare you and not to burden your acquisition department at your company but so that, as I stated above, I can provide **sustainable, long-term support** for this product for years to come. Open core products are extremely popular amongst devtools, as they pretty much always offer gratuitous free/community versions with enhanced versions, upgrades, and support avaiable upon purchase.
+
+It is notable, also, that I am a **solo bootstrapped founder**, not VC-backed, so I want things done right without interferences between me (the founder) and you (my user). I thought long and hard about the various approaches available to me, and this felt like the best path forward.
 
 ::: warning Fear not
-If you recoiled from seeing the AGPLv3 license, **don't worry**. Chances are it will not affect you. Make sure to read the [Licensing and Monetization](/getting-started/licensing-and-monetization) page for more details.
+If you recoil at the sight of COMM license, AGPLv3, or "open core", worry not: the large majority of you will likely have zero interest in forking and will instead just want to use the platform as is; in other words, chances are you probably don't care about this section. I offer a gratuitous free/community version of Didact that is hassle-free to get started with, and I expound more on being a bootstrapped founder elsewhere, so make sure to read the [Licensing and Monetization](/getting-started/licensing-and-monetization) page if you want to see more of my thoughts in detail about these matters.
 :::
