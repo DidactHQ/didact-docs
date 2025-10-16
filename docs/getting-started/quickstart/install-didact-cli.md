@@ -28,7 +28,7 @@ As expounded upon below, Didact CLI needs a connection string with DDL privilege
 
 ## Run database migrations
 
-If this is your first time using Didact on your given database, then you need to run the [migrate command](/api/didact-cli/database-migrate) against it to setup the data model. Open a terminal and run the following command to execute the database migrations:
+If this is your first time using Didact on your given database, then you need to run the [database migrate command](/api/didact-cli/database-migrate) against it to setup the data model. Open a terminal and run the following command to execute the database migrations:
 
 ```bash
 didact database migrate
