@@ -1,9 +1,7 @@
 # Install Didact UI
 
-## Get the code
+## Installation
 
-## Environment variables
+## Configure uisettings.json
 
-## Engine tuning
-
-## Deploy
+## Launch

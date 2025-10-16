@@ -1,9 +1,7 @@
 # Install Didact Engine
 
-## Get the code
+## Installation
 
-## Environment variables
+## Configure enginesettings.json
 
-## Directive
-
-## Deploy
+## Launch
