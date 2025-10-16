@@ -9,12 +9,12 @@ One of Didact's core components is a metadata SQL database.
 
 ## Database Providers
 
-Didact's data model is designed for traditional relational database management systems (RDBMS). The supported database providers are listed below:
+Didact's data model is designed for traditional relational database management systems (RDBMS). Various database providers and their support status are listed below:
 
-| Database Provider | Status |
-| --- | --- |
-| SQL Server | Supported |
-| PostgreSQL | Planned |
+| Database Provider | Key | Status |
+| --- | --- | --- |
+| SQL Server | `SQLServer` | Supported |
+| PostgreSQL | `PostgreSQL` | Planned |
 
 ### SQL Server
 
@@ -49,6 +49,14 @@ Didact's data model is a **highly-relational** data model. It is designed to cap
 Redis is optimized for fast retrieval and simple key-value lookups. Key-value lookups are an excellent pattern to use *where appropriate*, but this is of little use for a highly-relational data model like Didact's.
 
 This is drastically different from other background job libraries like Hangfire or Sidekiq, for example. In both of these libraries, the object relations are comparatively lightweight and focus more on the serialization of methods, method arguments, and simple configurations of the jobs.
+
+## Database Migrations
+
+The Didact CLI is required to run database migrations.
+
+::: warning
+When database migrations are ran, make sure that Didact CLI uses a connection string with DDL privileges.
+:::
 
 ## ORM Philosophy
 
