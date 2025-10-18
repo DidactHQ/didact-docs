@@ -101,11 +101,12 @@ export default defineConfig({
             items: [
               { text: 'Create a Flow Library', link: '/getting-started/quickstart/create-a-flow-library' },
               { text: 'Write a Flow', link: '/getting-started/quickstart/write-a-flow' },
-              { text: 'Configure dependency injection', link: '/getting-started/quickstart/configure-dependency-injection' },
-              { text: 'Installation', link: '/getting-started/quickstart/installation'},
-              // { text: 'Install Didact Engine', link: '/getting-started/quickstart/install-didact-engine' },
-              // { text: 'Install Didact UI', link: '/getting-started/quickstart/install-didact-ui' },
-              { text: 'Deploy Flow Library', link: '/getting-started/quickstart/deploy-flow-library' }
+              // { text: 'Configure dependency injection', link: '/getting-started/quickstart/configure-dependency-injection' },
+              { text: 'Setup a database', link: '/getting-started/quickstart/setup-a-database' },
+              { text: 'Install Didact CLI', link: '/getting-started/quickstart/install-didact-cli'},
+              { text: 'Deploy Flow Library', link: '/getting-started/quickstart/deploy-flow-library' },
+              { text: 'Install Didact Engine', link: '/getting-started/quickstart/install-didact-engine' },
+              { text: 'Install Didact UI', link: '/getting-started/quickstart/install-didact-ui' },
             ]
           },
           {
@@ -323,10 +324,10 @@ export default defineConfig({
             items: [
               { text: 'version', link: '/api/didact-cli/version' },
               { text: 'update' },
+              { text: 'config', link: '/api/didact-cli/config' },
               // { text: 'version update', link: '/api/didact-cli/version-update' },
               // { text: 'install', link: '/api/didact-cli/install' },
-              { text: 'database get' },
-              { text: 'database set', link: '/api/didact-cli/database-set' },
+              { text: 'migrate', link: '/api/didact-cli/migrate' },
               { text: 'engine install' },
               { text: 'engine get', link: '/api/didact-cli/engine-get' },
               { text: 'engine set', link: '/api/didact-cli/engine-set' },
