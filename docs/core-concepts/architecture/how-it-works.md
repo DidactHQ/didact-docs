@@ -49,7 +49,7 @@ Once your Flow Library is ready, you build and publish it to a specific location
 
 ### Installation
 
-You can install Didact Engine by running the [engine install command](/api/didact-cli/engine-install) from the Didact CLI, by downloading the binary from the [Releases page](https://github.com/DidactHQ/didact/releases) of the main [Didact repository](https://github.com/DidactHQ/didact) on GitHub, or by pulling its Docker image.
+You can install Didact Engine by running the [engine install command] from the Didact CLI, by downloading the binary from the [Releases page](https://github.com/DidactHQ/didact/releases) of the main [Didact repository](https://github.com/DidactHQ/didact) on GitHub, or by pulling its Docker image.
 
 ### Configure enginesettings.json
 
@@ -59,7 +59,7 @@ Didact Engine is a self-contained dotnet executable that requires an `enginesett
 
 ### Installation
 
-You can install Didact UI by running the [ui install command](/api/didact-cli/ui-install) from the Didact CLI, by downloading the binary from the [Releases page](https://github.com/DidactHQ/didact/releases) of the main [Didact repository](https://github.com/DidactHQ/didact) on GitHub, or by pulling its Docker image.
+You can install Didact UI by running the [ui install command] from the Didact CLI, by downloading the binary from the [Releases page](https://github.com/DidactHQ/didact/releases) of the main [Didact repository](https://github.com/DidactHQ/didact) on GitHub, or by pulling its Docker image.
 
 ### Configure uisettings.json
 
