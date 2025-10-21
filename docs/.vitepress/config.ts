@@ -204,6 +204,7 @@ export default defineConfig({
           {
             text: 'Deployments',
             items: [
+              { text: 'Deployment Types' },
               { text: 'Workflow' },
               { text: 'Targets' }
             ]
@@ -323,24 +324,19 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: 'version', link: '/api/didact-cli/version' },
-              { text: 'update' },
+              // { text: 'update' },
               { text: 'config', link: '/api/didact-cli/config' },
-              // { text: 'version update', link: '/api/didact-cli/version-update' },
-              // { text: 'install', link: '/api/didact-cli/install' },
               { text: 'migrate', link: '/api/didact-cli/migrate' },
-              { text: 'engine install' },
-              { text: 'engine get', link: '/api/didact-cli/engine-get' },
-              { text: 'engine set', link: '/api/didact-cli/engine-set' },
-              { text: 'engine config' },
-              { text: 'ui install' },
-              { text: 'ui get', link: '/api/didact-cli/engine-get' },
-              { text: 'ui set', link: '/api/didact-cli/engine-set' },
-              { text: 'ui config' },
+              { text: 'environment init', link: '/api/didact-cli/environment-init' },
+              { text: 'environment list', link: '/api/didact-cli/environment-list' },
               { text: 'license authenticate', link: '/api/didact-cli/license-authenticate' },
               { text: 'license validate', link: '/api/didact-cli/license-validate' },
-              { text: 'environment get' },
-              { text: 'environment set' },
-              { text: 'environment list' },
+              { text: 'engine install' },
+              { text: 'engine config' },
+              { text: 'engine run' },
+              { text: 'ui install' },
+              { text: 'ui config' },
+              { text: 'ui run' },
               // { text: 'library list', link: '/api/didact-cli/library-list' },
               // { text: 'library add', link: '/api/didact-cli/library-add' },
               // { text: 'library remove', link: '/api/didact-cli/library-remove' },
@@ -348,8 +344,8 @@ export default defineConfig({
               { text: 'deployment init', link: '/api/didact-cli/deployment-init' },
               { text: 'deployment config' },
               { text: 'deployment push' },
-              { text: 'deployment deactivate' },
-              { text: 'cron validate' }
+              { text: 'deployment disable' },
+              // { text: 'cron validate' }
             ]
           },
           { text: 'REST API', link: '/' },
