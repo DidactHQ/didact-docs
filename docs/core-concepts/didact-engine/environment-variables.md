@@ -20,7 +20,6 @@ The full template for `enginesettings.json` is shown below:
     },
     "EngineApiKey": "<YOUR_RANDOM_API_KEY_HERE>",
     "LicenseKey": "<YOUR_LICENSE_KEY_HERE>",
-    "Directive": "Leader",
     "EngineTuningName": "Default",
     "FlowVariables": {
         "Public": {
@@ -90,23 +89,6 @@ Please be aware that if you omit this setting, your instance of Didact Engine wi
 ::: warning For customers only
 If you are not a Didact customer / only use the Community Edition, you can omit this field. If you *are* a Didact customer, make sure to include this license key or else your enhanced features may not be unlocked.
 :::
-
-### Directive
-
-| Descriptor | Value |
-| --- | --- |
-| Key         | Directive |
-| Type        | `string` |
-| Description | The Directive for Didact Engine. |
-| Required    | `false` |
-| Default     | `Leader` |
-
-The Directives are shown below:
-
-| Name |
-| --- |
-| Leader |
-| Worker |
 
 ### EngineTuningName
 
