@@ -9,6 +9,10 @@ didact engine install [--path "<INSTALL_PATH>"]
 ## Options
 - `--path` (string): The install path for Didact Engine.
 
+::: info
+If `--path` is not specified, then a default installation path is used.
+:::
+
 ## Examples
 
 Install Didact Engine at the default location.

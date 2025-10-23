@@ -9,6 +9,10 @@ didact ui install [--path "<INSTALL_PATH>"]
 ## Options
 - `--path` (string): The install path for Didact UI.
 
+::: info
+If `--path` is not specified, then a default installation path is used.
+:::
+
 ## Examples
 
 Install Didact UI at the default location.
