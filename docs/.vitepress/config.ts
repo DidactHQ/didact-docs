@@ -326,6 +326,8 @@ export default defineConfig({
               { text: 'version', link: '/api/didact-cli/version' },
               // { text: 'update' },
               { text: 'config', link: '/api/didact-cli/config' },
+              { text: 'config set', link: '/api/didact-cli/config-set' },
+              { text: 'config list', link: '/api/didact-cli/config-list' },
               { text: 'migrate', link: '/api/didact-cli/migrate' },
               { text: 'environment init', link: '/api/didact-cli/environment-init' },
               { text: 'environment list', link: '/api/didact-cli/environment-list' },
@@ -343,7 +345,7 @@ export default defineConfig({
               // { text: 'library deploy', link: '/api/didact-cli/library-deploy' },
               { text: 'deployment init', link: '/api/didact-cli/deployment-init' },
               { text: 'deployment config' },
-              { text: 'deployment push' },
+              { text: 'deployment push', link: '/api/didact-cli/deployment-push' },
               { text: 'deployment disable' },
               // { text: 'cron validate' }
             ]
