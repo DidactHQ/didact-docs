@@ -10,14 +10,7 @@ didact config set --key "<KEY_NAME>" --value <KEY_VALUE>
 - `--key` (string): The name of the configuration key.
 - `--value` (string or number or boolean or null): The value of the configuration key.
 
-## Key names and values
-
-| Key name | Key value type | Key value description |
-| --- | :---: | --- |
-| `Database.Provider` | string | The [database provider key](/core-concepts/architecture/metadata-database#database-providers) for your database provider of choice.
-| `Database.ConnectionString` | string | The connection string for the database. |
-| `Environment` | string | The name of the default environment that you want to use. |
-| `LicenseKey` | string | An API key from [Didact Console](https://console.didact.dev) that unlocks enhanced features. |
+For a full list of the config keys that you can set, see the [config key matrix](/core-concepts/didact-cli/config#cliconfig-json-key-matrix).
 
 ## Examples
 
