@@ -11,12 +11,12 @@ didact migrate [--provider "<DB_PROVDER_KEY>" --connection-string "<DB_CONNECTIO
 - `--connection-string` (string): The connection string for the database.
 
 ::: warning
-If `--provider` and `--connection-string` are specified in [Didact CLI's config](/core-concepts/didact-cli/config), then they are not necessary here.
+If `--provider` and `--connection-string` are specified in [Didact CLI's config](/core-concepts/didact-cli/cli-config), then they are not necessary here.
 :::
 
 ## Examples
 
-Run migrations against the database and connection string that are already specified in the [Didact CLI config](/core-concepts/didact-cli/config).
+Run migrations against the database and connection string that are already specified in the [Didact CLI config](/core-concepts/didact-cli/cli-config).
 
 ```bash
 didact migrate
