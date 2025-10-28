@@ -16,9 +16,23 @@ A `engineconfig.json` JSON template file is shown below:
         "Provider": "<DB_PROVIDER_KEY>",
         "ConnectionString": "<DB_CONNECTION_STRING>"
     },
+    "EngineApiKey": "<ENGINE_API_KEY>",
     "LicenseKey": "<LICENSE_KEY>"
 }
 ```
+
+<!-- TODO Other engine config 
+
+    "EngineTuningName": "Default",
+    "FlowVariables": {
+        "Public": {
+            "PublicVariable1": "publicvalue1"
+        },
+        "Secret": {
+            "SecretVariable1": "secretvalue1"
+        }
+    } -->
+
 
 ## engineconfig.json key matrix
 
@@ -32,4 +46,11 @@ For simplicity, when referencing these keys through Didact CLI commands, use the
 | --- | :---: | --- |
 | `Database.Provider` | string | The [database provider key](/core-concepts/architecture/metadata-database#database-providers) for your database provider of choice. |
 | `Database.ConnectionString` | string | The connection string for the database. |
+| `EngineApiKey` | string | The user-defined API key to protect Didact Engine with authentication. |
 | `LicenseKey` | string | An API key from [Didact Console](https://console.didact.dev) that unlocks enhanced features. |
+
+### EngineApiKey
+
+::: danger
+Please be aware that if you omit this setting, then Didact Engine's API routes will be unprotected.
+:::

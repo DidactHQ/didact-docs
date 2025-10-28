@@ -33,3 +33,9 @@ For simplicity, when referencing these keys through Didact CLI commands, use the
 | JSON and CLI key name | Key value type | Key value description |
 | --- | :---: | --- |
 | `EngineBaseUrl` | string | The base URL for Didact Engine. |
+
+### EngineBaseUrl
+
+::: warning
+Do not include the trailing slash nor any additional paths.
+:::
