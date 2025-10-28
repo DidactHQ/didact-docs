@@ -10,7 +10,7 @@ didact engine config set --key "<KEY_NAME>" --value <KEY_VALUE>
 - `--key` (string): The name of the configuration key.
 - `--value` (string or number or boolean or null): The value of the configuration key.
 
-For a full list of the config keys that you can set, see the [config key matrix](/core-concepts/didact-engine/config#engineconfig-json-key-matrix).
+For a full list of the config keys that you can set, see the [config key matrix](/core-concepts/didact-engine/engine-config#engineconfig-json-key-matrix).
 
 ## Examples
 
