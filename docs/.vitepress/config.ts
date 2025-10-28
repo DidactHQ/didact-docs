@@ -124,59 +124,15 @@ export default defineConfig({
             ]
           }
         ],
-        // '/quickstarts/': [
-        //   {
-        //     text: 'Flow Library',
-        //     items: [
-        //       { text: 'New class library', link: '/' },
-        //       { text: 'Didact packages', link: '/' },
-        //       { text: 'Version', link: '/' }
-        //     ]
-        //   },
-        //   {
-        //     text: 'Flows',
-        //     items: [
-        //       { text: 'Write a Flow', link: '/' },
-        //       { text: 'Version', link: '/' }
-        //     ]
-        //   },
-        //   {
-        //     text: 'Configure Dependency Injection',
-        //     items: [
-        //       { text: 'Add dependencies', link: '/' },
-        //       { text: 'Plugin registrar', link: '/' },
-        //       { text: 'Constructor injection', link: '/' }
-        //     ]
-        //   },
-        //   {
-        //     text: 'Didact Engine',
-        //     items: [
-        //       { text: 'Get the code', link: '/' },
-        //       { text: 'Environment variables', link: '/' },
-        //       { text: 'Add Directive', link: '/' },
-        //       { text: 'Deploy', link: '/' }
-        //     ]
-        //   },
-        //   {
-        //     text: 'Didact UI',
-        //     items: [
-        //       { text: 'Get the code', link: '/' },
-        //       { text: 'Environment variables', link: '/' },
-        //       { text: 'Engine tuning', link: '/' },
-        //       { text: 'Deploy', link: '/' }
-        //     ]
-        //   },
-        // ],
         '/core-concepts/': [
           {
             text: 'Architecture',
             items: [
               { text: 'How It Works', link: '/core-concepts/architecture/how-it-works' },
-              // { text: 'Survey', link: '/core-concepts/architecture/survey' },
               { text: 'Metadata Database', link: '/core-concepts/architecture/metadata-database' },
+              { text: 'Didact CLI', link: '/core-concepts/architecture/didact-cli' },
               { text: 'Didact Engine', link: '/core-concepts/architecture/didact-engine' },
               { text: 'Didact UI', link: '/core-concepts/architecture/didact-ui' },
-              { text: 'Didact CLI' },
               { text: 'Didact Core', link: '/core-concepts/architecture/didact-core' },
               { text: 'Flow Library', link: '/core-concepts/architecture/flow-library'},
             ]
@@ -213,8 +169,8 @@ export default defineConfig({
             text: 'Didact CLI',
             items: [
               { text: 'Installation' },
-              { text: 'Config', link: '/core-concepts/didact-cli/config' },
-              { text: 'Environment Variables', link: '/core-concepts/didact-cli/environment-variables'}
+              { text: 'Config', link: '/core-concepts/didact-cli/cli-config' },
+              // { text: 'Environment Variables', link: '/core-concepts/didact-cli/environment-variables'}
             ]
           },
           {
@@ -222,10 +178,11 @@ export default defineConfig({
             items: [
               { text: 'Installation' },
               { text: 'Plugin System', link: '/' },
-              { text: 'Environment Variables', link: '/core-concepts/didact-engine/environment-variables' },
-              { text: 'Database Migrations', link: '/core-concepts/didact-engine/database-migrations' },
+              { text: 'Config', link: '/core-concepts/didact-engine/engine-config' },
+              // { text: 'Environment Variables', link: '/core-concepts/didact-engine/environment-variables' },
+              // { text: 'Database Migrations', link: '/core-concepts/didact-engine/database-migrations' },
               { text: 'Dependency Injection', link: '/' },
-              { text: 'Directives', link: '/core-concepts/didact-engine/directives' },
+              // { text: 'Directives', link: '/core-concepts/didact-engine/directives' },
               { text: 'Engine Tunings', link: '/' }
             ]
           },
@@ -233,7 +190,8 @@ export default defineConfig({
             text: "Didact UI",
             items: [
               { text: 'Installation' },
-              { text: "Environment Variables", link: '/core-concepts/didact-ui/environment-variables' }
+              { text: 'Config', link: '/core-concepts/didact-ui/ui-config' },
+              // { text: "Environment Variables", link: '/core-concepts/didact-ui/environment-variables' }
             ]
           },
           {
