@@ -1,4 +1,4 @@
-# Config
+# CLI Config
 
 Since Didact CLI is a build once, deploy anywhere application, its behaviors are modified through a simple configuration file. This configuration file can be thought of as a set of runtime environment variables for Didact CLI.
 
