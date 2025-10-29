@@ -1,5 +1,5 @@
 ---
-title: Flows
+title: Flows Overview
 description: Flows are the core building blocks for your Didact jobs. Flows are created by implementing the IFlow interface and defining the ConfigureAsync and ExecuteAsync methods.
 ---
 
