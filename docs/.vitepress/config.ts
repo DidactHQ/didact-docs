@@ -140,12 +140,13 @@ export default defineConfig({
           {
             text: 'Setup',
             items: [
-              { text: 'Database' },
+              { text: 'Database', link: '/core-concepts/database/database-setup' },
               {
                 text: 'Didact CLI',
                 items: [
                   { text: 'Installation' },
                   { text: 'Config', link: '/core-concepts/didact-cli/cli-config' },
+                  { text: 'Migrations', link: '/core-concepts/database/database-migrations' }
                 ]
               },
               {
@@ -168,7 +169,6 @@ export default defineConfig({
             text: 'Flow Libraries',
             items: [
               { text: 'Create', link: '/core-concepts/flow-libraries/create-flow-libraries' },
-              { text: 'Source Control' },
               { text: 'Dependency Injection' },
               { text: 'Dependencies', link: '/setup/' },
               { text: 'Versioning' }
