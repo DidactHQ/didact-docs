@@ -25,7 +25,7 @@ Didact CLI provides a [migrate command](/api/didact-cli/migrate) for easily runn
 
 ## Define Config files
 
-Didact CLI provides convenient commands for creating, setting, and inspecting config files for Didact CLI, Didact Engine, and Didact UI. See the respective config CLI commands in the [API](/api).
+Didact CLI provides convenient commands for creating, setting, and inspecting config files for Didact CLI, Didact Engine, and Didact UI. See the respective config CLI commands in the API.
 
 ## Automate CICD
 
