@@ -29,7 +29,7 @@ Didact CLI provides convenient commands for creating, setting, and inspecting co
 
 ## Automate CICD
 
-It is very possible that you may want to automate various Didact-related tasks in CICD processes, such as GitHub actions pipelines. For example, you may want to automate deploying a flow library or automate installing Didact Engine on a given compute resource. This is one of the primary reasons that Didact CLI was created.
+It is likely that you will want to automate various Didact-related tasks in CICD processes, such as GitHub actions pipelines. For example, you may want to automate deploying a flow library or automate installing Didact Engine on a given compute resource. This is one of the primary reasons that Didact CLI was created.
 
 ## Platform Updates
 
