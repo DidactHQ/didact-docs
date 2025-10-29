@@ -138,60 +138,107 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Flows',
+            text: 'Setup',
             items: [
-              { text: 'Flows Overview', link: '/core-concepts/flows/flows-overview' },
-              { text: 'Dependency Injection', link: '/core-concepts/flows/dependency-injection' },
-              { text: 'Synchronous Only', link: '/core-concepts/flows/synchronous-only' },
-              { text: 'Versioning' },
-              { text: 'Flow Variables', link: '/core-concepts/flows/flow-variables' }
-              // { text: 'Execution Blocks', link: '/setup/required-credentials' },
-              // { text: 'Logging', link: '/' },
-              // { text: 'Retry Policies', link: '/' }
+              { text: 'Database' },
+              {
+                text: 'Didact CLI',
+                items: [
+                  { text: 'Installation' },
+                  { text: 'Config', link: '/core-concepts/didact-cli/cli-config' },
+                ]
+              },
+              {
+                text: 'Didact Engine',
+                items: [
+                  { text: 'Installation', link: '/core-concepts/didact-engine/engine-installation' },
+                  { text: 'Config', link: '/core-concepts/didact-engine/engine-config' },
+                ]
+              },
+              {
+                text: 'Didact UI',
+                items: [
+                  { text: 'Installation', link: '/core-concepts/didact-ui/ui-installation' },
+                  { text: 'Config', link: '/core-concepts/didact-ui/ui-config' },
+                ]
+              }
             ]
           },
           {
-            text: 'Flow Library',
+            text: 'Flow Libraries',
             items: [
+              { text: 'Create', link: '/core-concepts/flow-libraries/create-flow-libraries' },
+              { text: 'Source Control' },
+              { text: 'Dependency Injection' },
               { text: 'Dependencies', link: '/setup/' },
               { text: 'Versioning' }
             ]
           },
           {
+            text: 'Flows',
+            items: [
+              { text: 'Overview', link: '/core-concepts/flows/flows-overview' },
+              { text: 'Dependency Injection', link: '/core-concepts/flows/dependency-injection' },
+              { text: 'Versioning', link: '/core-concepts/flows/flow-versioning' },
+              { text: 'Schedules' },
+              { text: 'Triggers' },
+              { text: 'Logging' },
+              { text: 'Retry Policies' }
+              // { text: 'Flow Variables', link: '/core-concepts/flows/flow-variables' },
+              // { text: 'Execution Blocks', link: '/setup/required-credentials' },
+            ]
+          },
+          {
             text: 'Deployments',
             items: [
+              { text: 'Overview', link: '/core-concepts/deployments/deployments-overview' },
               { text: 'Deployment Types' },
               { text: 'Workflow' },
               { text: 'Targets' }
             ]
           },
+          // {
+          //   text: 'Didact CLI',
+          //   items: [
+          //     { text: 'Installation' },
+          //     { text: 'Config', link: '/core-concepts/didact-cli/cli-config' },
+          //     // { text: 'Environment Variables', link: '/core-concepts/didact-cli/environment-variables'}
+          //   ]
+          // },
+          // {
+          //   text: 'Didact Engine',
+          //   items: [
+          //     { text: 'Installation', link: '/core-concepts/didact-engine/engine-installation' },
+          //     { text: 'Config', link: '/core-concepts/didact-engine/engine-config' },
+          //     // { text: 'Environment Variables', link: '/core-concepts/didact-engine/environment-variables' },
+          //   ]
+          // },
+          // {
+          //   text: "Didact UI",
+          //   items: [
+          //     { text: 'Installation', link: '/core-concepts/didact-ui/ui-installation' },
+          //     { text: 'Config', link: '/core-concepts/didact-ui/ui-config' },
+          //     // { text: "Environment Variables", link: '/core-concepts/didact-ui/environment-variables' }
+          //   ]
+          // },
+          // {
+          //   text: 'Execution Mechanics',
+          //   items: [
+          //     { text: 'Didact Threadpool', link: '/' },
+          //     { text: 'Didact Task Scheduler', link: '/' },
+          //     { text: 'Asynchronicity', link: '/' },
+          //     { text: 'Parallelism', link: '/' },
+          //     { text: 'Engine Tuning', link: '/' }
+          //   ]
+          // },
           {
-            text: 'Didact CLI',
+            text: 'Features',
             items: [
-              { text: 'Installation' },
-              { text: 'Config', link: '/core-concepts/didact-cli/cli-config' },
-              // { text: 'Environment Variables', link: '/core-concepts/didact-cli/environment-variables'}
-            ]
-          },
-          {
-            text: 'Didact Engine',
-            items: [
-              { text: 'Installation' },
-              { text: 'Plugin System', link: '/' },
-              { text: 'Config', link: '/core-concepts/didact-engine/engine-config' },
-              // { text: 'Environment Variables', link: '/core-concepts/didact-engine/environment-variables' },
-              // { text: 'Database Migrations', link: '/core-concepts/didact-engine/database-migrations' },
-              { text: 'Dependency Injection', link: '/' },
-              // { text: 'Directives', link: '/core-concepts/didact-engine/directives' },
+              { text: 'Versioning', link: '/' },
+              { text: 'Environments', link: '/' },
+              { text: 'Secrets Storage', link: '/' },
+              { text: 'Queus', link: '/' },
               { text: 'Engine Tunings', link: '/' }
-            ]
-          },
-          {
-            text: "Didact UI",
-            items: [
-              { text: 'Installation' },
-              { text: 'Config', link: '/core-concepts/didact-ui/ui-config' },
-              // { text: "Environment Variables", link: '/core-concepts/didact-ui/environment-variables' }
             ]
           },
           {
@@ -207,25 +254,6 @@ export default defineConfig({
               // { text: 'Airgapped Systems', link: '/' }
             ]
           },
-          // {
-          //   text: 'Execution Mechanics',
-          //   items: [
-          //     { text: 'Didact Threadpool', link: '/' },
-          //     { text: 'Didact Task Scheduler', link: '/' },
-          //     { text: 'Asynchronicity', link: '/' },
-          //     { text: 'Parallelism', link: '/' },
-          //     { text: 'Engine Tuning', link: '/' }
-          //   ]
-          // },
-          {
-            text: 'Features',
-            items: [
-              { text: 'Versioning', link: '/' },
-              { text: 'Multitenancy', link: '/' },
-              { text: 'Secrets Storage', link: '/' },
-              { text: 'Queue Types', link: '/' }
-            ]
-          }
         ],
         'guides': [
           {
@@ -328,7 +356,7 @@ export default defineConfig({
     },
     footer: {
       message: 'Proudly powered by <a style="color: #f97316;" target="_blank" href="https://www.vitepress.dev">VitePress</a>',
-      copyright: `Copyright © 2023-present ${copyrightHolderName}`
+      copyright: `Copyright © ${copyrightHolderName}`
     }
   },
   transformPageData(pageData, context) {
