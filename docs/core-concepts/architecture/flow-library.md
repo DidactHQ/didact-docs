@@ -1,47 +1,53 @@
 ---
 title: Flow Library
-description: The Flow Library is the dotnet class library project where you define your Flows. Your Flow Library contains your Flow source code, Flow dependencies, and gets loaded into Didact Engine as a runtime plugin.
+description: A flow library is the dotnet class library project where you define your flows. A flow library contains your flow source code, Fflow dependencies, and gets loaded into Didact Engine as a runtime plugin.
 ---
 
 # Flow Library
 
-And finally, we arrive at the user-facing component of the Didact platform: the Flow Library.
+And finally, we arrive at the user-facing component of the Didact platform: a Flow Library.
 
 ## Class Library Project
 
-Your Flow Library is a [dotnet class library project](https://learn.microsoft.com/en-us/dotnet/standard/class-libraries), meaning that its build artifacts are *not* executable files but rather .dll files and package dependency files.
+A flow library is a [dotnet class library project](https://learn.microsoft.com/en-us/dotnet/standard/class-libraries), meaning that its build artifacts are *not* executable files but rather .dll files and package dependency files.
 
 Class libraries are incredible projects to utilize in the dotnet ecosystem. Their source code files generate the basis for nuget packages, and they are incredibly easy to add to other dotnet projects, either via nuget references or via project references in a .csproj file.
 
 ## Plug and Play
 
-Your Flow Library is the one exception to Didact's otherwise default plug-and-play approach to deployment. While the rest of Didact's applications are meant to be used as is, your Flow Library is intended to be your playground for defining all things related to your Flows. Heavy modification is both expected and required.
+A flow library is the one exception to Didact's otherwise default plug-and-play approach to deployment. While the rest of Didact's applications are meant to be used as is, flow libraries are intended to be your playground for defining all things related to your Flows. Heavy modification is both expected and required.
+
+## How Many?
+
+You can have as many flow libraries as you want! Originally, I had designed Didact to use only one flow library at a time, but I felt there were use cases where multiple flow libraries were warranted. And indeed, after talking to users, I was correct.
+
+So if you want to have one flow library or a hundred flow libraries, that is completely fine!
 
 ## Flow Dependencies
 
-As you are designing your Flows, any dependencies that your Flows require need to be added to the Flow Library. Among the various responsibilites that a class library project has, one of them is managing dependencies.
+As you are designing your flows inside of a flow library, any dependencies that your flows require need to be added to the flow library. Among the various responsibilites that a class library project has, one of them is managing dependencies.
 
 ::: tip Tip of the spear
-The behavior and responsibilities of class library projects played **the most critical role** in helping me decide the architecture of the Didact platform. I realized that the most convenient, most sensible place to define Flows and manage their dependencies was in a dedicated class library project.
+The behavior and responsibilities of class library projects played **the most critical role** in helping me decide the architecture of the Didact platform. I realized that the most convenient, most sensible place to define flows and manage their dependencies was in a dedicated class library project.
 :::
 
 ## Plugin System
 
-What may come as a surprise to you is *what to do with the Flow Library*.
+What may come as a surprise to you is *what to do with a flow library*.
 
-Since Didact Engine is responsible for reading, loading, and executing your Flow Library and synchronizing it with the metadata database, you might be tempted to think that you should add the Flow Library as a reference in Didact Engine's .csproj file. Or perhaps you might think you need to publish your Flow Library to an internal, private nuget server and than add that private nuget package as a dependency to Didact Engine.
+Since Didact Engine is responsible for reading, loading, and executing your flow library and synchronizing it with the metadata database, you might be tempted to think that you should add the Flow Library as a reference in Didact Engine's .csproj file. Or perhaps you might think you need to publish your flow library to an internal, private nuget server and than add that private nuget package as a dependency to Didact Engine.
 
-However, you would be wrong on both accounts. And this is where the novelty and unusual nature of Didact's architecture comes into play. Because yes, Didact Engine *does* in fact need access to your Flow Library, but it accomplishes this in a way completely different from existing dotnet background job libraries:
+However, you would be wrong on both accounts. And this is where the novelty and unusual nature of Didact's architecture comes into play. Because yes, Didact Engine *does* in fact need access to your flow library, but it accomplishes this in a way completely different from existing dotnet background job libraries:
 
-Your Flow Library is loaded into Didact Engine *at runtime* as a **plugin**.
+Your flow library is loaded into Didact Engine *at runtime* as a **plugin**.
 
 ### At Runtime
 
-Yes, you read that correctly: your Flow Library is added to Didact Engine at runtime.
+Yes, you read that correctly: your flow library is added to Didact Engine at runtime.
 
-This means that Didact Engine has no nuget references nor project references to your class library in its .csproj file. It also means that your Flow Library is not known to the C# compiler at build time when Didact Engine is created, and it is not present to the dependency injection container nor anything else in Didact Engine at application startup.
+This means that Didact Engine has no nuget references nor project references to your class library in its .csproj file. It also means that your flow library is not known to the C# compiler at build time when Didact Engine is created, and it is not present to the dependency injection container nor anything else in Didact Engine at application startup.
 
-Your Flow Library is added *exclusively* at runtime, meaning any point in time after Didact Engine has completed its startup process and is actively running.
+Your flow library is added *exclusively* at runtime, meaning any point in time after Didact Engine has completed its startup process and is actively running.
 
 ### Plugin
 
