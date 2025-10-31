@@ -6,6 +6,10 @@ Since Didact CLI is a build once, deploy anywhere application, its behaviors are
 
 To provide important environment variables and app settings for Didact CLI, you need a `cliconfig.json` file. This is similar to an `appsettings.json` file that you would find in a standard dotnet project.
 
+## cliconfig.json path
+
+The `cliconfig.json` file is created at a default location that Didact CLI searches for upon execution.
+
 ## cliconfig.json template
 
 A `cliconfig.json` JSON template file is shown below:
