@@ -12,6 +12,14 @@ This is similar to a `.env` file that you would find in a standard single page a
 This subarchitecture for Didact UI was chosen because normal single page apps can only read environment variables **at build time**. However, this is intended to be a build once, deploy anywhere application, so I chose to wrap it in a standard server-side app like a dotnet web api so that appsettings and environment variables can be defined **post build time** through a config file.
 :::
 
+## uiconfig.json path
+
+The `uiconfig.json` file must exist in the same root directory as the Didact UI binary/executable. By default, the [ui install command](/api/didact-cli/ui-install) and [ui config init command](/api/didact-cli/ui-config-init) from the Didact CLI will autoinstall and autocreate the Didact UI binary/executable and the `uiconfig.json` file in the same default directory to ensure that the two are next to each other.
+
+::: danger
+If you install Didact UI somewhere other than its default install location, then you must ensure that a `uiconfig.json` file is created in the same directory for Didact UI to read.
+:::
+
 ## uiconfig.json template
 
 A `uiconfig.json` JSON template file is shown below:

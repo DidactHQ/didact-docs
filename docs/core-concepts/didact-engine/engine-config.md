@@ -6,6 +6,14 @@ Since Didact Engine is a build once, deploy anywhere application, its behaviors 
 
 To provide important environment variables and app settings for Didact Engine, you need an `engineconfig.json` file. This is similar to an `appsettings.json` file that you would find in a standard dotnet project.
 
+## engineconfig.json path
+
+The `engineconfig.json` file must exist in the same root directory as the Didact Engine binary/executable. By default, the [engine install command](/api/didact-cli/engine-install) and [engine config init command](/api/didact-cli/engine-config-init) from the Didact CLI will autoinstall and autocreate the Didact Engine binary/executable and the `engineconfig.json` file in the same default directory to ensure that the two are next to each other.
+
+::: danger
+If you install Didact Engine somewhere other than its default install location, then you must ensure that an `engineconfig.json` file is created in the same directory for Didact Engine to read.
+:::
+
 ## engineconfig.json template
 
 A `engineconfig.json` JSON template file is shown below:
