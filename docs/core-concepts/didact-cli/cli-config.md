@@ -6,6 +6,10 @@ Since Didact CLI is a build once, deploy anywhere application, its behaviors are
 
 To provide important environment variables and app settings for Didact CLI, you need a `cliconfig.json` file. This is similar to an `appsettings.json` file that you would find in a standard dotnet project.
 
+## cliconfig.json path
+
+The `cliconfig.json` file is created at a default location that Didact CLI searches for upon execution.
+
 ## cliconfig.json template
 
 A `cliconfig.json` JSON template file is shown below:
@@ -35,6 +39,12 @@ For simplicity, when referencing these keys through Didact CLI commands, use the
 | `Database.ConnectionString` | string | The connection string for the database. |
 | `Environment` | string | The name of the default environment that you want to use. |
 | `LicenseKey` | string | An API key from [Didact Console](https://console.didact.dev) that unlocks enhanced features. |
+
+### LicenseKey
+
+::: info
+A license key is only required for Didact customers who purchase a subscription. Free users who use the Community edition of Didact can ignore this field.
+:::
 
 <!-- ## cliconfig keys
 
