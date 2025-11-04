@@ -40,6 +40,12 @@ For simplicity, when referencing these keys through Didact CLI commands, use the
 | `Environment` | string | The name of the default environment that you want to use. |
 | `LicenseKey` | string | An API key from [Didact Console](https://console.didact.dev) that unlocks enhanced features. |
 
+### LicenseKey
+
+::: info
+A license key is only required for Didact customers who purchase a subscription. Free users who use the Community edition of Didact can ignore this field.
+:::
+
 <!-- ## cliconfig keys
 
 ### Database.Provider TEXT
