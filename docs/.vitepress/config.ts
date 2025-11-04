@@ -169,16 +169,15 @@ export default defineConfig({
             text: 'Flow Libraries',
             items: [
               { text: 'Create', link: '/core-concepts/flow-libraries/create-flow-libraries' },
-              { text: 'Dependency Injection' },
-              { text: 'Dependencies', link: '/setup/' },
-              { text: 'Versioning' }
+              { text: 'Setup Dependency Injection', link: '/core-concepts/flow-libraries/dependency-injection' },
+              // { text: 'Versioning' }
             ]
           },
           {
             text: 'Flows',
             items: [
               { text: 'Overview', link: '/core-concepts/flows/flows-overview' },
-              { text: 'Dependency Injection', link: '/core-concepts/flows/dependency-injection' },
+              { text: 'Use Dependency Injection', link: '/core-concepts/flows/dependency-injection' },
               { text: 'Versioning', link: '/core-concepts/flows/flow-versioning' },
               { text: 'Schedules' },
               { text: 'Triggers' },
