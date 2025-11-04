@@ -62,3 +62,9 @@ For simplicity, when referencing these keys through Didact CLI commands, use the
 ::: danger
 Please be aware that if you omit this setting, then Didact Engine's API routes will be unprotected.
 :::
+
+### LicenseKey
+
+::: info
+A license key is only required for Didact customers who purchase a subscription. Free users who use the Community edition of Didact can ignore this field.
+:::
