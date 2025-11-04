@@ -182,7 +182,8 @@ export default defineConfig({
               { text: 'Schedules' },
               { text: 'Triggers' },
               { text: 'Logging' },
-              { text: 'Retry Policies' }
+              { text: 'Retry Policies' },
+              { text: 'Queues' }
               // { text: 'Flow Variables', link: '/core-concepts/flows/flow-variables' },
               // { text: 'Execution Blocks', link: '/setup/required-credentials' },
             ]
@@ -191,6 +192,7 @@ export default defineConfig({
             text: 'Deployments',
             items: [
               { text: 'Overview', link: '/core-concepts/deployments/deployments-overview' },
+              { text: 'Environments' },
               { text: 'Deployment Types' },
               { text: 'Workflow' },
               { text: 'Targets' }
@@ -231,12 +233,12 @@ export default defineConfig({
           //   ]
           // },
           {
-            text: 'Features',
+            text: 'Advanced Features',
             items: [
-              { text: 'Versioning', link: '/' },
-              { text: 'Environments', link: '/' },
+              // { text: 'Versioning', link: '/' },
+              // { text: 'Environments', link: '/' },
               { text: 'Secrets Storage', link: '/' },
-              { text: 'Queus', link: '/' },
+              // { text: 'Queus', link: '/' },
               { text: 'Engine Tunings', link: '/' }
             ]
           },
