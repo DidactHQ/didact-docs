@@ -63,9 +63,13 @@ namespace FlowLibrary
 }
 ```
 
+## Don't register flows
+
+This may come as a surprise to you, but you do not have to register flows in the dependency injection registrar; the only thing you need to register are any flow dependencies, **not the flows themselves**.
+
 ## Inject dependencies
 
-Now that your registrar is setup, you can write your flows using the registered dependencies. As is standard procedure with normal dotnet dependency injection, if you want to use a dependency in a flow, you simply inject it into the flow's constructor like you would any other C# class. Most of the time, I inject dependencies into class constructors and then save those dependencies to `private read only` fields in the class.
+Now that your registrar is setup, you can write your flows using the registered dependencies. As is standard procedure with normal dotnet dependency injection, if you want to use a dependency in a flow, you simply inject it into the flow's constructor like you would any other C# class. Most of the time, I inject dependencies into class constructors and then save those dependencies to `private readonly` fields in the class.
 
 Didact will take of the internal mechanics to make that happen under the hood.
 
