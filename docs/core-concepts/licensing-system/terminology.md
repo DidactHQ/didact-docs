@@ -24,7 +24,7 @@ As mentioned above, Didact Console exposes a license server for customers that r
 
 The license server is exposed as a set of endpoints in Didact Console's REST API. As a Didact user, you should not have a need to call these endpoints directly; instead, Didact Engine communicates with them internally.
 
-The license server is built with resilience and reliability in mind. If you would like to see its current uptime status, feel free to check out the [Didact status page](https://status.didact.dev) and read [Uptime and Alerting](/core-concepts/licensing-system/uptime-and-alerting).
+The license server is built with resilience and reliability in mind. If you would like to see its current uptime status, feel free to read [Uptime and Alerting](/core-concepts/licensing-system/uptime-and-alerting).
 
 ## License key
 
