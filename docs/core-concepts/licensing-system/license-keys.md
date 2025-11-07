@@ -1,14 +1,18 @@
+---
+title: License Keys
+description:
+---
+
 <script setup>
 const exampleDidactLicenseKey = import.meta.env.VITE_EXAMPLE_DIDACT_LICENSE_KEY;
+const consoleBaseUrl = import.meta.env.VITE_DIDACT_CONSOLE_BASE_URL;
 </script>
 
-# Authentication
+# License Keys
 
 ## How to obtain a license key
 
-To unlock the enhanced features of the Didact platform, you need to purchase a paid plan in the customer portal, called Didact Console.
-
-<!-- You can [login here](https://hub.didact.dev). -->
+To unlock the enhanced features of the Didact platform, you need to purchase a paid plan in the customer portal, called [Didact Console](https://console.didact.dev).
 
 Inside of Didact Console, you will find a licensing page where your license key is generated upon purchasing your paid plan.
 
@@ -26,15 +30,4 @@ You will need to use it in order to authenticate Didact with the license server,
 
 ## How to use the license key
 
-In Didact Engine, you will need to use the license key in order to authenticate with the license server and unlock Didact's enhanced features.
-
-Since Didact is a build once, deploy anywhere application, you need only follow the [environment variables guide](/core-concepts/didact-engine/environment-variables) for Didact Engine to properly use your license key. Namely, in your `enginesettings.json` file, add the following (using your own license key):
-
-```json
-{
-    // Other settings
-    "LicenseKey": "<YOUR_LICENSE_KEY_HERE>"
-}
-```
-
-## License key lifecycle
+The license key can be used in both Didact CLI and Didact Engine. Each application has its own guide, though they are nearly the same steps in either case: you save the license key as a config value to the app's respective config file. Make sure to check out the [CLI config](/core-concepts/didact-cli/cli-config) and [engine config](/core-concepts/didact-engine/engine-config) docs for details.
