@@ -20,6 +20,14 @@ The `uiconfig.json` file must exist in the same root directory as the Didact UI 
 If you install Didact UI somewhere other than its default install location, then you must ensure that a `uiconfig.json` file is created in the same directory for Didact UI to read.
 :::
 
+## uiconfig.json CLI commands
+
+To create the `uiconfig.json` file, use the [ui config init](/api/didact-cli/ui-config-init) command.
+
+To populate or edit the `uiconfig.json` file, use the [ui config set](/api/didact-cli/ui-config-set) command.
+
+To see the current values inside the `uiconfig.json` file, using the [ui config inspect](/api/didact-cli/ui-config-inspect) command.
+
 ## uiconfig.json template
 
 A `uiconfig.json` JSON template file is shown below:

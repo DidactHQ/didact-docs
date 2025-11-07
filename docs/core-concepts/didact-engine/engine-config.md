@@ -14,6 +14,14 @@ The `engineconfig.json` file must exist in the same root directory as the Didact
 If you install Didact Engine somewhere other than its default install location, then you must ensure that an `engineconfig.json` file is created in the same directory for Didact Engine to read.
 :::
 
+## engineconfig.json CLI commands
+
+To create the `engineconfig.json` file, use the [engine config init](/api/didact-cli/engine-config-init) command.
+
+To populate or edit the `engineconfig.json` file, use the [engine config set](/api/didact-cli/engine-config-set) command.
+
+To see the current values inside the `engineconfig.json` file, using the [engine config inspect](/api/didact-cli/engine-config-inspect) command.
+
 ## engineconfig.json template
 
 A `engineconfig.json` JSON template file is shown below:
