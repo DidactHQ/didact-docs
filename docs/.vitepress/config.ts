@@ -247,10 +247,10 @@ export default defineConfig({
             items: [
               // { text: 'Needs and Motivations', link: '/' },
               { text: 'Terminology', link: '/core-concepts/licensing-system/terminology' },
-              { text: 'Authentication', link: '/core-concepts/licensing-system/authentication' },
-              { text: 'Validation', link: '/core-concepts/licensing-system/validation' },
-              { text: 'Features Validator', link: '/' },
-              { text: 'Failsafe Mechanics', link: '/' },
+              { text: 'License Key', link: '/core-concepts/licensing-system/license-keys' },
+              { text: 'Smart Key', link: '/core-concepts/licensing-system/smart-keys' },
+              // { text: 'Features Validator', link: '/' },
+              { text: 'Failsafe Mechanics', link: '/core-concepts/licensing-system/failsafe-mechanics' },
               { text: 'Uptime and Alerting', link: '/core-concepts/licensing-system/uptime-and-alerting' },
               // { text: 'Airgapped Systems', link: '/' }
             ]
@@ -321,6 +321,7 @@ export default defineConfig({
               { text: 'environment init', link: '/api/didact-cli/environment-init' },
               { text: 'environment list', link: '/api/didact-cli/environment-list' },
               { text: 'license authenticate', link: '/api/didact-cli/license-authenticate' },
+              { text: 'license refresh', link: '/api/didact-cli/license-refresh' },
               // { text: 'license validate', link: '/api/didact-cli/license-validate' },
               { text: 'engine install', link:'/api/didact-cli/engine-install' },
               { text: 'engine config init', link: '/api/didact-cli/engine-config-init' },
