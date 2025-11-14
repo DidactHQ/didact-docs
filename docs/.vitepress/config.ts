@@ -333,12 +333,10 @@ export default defineConfig({
               { text: 'ui config set', link: '/api/didact-cli/ui-config-set' },
               { text: 'ui config inspect', link: '/api/didact-cli/ui-config-inspect' },
               { text: 'ui run', link: '/api/didact-cli/ui-run' },
-              // { text: 'library list', link: '/api/didact-cli/library-list' },
-              // { text: 'library add', link: '/api/didact-cli/library-add' },
-              // { text: 'library remove', link: '/api/didact-cli/library-remove' },
-              // { text: 'library deploy', link: '/api/didact-cli/library-deploy' },
               { text: 'deployment init', link: '/api/didact-cli/deployment-init' },
-              { text: 'deployment config' },
+              { text: 'deployment create', link: '/api/didact-cli/deployment-create' },
+              { text: 'deployment stage', link: '/api/didact-cli/deployment-stage' },
+              { text: 'deployment push', link: '/api/didact-cli/deployment-push' },
               { text: 'deployment push', link: '/api/didact-cli/deployment-push' },
               // { text: 'cron validate' }
             ]

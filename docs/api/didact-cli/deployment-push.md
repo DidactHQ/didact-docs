@@ -3,21 +3,16 @@
 Pushes a deployment update to the Didact database.
 
 ```bash-vue
-didact deployment push --path "<PATH_TO_DEPLOYMENT_FILE>"
+didact deployment push --id <DEPLOYMENT_ID>
 ```
 
 ## Options
-- `--path` (string): The path to the flow library's deployment file.
+- `--id` (number): The target DeploymentId.
 
 ## Examples
 
-Push the deployment, assuming the terminal was opened from the same directory where the deployment file is located.
+Push the deployment.
 
 ```bash
-didact deployment push
+didact deployment push --id 2
 ```
-
-Push the deployment, specifying a path to the flow library's deployment file.
-
-```bash
-didact deployment push --path "C:\Users\MyUser\FlowLibraries\FlowLibrary\deployment.json"
