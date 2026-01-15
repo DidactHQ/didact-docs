@@ -3,23 +3,22 @@
 Initializes a new environment in the Didact database.
 
 ```bash-vue
-didact environment init --name "<ENVIRONMENT_NAME>" [--description "<ENVIRONMENT_DESCRIPTION>"]
+didact environment init <ENVIRONMENT_NAME> [--description "<ENVIRONMENT_DESCRIPTION>"]
 ```
 
 ## Options
-- `--name` (string): The name of the new environment.
 - `--description` (string): The description of the new environment.
 
 ## Examples
 
-Creates a new environment called "Staging".
+Creates a new environment called `staging`.
 
 ```bash
-didact environment init --name "Staging"
+didact environment init staging
 ```
 
-Creates a new environment called "Development" with an associated description.
+Creates a new environment called `development` with an associated description.
 
 ```bash
-didact environment init --name "Development" --description "A wip environment for the dev team."
+didact environment init development --description "A wip environment for the dev team."
 ```
