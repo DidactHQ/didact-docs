@@ -85,7 +85,7 @@ didact config set Database.ConnectionString "{{ env:DIDACT_DB_CONN_STRING }}"
 
 ## Run migrations
 
-Once the config is setup and we configure the database connection settings, we need to run migrations against the database instance.
+Once the config is setup and you configure the database connection settings, you need to run migrations against the database instance.
 
 Run the [database migration command](/api/didact-cli/migrate) below:
 
@@ -95,7 +95,7 @@ didact migrate
 
 ## Install engine and UI
 
-Now that we have Didact CLI installed and migrations ran, we need to install the other two Didact applications: Didact Engine and Didact UI. Run the unified installer command below:
+Now that you have Didact CLI installed and migrations ran, you need to install the other two Didact applications: Didact Engine and Didact UI. Run the unified installer command below:
 
 ```bash
 didact install
@@ -109,7 +109,7 @@ If you only want to install one of the applications, you can run `didact install
 
 ## Engine config
 
-For Didact Engine to run, there are a few required settings that we must configure first. The recommended configurations are below:
+For Didact Engine to run, there are a few required settings that you must configure first. The recommended configurations are below:
 
 Set the engine name.
 
@@ -119,7 +119,7 @@ didact config set Engine.Name my-engine
 
 ## UI config
 
-For Didact UI to run, there are a few required settings that we must configure first. The recommended configurations are below:
+For Didact UI to run, there are a few required settings that you must configure first. The recommended configurations are below:
 
 Set the engine base URL:
 
@@ -127,9 +127,9 @@ Set the engine base URL:
 didact config set UI.EngineBaseUrl "some-base-url"
 ```
 
-## Run applications
+## Start applications
 
-Finally, to run the applications, we use the respective [start command](/api/didact-cli/start).
+Finally, to run the applications, use the respective [start command](/api/didact-cli/start).
 
 To run Didact Engine:
 
@@ -143,7 +143,11 @@ To run Didact UI:
 didact start ui
 ```
 
-## Notes
+## Rationale
+
+::: info
+This section explains the founder's rationale behind the content described above. It is not required to use Didact, but it may enhance your understanding.
+:::
 
 ### Migrations
 
