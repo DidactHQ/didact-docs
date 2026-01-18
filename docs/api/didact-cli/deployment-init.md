@@ -1,30 +1,30 @@
 # Deployment Init
 
-Initializes a new deployment for a flow library.
+Initializes a new deployment in the local `didact.deployments.json` file.
 
 ```bash-vue
-didact deployment init --name "<DEPLOYMENT_NAME>" --library-name "<FLOW_LIBRARY_NAME>" [--path "<FLOW_LIBRARY_PUBLISH_PATH>"]
+didact deployment init --name <DEPLOYMENT_NAME> --environment <ENVIRONMENT> --entrypoint <ENTRYPOINT_FILE> [--description "<DESCRIPTION>"]
 ```
+
+::: tip
+If `didact.deployments.json` does not exist when invoking this command, then the file will be auto-created.
+:::
 
 ## Options
 - `--name` (string): The name of the new deployment.
-- `--library-name` (string): The name of the flow library's main .dll file.
-- `--path` (string): The flow library's publish directory.
+- `--environment` (string): The name of the target environment.
+- `--entrypoint` (string): The name of the entrypoint file.
 
-::: warning
-`--path` must be specified unless the terminal is launched from the flow library's publish directory. If specifying the path, do not specify a path to a file such as `./publish/Flow Library.dll`; rather, specify only to the folder level such as `./publish`.
+::: tip
+For class libraries, the entrypoint file will be the main assembly `.dll`. For example, for a class library named `FlowLibrary`, the entrypoint file would be `FlowLibrary.dll`.
 :::
+
+- `--description` (string): The description of the new deployment.
 
 ## Examples
 
-Create a new deployment for a flow library called "Flow Library". Assume the terminal was launched from the publish artifact directory of "Flow Library".
+Create a new deployment named `some-deployment` for the `production` environment whose class library is named `FlowLibrary`.
 
 ```bash
-didact deployment init --name "My deployment" --library-name "Flow Library"
-```
-
-Create a new deployment for a flow library called "Flow Library" and specify the path.
-
-```bash
-didact deployment init --name "My deployment" --library-name "Flow Library" --path "./Flow Library/publish"
+didact deployment init --name some-deployment --environment production --entrypoint FlowLibrary.dll
 ```
