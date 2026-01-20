@@ -14,25 +14,20 @@ To use dependencies inside of your flow definitions, all you need to do is injec
 For example, if I want to use `IServiceA` in my flow, I would do the following:
 
 ```csharp
-using DidactCore.Flows
-
-namespace FlowLibrary
+public class MyFlow : IFlow
 {
-    public class MyFlow : IFlow
+    private readonly IServiceA _serviceA;
+
+    public MyFlow(IServiceA serviceA)
     {
-        private readonly IServiceA _serviceA;
+        _serviceA = serviceA;
+    }
 
-        public MyFlow(IServiceA serviceA)
-        {
-            _serviceA = serviceA;
-        }
+    // ...
 
-        // ...
-
-        public async Task ExecuteAsync(IFlowExecutionContext context)
-        {
-            await _serviceA.DoSomething();
-        }
+    public async Task ExecuteAsync(IFlowExecutionContext context)
+    {
+        await _serviceA.DoSomethingAsync();
     }
 }
 ```
