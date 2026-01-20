@@ -1,29 +1,126 @@
 # Installation
 
-Unlike other projects, Didact provides you with prebuilt binaries/executables and prebuilt Docker images that are ready for download and immediate execution. This prevents you from having to go through cumbersome steps of cloning git repos, producing build files, enforcing version matching, building Docker images, and so on.
+This page will walk you through the Quickstart installation. As such, the explanations on this page will be very brief to help you get started as quickly as possible.
 
-Even better, Didact provides a dedicated CLI tool for your convenience to easily utilize the platform in its entirety. The CLI is excellent for both local development as well as production deployments and can be conveniently utilized later on in CI/CD scripts.
+::: tip
+If you would like to see a more in-depth, technically-expressive installation guide, then feel free to read the [Installation setup page](/core-concepts/setup/installation).
+:::
+
+## Database
+
+First and foremost, Didact requires a database connection, so you need to spin up a new database instance for Didact. See [database providers](/core-concepts/architecture/metadata-database#database-providers) for a list of what databases are supported.
+
+::: warning
+A pre-existing database can be used if necessary, but it's my general recommendation to spin up a dedicated database since it will house significant metadata and track its own migrations.
+:::
 
 ## Install Didact CLI
 
-## Manual Installation
+Now you need to install Didact CLI, the central utility tool to help you manage the rest of the Didact platform.
 
-### Install Applications
+You can install Didact CLI by using the provided installer scripts below:
 
-To install both Didact Engine and Didact UI to run locally, run the following command in Didact CLI:
+::: code-group
+
+```powershell [Windows]
+iex
+```
+
+```bash [Mac]
+curl
+```
+
+```bash [Linux]
+curl
+```
+:::
+
+Ensure that the installation was successful by running the [version command](/api/didact-cli/version) below:
+
+```bash
+didact version
+```
+
+## Setup config
+
+Now you need to setup the [didact config file](/core-concepts/setup/config), named `didact.config.json`, and save the database settings to run migrations.
+
+First, run the [config init command](/api/didact-cli/config-init):
+
+```bash
+didact config init
+```
+
+Next, set the [database provider key](/core-concepts/architecture/metadata-database#database-providers) and database connection string with the [config set command](/api/didact-cli/config-set) below:
+
+```bash
+didact config set Database.Provider your-provider-key
+```
+
+```bash
+didact config set Database.ConnectionString "your-conn-string"
+```
+
+Ensure that your config settings were saved successfully by running the [config inspect command](/api/didact-cli/config-inspect):
+
+```bash
+didact config inspect
+```
+
+## Run migrations
+
+Now you need to run migrations against your database instance. Run the following [database migration command](/api/didact-cli/migrate):
+
+```bash
+didact migrate
+```
+
+## Install engine and UI
+
+Next, install both Didact Engine and Didact UI with the [install command](/api/didact-cli/install):
 
 ```bash
 didact install
 ```
 
-### Install Didact Engine
+## Enhance config
 
-#### Runtime Environment Variables
+To properly use Didact Engine and Didact UI, they each need a few [settings](/core-concepts/setup/config#config-settings) saved to the config file, as well. Use the following [config set command](/api/didact-cli/config-set) calls below:
 
-#### Directive
+### Engine config
 
-### Install Didact UI
+- Set the engine name.
 
-#### Runtime Environment Variables
+```bash
+didact config set Engine.Name local-engine
+```
 
-## Docker Installation
+::: tip
+If you would like to provide a special name here, such as your machine name, then you can do so with [config contexts](/core-concepts/setup/config#config-contexts). For example, if you wanted your engine name to be your machine name, you would run the following command:
+
+```bash
+didact config set Engine.Name "${machineName}"
+```
+:::
+
+### UI config
+
+- Set the engine base URL.
+
+```bash
+didact config set UI.EngineBaseUrl "my-url"
+```
+
+## Start applications
+
+Now that you have installed all Didact applications and setup a minimum config, you need to start the applications. Open two terminal windows, one for Didact Engine and the other for Didact UI, and run the following [start commands](/api/didact-cli/start):
+
+```bash
+didact start engine
+```
+
+```bash
+didact start ui
+```
+
+These commands start Didact Engine and Didact UI, respectively, as long-running processes.
