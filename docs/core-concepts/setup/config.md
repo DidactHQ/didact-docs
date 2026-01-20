@@ -22,7 +22,21 @@ To see the current values inside `didact.config.json`, use the [config inspect](
 
 ## Config profiles
 
-Todo
+Considering that Didact is a self-hosted tool, it is very possible that you may be targeting various environments in your infrastructure that require different settings, different secrets, different connection strings, and so on.
+
+Rather than have you constantly resetting configuration settings in `didact.config.json`, managing multiple `didact.config.json` files, or doing some other hack, I have elected to instead provide config profile support.
+
+Config profiles are uniquely named objects in a dictionary object **where each profile contains the actual Didact settings**. You can create multiple config profiles and save different settings to each profile. Then, in the config file, you elect to **activate** one config profile at a time.
+
+::: tip
+It's important to keep in mind, then, that config settings are actually saved specifically to config profiles.
+:::
+
+This is very convenient for you because you can easily create different profiles and easily swap back and forth between their settings. For example, you could make a `staging` profile for your Staging environment and a `production` profile for your Production environment.
+
+To create a new config profile, run the [config profile init](/api/didact-cli/config-profile-init) command.
+
+To activate an existing profile, run the [config profile activate](/api/didact-cli/config-profile-activate) command.
 
 ## Config contexts
 
@@ -38,25 +52,39 @@ The available config contexts are listed below:
 
 ::: v-pre
 
-- `{{ machineName }}`
+- `${machineName}`
 The machine name.
 
 ```bash
-{{ machineName }}
+${machineName}
 ```
 
-- `{{ username }}`
+- `${username}`
 The current username.
 
 ```bash
-{{ username }}
+${username}
 ```
 
-- `{{ env:SOME_VARIABLE }}`
+- `${env.SOME_VARIABLE}`
 The environment variable named `SOME_VARIABLE`. As you can see, the syntax is to prefix `env:` followed by the environment variable name.
 
 ```bash
-{{ env:SOME_VARIABLE }}
+${env.SOME_VARIABLE}
+```
+
+- `${variables.some-variable}`
+A [Didact variable](/core-concepts/variables) named `some-variable`.
+
+```bash
+${variables.some-variable}
+```
+
+- `${secrets.some-variable}`
+A [Didact secret](/core-concepts/secrets) named `some-variable`.
+
+```bash
+${secrets.some-variable}
 ```
 
 :::
@@ -67,7 +95,7 @@ A `didact.config.json` JSON template file is shown below with the `default` conf
 
 ```json
 {
-    "$schema": "https://schema.didact.dev/config/v1",
+    "$schema": "https://schemas.didact.dev/v1/didact.config.json",
     "activeProfile": "default",
     "profiles": {
         "default": {
@@ -90,18 +118,21 @@ A `didact.config.json` JSON template file is shown below with the `default` conf
 
 ## Config settings
 
-The config keys are shown below in a matrix.
+The config settings for a profile are shown below:
 
 ::: info
-For simplicity, when referencing these keys through Didact CLI commands, use the exact JSON key reference here such as `Database.Provider`. It makes the CLI commands slightly ugly, but it avoids unproductive aliasing work on my part for the moment.
+For simplicity, when referencing these settings through Didact CLI commands, use the exact JSON key reference here such as `Database.Provider`.
 :::
 
-| JSON and CLI key name | Key value type | Key value description |
+| Setting | Type | Description |
 | --- | :---: | --- |
+| `activeProfile` | string | The currently activated config profile. |
 | `Database.Provider` | string | The [database provider key](/core-concepts/architecture/metadata-database#database-providers) for your database provider of choice. |
 | `Database.ConnectionString` | string | The connection string for the database. |
 | `Environment` | string | The name of the default environment that you want to use. |
 | `LicenseKey` | string | An API key from [Didact Console](https://console.didact.dev) that unlocks enhanced features. |
+| `Engine.Name` | string | The name of the Didact Engine instance. |
+| `UI.EngineBaseUrl` | string | The base URL of a target Didact Engine. |
 
 ### LicenseKey
 
