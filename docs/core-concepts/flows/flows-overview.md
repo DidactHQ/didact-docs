@@ -25,11 +25,9 @@ For example, see the code snippet below for a class called `ExampleFlow`:
 ```cs
 using DidactCore;
 
-public class ExampleFlow : IFlow
+public class SomeFlow : IFlow
 {
-    public ExampleFlow() { }
-
-    public Task<IFlowConfigurator> ConfigureAsync(IFlowConfigurator flowConfigurator) {}
+    public Task<IFlowConfigurationContext> ConfigureAsync(IFlowConfigurationContext context) {}
 
     public async Task ExecuteAsync(IFlowExecutionContext context) {}
 }
@@ -68,16 +66,14 @@ It's possible that you may never need asynchronous functionality in `ConfigureAs
 ```cs
 using DidactCore;
 
-public class ExampleFlow : IFlow
+public class SomeFlow : IFlow
 {
-    public ExampleFlow() { }
-
-    public async Task<IFlowConfigurator> ConfigureAsync(IFlowConfigurator flowConfigurator)
+    public Task<IFlowConfigurationContext> ConfigureAsync(IFlowConfigurationContext context)
     {
-        flowConfigurator
-            .WithTypeName(GetType().Name);
+        context.Configurator
+            .WithName("some-flow");
 
-        return Task.FromResult(flowConfigurator);
+        return Task.FromResult(context);
     }
 }
 ```

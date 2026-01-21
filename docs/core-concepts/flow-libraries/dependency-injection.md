@@ -24,9 +24,7 @@ namespace FlowLibrary
 {
     public class PluginRegistrar : IPluginRegistrar
     {
-        IServiceCollection RegisterServices(IServiceCollection pluginServiceCollection)
-        {
-        }
+        IServiceCollection RegisterServices(IServiceCollection pluginServiceCollection) {}
     }
 }
 ```
