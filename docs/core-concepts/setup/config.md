@@ -67,21 +67,21 @@ ${username}
 ```
 
 - `${env.SOME_VARIABLE}`
-The environment variable named `SOME_VARIABLE`. As you can see, the syntax is to prefix `env:` followed by the environment variable name.
+The environment variable named `SOME_VARIABLE`.
 
 ```bash
 ${env.SOME_VARIABLE}
 ```
 
 - `${variables.some-variable}`
-A [Didact variable](/core-concepts/variables) named `some-variable`.
+The [Didact variable](/core-concepts/variables) named `some-variable`.
 
 ```bash
 ${variables.some-variable}
 ```
 
 - `${secrets.some-variable}`
-A [Didact secret](/core-concepts/secrets) named `some-variable`.
+The [Didact secret](/core-concepts/secrets) named `some-variable`.
 
 ```bash
 ${secrets.some-variable}
