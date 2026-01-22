@@ -1,21 +1,19 @@
 # Encryption-Key Generate
 
-Pushes a deployment's metadata to the Didact database from `didact.deployments.json`.
+Generates a new randomized, 32-byte, base64-encoded symmetric encryption key to use in Didact's [config](/core-concepts/setup/config).
 
 ```bash
-didact deployment push <DEPLOYMENT_QUALIFIED_NAME>
+didact encryption-key generate
 ```
 
-where `<DEPLOYMENT_QUALIFIED_NAME>` is the deployment's qualified name `environment/deployment`.
-
-::: warning
-To properly set/persist a new encryption key for Didact, I highly recommend you read through the [setup encryption key](/guides/setup-encryption-key) guide.
+::: danger
+This command does NOT persist the encryption key to the Didact config; you must do that yourself. To properly set/persist a new encryption key for Didact, I highly recommend you read through the [setup encryption key](/guides/setup-encryption-key) guide.
 :::
 
 ## Examples
 
-Push the deployment named `some-deployment` belonging to the `production` environment.
+Generate a new encryption key.
 
 ```bash
-didact deployment push production/some-deployment
+didact encryption-key generate
 ```

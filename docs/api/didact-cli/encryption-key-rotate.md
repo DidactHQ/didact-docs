@@ -1,21 +1,15 @@
 # Encryption-Key Rotate
 
-Pushes a deployment's metadata to the Didact database from `didact.deployments.json`.
+Rotates symmetric encryption keys used for [Didact secrets](/core-concepts/secrets) by decrypting the secrets with the current encryption key and then encrypting the secrets with the new encryption key.
 
 ```bash
-didact deployment push <DEPLOYMENT_QUALIFIED_NAME>
+didact encryption-key rotate --current-key "currentkey123..." --new-key "newkey123..."
 ```
-
-where `<DEPLOYMENT_QUALIFIED_NAME>` is the deployment's qualified name `environment/deployment`.
-
-::: warning
-To properly rotate encryption keys for Didact, I highly recommend you read through the [rotate encryption keys](/guides/rotate-encryption-keys) guide.
-:::
 
 ## Examples
 
-Push the deployment named `some-deployment` belonging to the `production` environment.
+Rotate encryption keys.
 
 ```bash
-didact deployment push production/some-deployment
+didact encryption-key rotate --current-key "currentkey123..." --new-key "newkey123..."
 ```
