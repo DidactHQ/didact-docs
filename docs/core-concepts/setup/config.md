@@ -103,7 +103,7 @@ A `didact.config.json` JSON template file is shown below with the `default` conf
                 "Provider": "<DB_PROVIDER_KEY>",
                 "ConnectionString": "<DB_CONNECTION_STRING>"
             },
-            "Environment": "<ENVIRONMENT_NAME>",
+            "EncryptionKey": "<ENCRYPTION_KEY>",
             "LicenseKey": "<LICENSE_KEY>",
             "Engine": {
                 "Name": "<ENGINE_NAME>"
@@ -129,7 +129,7 @@ For simplicity, when referencing these settings through Didact CLI commands, use
 | `activeProfile` | string | The currently activated config profile. |
 | `Database.Provider` | string | The [database provider key](/core-concepts/architecture/metadata-database#database-providers) for your database provider of choice. |
 | `Database.ConnectionString` | string | The connection string for the database. |
-| `Environment` | string | The name of the default environment that you want to use. |
+| `EncryptionKey` | string | The symmetric encryption key. |
 | `LicenseKey` | string | An API key from [Didact Console](https://console.didact.dev) that unlocks enhanced features. |
 | `Engine.Name` | string | The name of the Didact Engine instance. |
 | `UI.EngineBaseUrl` | string | The base URL of a target Didact Engine. |
