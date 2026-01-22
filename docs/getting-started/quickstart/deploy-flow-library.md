@@ -56,7 +56,7 @@ So for this example, since we made a deployment named `flow-library` for the `de
 Now we need to set the deployment's source. Since we are using the filesystem of your local machine, you need to run the [deployment source set filesystem](/api/didact-cli/deployment-source-set-filesystem) command.
 
 ```bash
-didact deployment source set filesystem --path "C:\deployments\${environment}\${deployment}" --name default/flow-library
+didact deployment source set filesystem --path "C:\deployments\${environment}\${deployment}\${version}" --name default/flow-library
 ```
 
 ## Inspect deployment
@@ -76,12 +76,12 @@ You should see output similar to what's below:
     "entrypoint": "FlowLibrary.dll",
     "deployments": [
         {
-            "name": "flow-library",
+            "deployment": "flow-library",
             "environment": "default",
             "version": "v1.0.0",
             "source": {
                 "type": "filesystem",
-                "path": "./deployments/${environment}/${deployment}/${version}"
+                "path": "C:\\deployments\\${environment}\\${deployment}\\${version}"
             }
         }
     ]
@@ -92,24 +92,32 @@ You should see output similar to what's below:
 
 Now that the deployment and deployments file has been setup, you need to publish `FlowLibrary` to create the library artifacts. Since we mentioned above that we are using the filesystem of your local machine to store deployments, let's use the `dotnet publish` command to publish `FlowLibrary` to the target folder.
 
-However, we need to keep one thing in mind: deployments are intended to be immutable.
+However, pay careful attention to what we designated as the filesystem source in the `didact.deployments.json` file: notice that we used special [deployment contexts] as a template syntax in the path to make the path dynamic. In this case, we have the following values in `didact.deployments.json`:
 
-To deploy your Flow Library, you'll use the Didact CLI that you previously installed.
+- `deployment` = `"flow-library"`
+- `environment` = `"default"`
+- `version` = `"v1.0.0"`
 
-1. Open a terminal and navigate to the root directory of your Flow Library (where your .csproj file is).
-2. Publish your Flow Library to a local folder using the dotnet CLI command below:
+Because that is how we specified the filesystem path for Didact Engine to find this deployment, we need to use this qualified path in the `dotnet publish` command.
+
+Therefore, do the following:
+
+1. Open a terminal and navigate to `FlowLibrary`'s root directory where the `.csproj` file is.
+2. Publish your `FlowLibrary` to the deployment path by running the `dotnet publish` command below:
 
 ```bash
-dotnet publish
+dotnet publish -o "C:\deployments\default\flow-library\v1.0.0"
 ```
 
-::: info
-If your .csproj was configured correctly in the previous steps, then the publish command should create one or more .dll files.
+::: warning
+Notice that we had to type the `deployment contexts` into the `dotnet publish` command since dotnet has no knowledge of Didact.
 :::
+
+This command will send all publish artifacts for `FlowLibrary` to the target deployments folder - exactly what we want.
 
 ## Push deployment
 
-Now that you have published `FlowLibrary`'s build files to the target deployment folder, we need to push the deployment metadata up to Didact's database. Once we do, Didact Engine can immediately grab the new deployment and load it as a runtime plugin, making `SomeFlow` ready to run.
+Now that you have published `FlowLibrary`'s publish files to the target deployment folder, we need to push the deployment metadata up to Didact's database. Once we do, Didact Engine can immediately grab the new deployment and load it as a runtime plugin, making `SomeFlow` ready to run.
 
 Run the [deployment push](/api/didact-cli/deployment-push) command to make this deployment available:
 
