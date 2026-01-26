@@ -35,7 +35,7 @@ A `didact.deployments.json` JSON template file is shown below with the `default`
 
 ```json
 {
-  "$schema": "https://schema.didact.dev/v1/didact.deployments.config.json",
+  "$schema": "https://schema.didact.dev/v1/didact.deployments.json",
   "name": "FlowLibrary",
   "artifact": {
     "type": "dotnet-class-library",
