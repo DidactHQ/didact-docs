@@ -49,7 +49,7 @@ I do not currently code sign Didact's app binaries, but I do provide a checksum 
 
 ## Setup config
 
-Next you need to setup the Didact config file, `didact.config.json`. There is a dedicated [config page](/core-concepts/setup/config) and corresponding CLI commands in the [API docs](/api) for you to fully learn the config, but on this page we will just do the bare minimum to expedite setup.
+Next you need to setup the Didact config file, `didact.config.json`. There is a dedicated [config page](/core-concepts/setup/config) and corresponding CLI commands in the API docs for you to fully learn the config, but on this page we will just do the bare minimum to expedite setup.
 
 First, verify that you have Didact CLI successfully installed and registered to PATH.
 
