@@ -1,9 +1,9 @@
 # Deployment Init
 
-Initializes a new deployment in the local `didact.deployments.json` file.
+Initializes a new [deployments file](/core-concepts/deployments/deployments-file).
 
-```bash-vue
-didact deployment init --name <DEPLOYMENT_NAME> --environment <ENVIRONMENT> [--entrypoint <ENTRYPOINT_FILE> --description "<DESCRIPTION>"]
+```bash
+didact deployment init --name <DEPLOYMENT_NAME> --artifact-entrypoint <ENTRYPOINT_FILE> --artifact-version <VERSION>
 ```
 
 ::: tip
@@ -12,21 +12,18 @@ If `didact.deployments.json` does not exist when invoking this command, then the
 
 ## Options
 - `--name` (string): The name of the new deployment.
-- `--environment` (string): The name of the target environment.
-- `--entrypoint` (string): The name of the entrypoint file.
+- `--artifact-entrypoint` (string): The name of the entrypoint file.
 
 ::: danger
-`--entrypoint` is required if a new `didact.deployments.json` file needs to be created. If you are simply adding a new deployment to a pre-existing `didact.deployments.json` file, then `--entrypoint` is not necessary.
+`--artifact-entrypoint` is required if a new `didact.deployments.json` file needs to be created. If you are simply adding a new deployment to a pre-existing `didact.deployments.json` file, then `--artifact-entrypoint` is not necessary.
 :::
 
-- `--description` (string): The description of the new deployment.
+- `--artifact-version` (string): The version of the artifact.
 
 ## Examples
 
-Create a new deployment named `some-deployment` for the `production` environment whose class library is named `FlowLibrary`. Assume we do NOT have a pre-existing `didact.deployments.json` file, so we need to specify `--entrypoint`.
+Create a new deployment named `flow-library` for the class library named `FlowLibrary` and specify the version.
 
 ```bash
-didact deployment init --name some-deployment --environment production --entrypoint FlowLibrary.dll
+didact deployment init --name some-deployment --artifact-entrypoint FlowLibrary.dll --artifact-version v1.0.0
 ```
-
-Create a new deployment named `some-deployment` for the `production` environment whose class library is named `FlowLibrary`. Assume we already have a pre-existing `didact.deployments.json` file where `--entrypoint` was previously specified.

@@ -148,8 +148,7 @@ export default defineConfig({
               { text: 'Schedules' },
               { text: 'Triggers' },
               { text: 'Logging', link: '/core-concepts/flows/logging' },
-              { text: 'Retry Policies' },
-              { text: 'Queues' }
+              { text: 'Retry Policies' }
             ]
           },
           {
@@ -251,7 +250,6 @@ export default defineConfig({
             items: [
               { text: 'Windows Service' },
               { text: 'Windows Server' },
-              { text: 'IIS' },
               { text: 'Azure VM' },
               { text: 'AWS EC2' },
               { text: 'Docker' },
@@ -298,10 +296,11 @@ export default defineConfig({
               { text: 'deployment init', link: '/api/didact-cli/deployment-init' },
               { text: 'deployment set', link: '/api/didact-cli/deployment-set' },
               { text: 'deployment version', link: '/api/didact-cli/deployment-version' },
-              { text: 'deployment-source set', items: [
-                { text: 'deployment-source set filesystem', link: '/api/didact-cli/deployment-source-set-filesystem' }
+              { text: 'deployment-profile init', link: '/api/didact-cli/deployment-profile-init' },
+              { text: 'deployment profile sources', items: [
+                { text: 'deployment-profile-source set filesystem', link: '/api/didact-cli/deployment-profile-source-set-filesystem' }
               ]},
-              { text: 'deployment push', link: '/api/didact-cli/deployment-push' },
+              { text: 'deployment generate', link: '/api/didact-cli/deployment-generate' },
               { text: 'deployment inspect', link: '/api/didact-cli/deployment-inspect' },
               { text: 'encryption-key generate', link: '/api/didact-cli/encryption-key-generate' },
               // { text: 'encryption-key rotate', link: '/api/didact-cli/encryption-key-rotate' }
