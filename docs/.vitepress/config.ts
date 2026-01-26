@@ -75,8 +75,6 @@ export default defineConfig({
         { 
           text: 'Resources',
           items: [
-            // { text: 'FAQ', link: '/faq/index' },
-            // { text: 'Internal Mechanics', link: '/resources/internal-mechanics' },
             { text: 'Feedback', link: 'https://didact.featurebase.app' },
             { text: 'Roadmap', link: 'https://didact.featurebase.app/roadmap' },
             { text: 'Status', link: 'https://status.didact.dev' },
@@ -101,26 +99,16 @@ export default defineConfig({
             items: [
               { text: 'Create a Flow Library', link: '/getting-started/quickstart/create-a-flow-library' },
               { text: 'Write a Flow', link: '/getting-started/quickstart/write-a-flow' },
-              // { text: 'Configure dependency injection', link: '/getting-started/quickstart/configure-dependency-injection' },
-              { text: 'Setup a database', link: '/getting-started/quickstart/setup-a-database' },
-              { text: 'Install Didact CLI', link: '/getting-started/quickstart/install-didact-cli'},
+              { text: 'Installation', link: '/getting-started/quickstart/installation' },
               { text: 'Deploy Flow Library', link: '/getting-started/quickstart/deploy-flow-library' },
-              { text: 'Install Didact Engine', link: '/getting-started/quickstart/install-didact-engine' },
-              { text: 'Install Didact UI', link: '/getting-started/quickstart/install-didact-ui' },
             ]
           },
           {
-            text: 'Business',
+            text: 'About',
             items: [
               { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
-              { text: 'Meet the Team', link: '/getting-started/meet-the-team' }
-            ]
-          },
-          {
-            text: 'Open Source',
-            items: [
-              { text: 'Structure', link: '/getting-started/open-source-structure' },
-              { text: 'Contributing', link: '/getting-started/contributing' },
+              { text: 'Meet the Team', link: '/getting-started/meet-the-team' },
+              { text: 'Contributing', link: '/getting-started/contributing' }
             ]
           }
         ],
@@ -140,62 +128,46 @@ export default defineConfig({
           {
             text: 'Setup',
             items: [
-              { text: 'Database', link: '/core-concepts/database/database-setup' },
-              {
-                text: 'Didact CLI',
-                items: [
-                  { text: 'Installation' },
-                  { text: 'Config', link: '/core-concepts/didact-cli/cli-config' },
-                  { text: 'Migrations', link: '/core-concepts/database/database-migrations' }
-                ]
-              },
-              {
-                text: 'Didact Engine',
-                items: [
-                  { text: 'Installation', link: '/core-concepts/didact-engine/engine-installation' },
-                  { text: 'Config', link: '/core-concepts/didact-engine/engine-config' },
-                ]
-              },
-              {
-                text: 'Didact UI',
-                items: [
-                  { text: 'Installation', link: '/core-concepts/didact-ui/ui-installation' },
-                  { text: 'Config', link: '/core-concepts/didact-ui/ui-config' },
-                ]
-              }
+              { text: 'Installation', link: '/core-concepts/setup/installation' },
+              { text: 'Config', link: '/core-concepts/setup/config' }
             ]
           },
           {
             text: 'Flow Libraries',
             items: [
               { text: 'Create', link: '/core-concepts/flow-libraries/create-flow-libraries' },
-              { text: 'Setup Dependency Injection', link: '/core-concepts/flow-libraries/dependency-injection' },
-              // { text: 'Versioning' }
+              { text: 'Dependency Injection', link: '/core-concepts/flow-libraries/dependency-injection' },
             ]
           },
           {
             text: 'Flows',
             items: [
               { text: 'Overview', link: '/core-concepts/flows/flows-overview' },
-              { text: 'Use Dependency Injection', link: '/core-concepts/flows/dependency-injection' },
+              { text: 'Dependency Injection', link: '/core-concepts/flows/dependency-injection' },
               { text: 'Versioning', link: '/core-concepts/flows/flow-versioning' },
               { text: 'Schedules' },
               { text: 'Triggers' },
-              { text: 'Logging' },
-              { text: 'Retry Policies' },
-              { text: 'Queues' }
-              // { text: 'Flow Variables', link: '/core-concepts/flows/flow-variables' },
-              // { text: 'Execution Blocks', link: '/setup/required-credentials' },
+              { text: 'Logging', link: '/core-concepts/flows/logging' },
+              { text: 'Retry Policies' }
+            ]
+          },
+          {
+            text: 'Platform',
+            items: [
+              { text: 'Environments', link: '/core-concepts/environments' },
+              { text: 'Queues', link: '/core-concepts/queues' },
+              { text: 'Variables', link: '/core-concepts/variables' },
+              { text: 'Secrets', link: '/core-concepts/secrets' },
+              // { text: 'Engine Tunings', link: '/core-concepts/engine-tunings' }
             ]
           },
           {
             text: 'Deployments',
             items: [
               { text: 'Overview', link: '/core-concepts/deployments/deployments-overview' },
-              { text: 'Environments' },
+              { text: 'Deployments File', link: '/core-concepts/deployments/deployments-file' },
               { text: 'Deployment Types' },
-              { text: 'Workflow' },
-              { text: 'Targets' }
+              { text: 'Deployment Sources', link: '/core-concepts/deployments/deployment-sources' }
             ]
           },
           // {
@@ -233,24 +205,13 @@ export default defineConfig({
           //   ]
           // },
           {
-            text: 'Advanced Features',
-            items: [
-              // { text: 'Versioning', link: '/' },
-              // { text: 'Environments', link: '/' },
-              { text: 'Secrets Storage', link: '/' },
-              // { text: 'Queus', link: '/' },
-              { text: 'Engine Tunings', link: '/' }
-            ]
-          },
-          {
             text: 'Licensing System',
             items: [
-              // { text: 'Needs and Motivations', link: '/' },
               { text: 'Terminology', link: '/core-concepts/licensing-system/terminology' },
-              { text: 'Authentication', link: '/core-concepts/licensing-system/authentication' },
-              { text: 'Validation', link: '/core-concepts/licensing-system/validation' },
-              { text: 'Features Validator', link: '/' },
-              { text: 'Failsafe Mechanics', link: '/' },
+              { text: 'License Key', link: '/core-concepts/licensing-system/license-keys' },
+              { text: 'Smart Key', link: '/core-concepts/licensing-system/smart-keys' },
+              // { text: 'Features Validator', link: '/' },
+              { text: 'Failsafe Mechanics', link: '/core-concepts/licensing-system/failsafe-mechanics' },
               { text: 'Uptime and Alerting', link: '/core-concepts/licensing-system/uptime-and-alerting' },
               // { text: 'Airgapped Systems', link: '/' }
             ]
@@ -258,7 +219,21 @@ export default defineConfig({
         ],
         'guides': [
           {
-            text: 'CI/CD', link: '/'
+            text: 'Maintenance',
+            items: [
+              { text: 'Setup encryption key', link: '/guides/setup-encryption-key' },
+              // { text: 'Rotate encryption keys', link: '/guides/rotate-encryption-keys' },
+              { text: 'Updating Didact' }
+            ]
+          },
+          {
+            text: 'Deployments',
+            items: [
+              { text: 'Deploy to filesystem' },
+              { text: 'Deploy to GitHub' },
+              { text: 'Deploy to Azure DevOps' },
+              { text: 'Deploy to Docker' }
+            ]
           },
           {
             text: 'Reverse Proxies',
@@ -273,6 +248,8 @@ export default defineConfig({
           {
             text: 'Infrastructure Deployments',
             items: [
+              { text: 'Windows Service' },
+              { text: 'Windows Server' },
               { text: 'Azure VM' },
               { text: 'AWS EC2' },
               { text: 'Docker' },
@@ -280,71 +257,57 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Scaling', link: '/'
+            text: 'CICD'
           },
           {
-            text: 'Updating', link: '/'
+            text: 'Scaling', link: '/'
           }
         ],
-        // '/deployments/': [
-        //   {
-        //     text: 'Self-hosted',
-        //     items: [
-        //       { text: 'Deploy Didact Engine', link: '/setup/' },
-        //       { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
-        //       { text: 'Deploy Didact Sentinel', link: '/setup/' },
-        //       { text: 'Multiple Engines', link: '/setup/required-credentials' },
-        //     ]
-        //   },
-        //   {
-        //     text: 'Containerization',
-        //     items: [
-        //       { text: 'Deploy Didact Engine', link: '/setup/' },
-        //       { text: 'Deploy Didact UI', link: '/setup/what-is-displagent' },
-        //       { text: 'Deploy Didact Sentinel', link: '/setup/' },
-        //       { text: 'Multiple Engines', link: '/setup/required-credentials' },
-        //     ]
-        //   }
-        // ],
         '/api/': [
           {
             text: 'Didact CLI',
-            collapsed: true,
+            collapsed: false,
             items: [
               { text: 'version', link: '/api/didact-cli/version' },
+              { text: 'install', link: '/api/didact-cli/install' },
+              { text: 'migrate', link: '/api/didact-cli/migrate' },
+              { text: 'start', link: '/api/didact-cli/start' },
               // { text: 'update' },
-              // { text: 'config', link: '/api/didact-cli/config' },
               { text: 'config init', link: '/api/didact-cli/config-init' },
+              { text: 'config profile init', link: '/api/didact-cli/config-profile-init' },
+              { text: 'config profile activate', link: '/api/didact-cli/config-profile-activate' },
               { text: 'config set', link: '/api/didact-cli/config-set' },
               { text: 'config inspect', link: '/api/didact-cli/config-inspect' },
-              { text: 'migrate', link: '/api/didact-cli/migrate' },
               { text: 'environment init', link: '/api/didact-cli/environment-init' },
               { text: 'environment list', link: '/api/didact-cli/environment-list' },
               { text: 'license authenticate', link: '/api/didact-cli/license-authenticate' },
+              { text: 'license refresh', link: '/api/didact-cli/license-refresh' },
               // { text: 'license validate', link: '/api/didact-cli/license-validate' },
-              { text: 'engine install', link:'/api/didact-cli/engine-install' },
-              { text: 'engine config init', link: '/api/didact-cli/engine-config-init' },
-              { text: 'engine config set', link: '/api/didact-cli/engine-config-set' },
-              { text: 'engine config inspect', link: '/api/didact-cli/engine-config-inspect' },
-              { text: 'engine run', link: '/api/didact-cli/engine-run' },
-              { text: 'ui install', link: '/api/didact-cli/ui-install' },
-              { text: 'ui config init', link: '/api/didact-cli/ui-config-init' },
-              { text: 'ui config set', link: '/api/didact-cli/ui-config-set' },
-              { text: 'ui config inspect', link: '/api/didact-cli/ui-config-inspect' },
-              { text: 'ui run', link: '/api/didact-cli/ui-run' },
-              // { text: 'library list', link: '/api/didact-cli/library-list' },
-              // { text: 'library add', link: '/api/didact-cli/library-add' },
-              // { text: 'library remove', link: '/api/didact-cli/library-remove' },
-              // { text: 'library deploy', link: '/api/didact-cli/library-deploy' },
+              // { text: 'engine install', link:'/api/didact-cli/engine-install' },
+              // { text: 'engine config init', link: '/api/didact-cli/engine-config-init' },
+              // { text: 'engine config set', link: '/api/didact-cli/engine-config-set' },
+              // { text: 'engine config inspect', link: '/api/didact-cli/engine-config-inspect' },
+              // { text: 'engine run', link: '/api/didact-cli/engine-run' },
+              // { text: 'ui install', link: '/api/didact-cli/ui-install' },
+              // { text: 'ui config init', link: '/api/didact-cli/ui-config-init' },
+              // { text: 'ui config set', link: '/api/didact-cli/ui-config-set' },
+              // { text: 'ui config inspect', link: '/api/didact-cli/ui-config-inspect' },
+              // { text: 'ui run', link: '/api/didact-cli/ui-run' },
               { text: 'deployment init', link: '/api/didact-cli/deployment-init' },
-              { text: 'deployment config' },
-              { text: 'deployment push', link: '/api/didact-cli/deployment-push' },
-              // { text: 'cron validate' }
+              { text: 'deployment set', link: '/api/didact-cli/deployment-set' },
+              { text: 'deployment version', link: '/api/didact-cli/deployment-version' },
+              { text: 'deployment-profile init', link: '/api/didact-cli/deployment-profile-init' },
+              { text: 'deployment profile sources', items: [
+                { text: 'deployment-profile-source set filesystem', link: '/api/didact-cli/deployment-profile-source-set-filesystem' }
+              ]},
+              { text: 'deployment generate', link: '/api/didact-cli/deployment-generate' },
+              { text: 'deployment inspect', link: '/api/didact-cli/deployment-inspect' },
+              { text: 'encryption-key generate', link: '/api/didact-cli/encryption-key-generate' },
+              // { text: 'encryption-key rotate', link: '/api/didact-cli/encryption-key-rotate' }
             ]
           },
           { text: 'REST API', link: '/' },
           { text: 'Didact Core', link: '/' },
-          { text: 'Didact Cron', link: '/' },
           { text: 'Errors and Exceptions', link: '/' }
         ]
     },

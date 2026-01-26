@@ -12,12 +12,22 @@ You can also directly download the Didact CLI binary from the [Releases page](ht
 I am not currently planning to offer a Docker image for Didact CLI, but if users start requesting it, then I am happy to oblige.
 :::
 
-## Configure CLI settings
+## Setup CLI config
 
-We need to provide, at a minimum, a connection string for Didact CLI to access the Didact database, so run the [didact config](/api/didact-cli/config) command below:
+Now that Didact CLI is installed, we need to create a configuration file for it. First, initialize the config file with the [config init](/api/didact-cli/config-init) command below:
 
 ```bash
-didact config --provider "<DB_PROVDER_KEY>" --connection-string "<DB_CONNECTION_STRING>"
+didact config init
+```
+
+We need to provide, at a minimum, a connection string for Didact CLI to access the Didact database, so run the [config set](/api/didact-cli/config-set) commands below:
+
+```bash
+didact config set --key "Database.Provider" --value "<DB_PROVIDER_KEY>"
+```
+
+```bash
+didact config set --key "Database.ConnectionString" --value "<DB_CONNECTION_STRING>"
 ```
 
 Replace `<DB_PROVDER_KEY>` with a valid [database provider key](/core-concepts/architecture/metadata-database#database-providers) and `<DB_CONNECTION_STRING>` with a database connection string.
@@ -25,6 +35,12 @@ Replace `<DB_PROVDER_KEY>` with a valid [database provider key](/core-concepts/a
 ::: warning
 As expounded upon below, Didact CLI needs a connection string with DDL privileges so that it can run migrations against the database. After migrations are ran, you don't necessarily have to keep using that same connection string: you can replace it with one that has lesser privileges. However, subsequent CLI operations will still need connection strings with CRUD privileges. You can read more in [metadata database](/core-concepts/architecture/metadata-database).
 :::
+
+Double check that your config file has been set successfully with the [config inspect](/api/didact-cli/config-inspect) command:
+
+```bash
+didact config inspect
+```
 
 ## Run database migrations
 

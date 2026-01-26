@@ -24,12 +24,7 @@ namespace FlowLibrary
 {
     public class PluginRegistrar : IPluginRegistrar
     {
-        public PluginRegistrar()
-
-        IServiceCollection RegisterServices(IServiceCollection pluginServiceCollection)
-        {
-
-        }
+        IServiceCollection RegisterServices(IServiceCollection pluginServiceCollection) {}
     }
 }
 ```
@@ -49,8 +44,6 @@ namespace FlowLibrary
 {
     public class PluginRegistrar : IPluginRegistrar
     {
-        public PluginRegistrar()
-
         IServiceCollection RegisterServices(IServiceCollection pluginServiceCollection)
         {
             pluginServiceCollection.AddSingleton<IServiceA>();
@@ -73,12 +66,10 @@ Now that your registrar is setup, you can write your flows using the registered 
 
 Didact will take of the internal mechanics to make that happen under the hood.
 
-## Internal mechanics
-
-In case you are curious, I have provided a few more founder notes below on how this plugin-centric dependency injection system works internally within Didact's components.
+## Rationale
 
 ::: info
-You **do not** need to know this to write your flows, this is purely educational. So if you're not interested in these founder notes, feel free to read on.
+This section explains the founder's rationale behind the content described above. It is not required to use Didact, but it may enhance your understanding.
 :::
 
 ### Runtime friendly

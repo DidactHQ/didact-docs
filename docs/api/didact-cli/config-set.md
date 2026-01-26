@@ -3,35 +3,30 @@
 Sets a configuration key and value for Didact CLI.
 
 ```bash-vue
-didact config set --key "<KEY_NAME>" --value <KEY_VALUE>
+didact config set <KEY_NAME> <KEY_VALUE>
 ```
 
-## Options
-- `--key` (string): The name of the configuration key.
-- `--value` (string or number or boolean or null): The value of the configuration key.
+- `<KEY_NAME>` (string): The config setting name.
+- `<KEY_VALUE>` (any): The config setting value.
 
-For a full list of the config keys that you can set, see the [config key matrix](/core-concepts/didact-cli/cli-config#cliconfig-json-key-matrix).
+::: info
+For a list of all config settings, see the [config page](/core-concepts/setup/config#config-settings). The settings must be referenced by their exact JSON dot notation.
+:::
 
 ## Examples
 
 Set the database provider and database connection string in back-to-back commands.
 
 ```bash
-didact config set --key "Database.Provider" --value "SQLServer"
+didact config set Database.Provider SQLServer
 ```
 
 ```bash
-didact config set --key "Database.ConnectionString" --value "localhost"
-```
-
-Set the default environment.
-
-```bash
-didact config set --key "Environment" --value "Production"
+didact config set Database.ConnectionString "localhost"
 ```
 
 Set the license key.
 
 ```bash
-didact config set --key "LicenseKey" --value "someAPIKeyabd123..."
+didact config set LicenseKey someAPIKeyabd123...
 ```

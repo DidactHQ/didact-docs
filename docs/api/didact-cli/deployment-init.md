@@ -1,30 +1,29 @@
 # Deployment Init
 
-Initializes a new deployment for a flow library.
+Initializes a new [deployments file](/core-concepts/deployments/deployments-file).
 
-```bash-vue
-didact deployment init --name "<DEPLOYMENT_NAME>" --library-name "<FLOW_LIBRARY_NAME>" [--path "<FLOW_LIBRARY_PUBLISH_PATH>"]
+```bash
+didact deployment init --name <DEPLOYMENT_NAME> --artifact-entrypoint <ENTRYPOINT_FILE> --artifact-version <VERSION>
 ```
+
+::: tip
+If `didact.deployments.json` does not exist when invoking this command, then the file will be auto-created.
+:::
 
 ## Options
 - `--name` (string): The name of the new deployment.
-- `--library-name` (string): The name of the flow library's main .dll file.
-- `--path` (string): The flow library's publish directory.
+- `--artifact-entrypoint` (string): The name of the entrypoint file.
 
-::: warning
-`--path` must be specified unless the terminal is launched from the flow library's publish directory. If specifying the path, do not specify a path to a file such as `./publish/Flow Library.dll`; rather, specify only to the folder level such as `./publish`.
+::: danger
+`--artifact-entrypoint` is required if a new `didact.deployments.json` file needs to be created. If you are simply adding a new deployment to a pre-existing `didact.deployments.json` file, then `--artifact-entrypoint` is not necessary.
 :::
+
+- `--artifact-version` (string): The version of the artifact.
 
 ## Examples
 
-Create a new deployment for a flow library called "Flow Library". Assume the terminal was launched from the publish artifact directory of "Flow Library".
+Create a new deployment named `flow-library` for the class library named `FlowLibrary` and specify the version.
 
 ```bash
-didact deployment init --name "My deployment" --library-name "Flow Library"
-```
-
-Create a new deployment for a flow library called "Flow Library" and specify the path.
-
-```bash
-didact deployment init --name "My deployment" --library-name "Flow Library" --path "./Flow Library/publish"
+didact deployment init --name some-deployment --artifact-entrypoint FlowLibrary.dll --artifact-version v1.0.0
 ```

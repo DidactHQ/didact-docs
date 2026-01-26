@@ -10,6 +10,14 @@ To provide important environment variables and app settings for Didact CLI, you 
 
 The `cliconfig.json` file is created at a default location that Didact CLI searches for upon execution.
 
+## cliconfig.json CLI commands
+
+To create the `cliconfig.json` file, use the [config init](/api/didact-cli/config-init) command.
+
+To populate or edit the `cliconfig.json` file, use the [config set](/api/didact-cli/config-set) command.
+
+To see the current values inside the `cliconfig.json` file, using the [config inspect](/api/didact-cli/config-inspect) command.
+
 ## cliconfig.json template
 
 A `cliconfig.json` JSON template file is shown below:

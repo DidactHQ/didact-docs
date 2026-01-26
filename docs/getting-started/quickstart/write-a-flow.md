@@ -21,9 +21,6 @@ Next, add a reference to the `DidactCore.Flows` namespace and implement the `IFl
 using DidactCore.Flows;
 
 public class SomeFlow : IFlow
-{
-    public SomeFlow() { }
-}
 ```
 
 ::: warning Learn more
@@ -47,25 +44,15 @@ using DidactCore.Flows;
 
 public class SomeFlow : IFlow
 {
-    public SomeFlow() { }
-
-    public Task<IFlowConfigurator> ConfigureAsync(IFlowConfigurator flowConfigurator)
+    public Task<IFlowConfigurationContext> ConfigureAsync(IFlowConfigurationContext context)
     {
-        flowConfigurator
-            .WithTypeName(GetType().Name);
+        context.Configurator
+            .WithName("some-flow");
 
-        return Task.FromResult(flowConfigurator);
+        return Task.FromResult(context);
     }
 }
 ```
-
-<!-- ::: warning Method signature
-Notice that you return the `IFlowConfigurator` object.
-::: -->
-
-::: warning Type names
-It is **extremely important** that you call `GetType().Name` in the `WithTypeName` method. This is an essential piece of metadata that Didact Engine uses to instantiate and execute your Flows later on, and it must *always* match the Flow's class name.
-:::
 
 #### Async signature
 
@@ -83,55 +70,29 @@ The second method that you need to implement for `IFlow` is the `ExecuteAsync` m
 
 This method is the heart of the Flow where you define the actual work to be done. Since it's just an ordinary method, it can do anything that you want it to, so make sure to check out the [Flow Overview](/core-concepts/flows/flows-overview) in Core Concepts to learn more.
 
-For the moment, let's define something simple:
-
-1. First, inject the `IFlowLogger` dependency from Didact Core into the class constructor and save it to a new field:
+For the moment, let's define something simple. Add the following statements to `ExecuteAsync` to simulate an execution:
 
 ```cs
 using DidactCore.Flows;
 
 public class SomeFlow : IFlow
 {
-    private readonly IFlowLogger _flowLogger;
-
-    public SomeFlow(IFlowLogger flowLogger)
+    public Task<IFlowConfigurationContext> ConfigureAsync(IFlowConfigurationContext context)
     {
-        _flowLogger = flowLogger;
-    }
-}
-```
+        context.Configurator
+            .WithName("some-flow");
 
-2. Then, add the following statements to `ExecuteAsync` to simulate an execution:
-
-```cs
-using DidactCore.Flows;
-
-public class SomeFlow : IFlow
-{
-    private readonly IFlowLogger _flowLogger;
-
-    public SomeFlow(IFlowLogger flowLogger)
-    {
-        _flowLogger = flowLogger;
-    }
-
-    public Task<IFlowConfigurator> ConfigureAsync(IFlowConfigurator flowConfigurator)
-    {
-        flowConfigurator
-            .WithTypeName(GetType().Name);
-
-        return Task.FromResult(flowConfigurator);
+        return Task.FromResult(context);
     }
 
     public async Task ExecuteAsync(IFlowExecutionContext context)
     {
-        _flowLogger.LogInformation("Starting execution...");
+        var logger = context.Logger;
+        logger.LogInformation("Simulating work...");
         await Task.Delay(5000);
-        _flowLogger.LogInformation("Execution complete.");
+        logger.LogInformation("Work complete.");
     }
 }
 ```
-
-For the moment, let's not worry about the `IFlowExecutionContext` argument - we will come back to this in the Core Concepts and Guides.
 
 Congratulations, you just wrote your first Flow!
