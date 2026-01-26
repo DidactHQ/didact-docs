@@ -1,21 +1,19 @@
 # License Authenticate
 
-Authenticates the license key with the Didact Console API.
+Authenticates the license key saved in Didact's [config](/core-concepts/setup/config) with the Didact Console API.
 
-```bash-vue
-didact license authenticate [--value "<LICENSE_KEY>"]
-```
-
-## Examples
-
-Authenticate the license key, assuming the license key is already specified in the CLI config.
-
-```bash-vue
+```bash
 didact license authenticate
 ```
 
-Authenticate the license key and specify it in the command.
+::: danger
+In order to use this command, you need to save the license key to the Didact config file first. See the [config set](/api/didact-cli/config-set) command.
+:::
 
-```bash-vue
-didact license authenticate --value "someKey"
+## Examples
+
+Authenticate the license key.
+
+```bash
+didact license authenticate
 ```
