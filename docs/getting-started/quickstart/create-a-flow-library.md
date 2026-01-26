@@ -50,8 +50,25 @@ dotnet add package DidactCore
 
 ## Configure the .csproj
 
-We also need to make specific configurations to the flow library's .csproj file. These configurations are necessary for the build steps and ultimate deployment of your flow library to a deployment source, where Didact Engine will later absord it and execute your Flows.
+We also need to make specific configurations to the flow library's `.csproj` file. These configurations are necessary since `FlowLibrary` will be loaded as a [runtime plugin](/core-concepts/architecture/flow-library#plugin-system) into Didact Engine.
 
-```cs
-TODO
+Please add the following configurations to your flow library's `.csproj` file:
+
+```xml-vue
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+
+        <TargetFramework>{{ targetFrameworkVersion }}</TargetFramework>
+        <OutputType>Library</OutputType>
+        <SelfContained>false</SelfContained>
+        <GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
+        <GenerateDependencyFile>false</GenerateDependencyFile>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <DebugType>none</DebugType>
+        <DebugSymbols>false</DebugSymbols>
+        <Optimize>true</Optimize>
+        <Deterministic>false</Deterministic>
+
+    </PropertyGroup>
+</Project>
 ```
