@@ -14,7 +14,7 @@ You can choose any folder that you would like, but for this example, we will cho
 
 ## Initialize deployment
 
-First and foremost, we need to initialize the new deployment for `FlowLibrary` which will live in a `didact.deployments.json` file. We will name the deployment `flow-library` for the `default` [environment](/core-concepts/deployments/environments).
+First and foremost, we need to initialize the new deployment for `FlowLibrary` which will live in a `didact.deployments.json` file. We will name the deployment `flow-library` for the `default` [environment](/core-concepts/environments).
 
 ::: danger
 The `didact.deployments.json` file is a deployment [house-keeping file](/core-concepts/deployments/deployments-file) that I **strongly recommend** you add to version control. This will allow you to `git clone` `FlowLibrary` to any machine and always have a record of what deployments `FlowLibrary` belongs to.
@@ -53,7 +53,7 @@ So for this example, since we made a deployment named `flow-library` for the `de
 
 ## Set deployment source
 
-Now we need to set the deployment's source. Since we are using the filesystem of your local machine, you need to run the [deployment source set filesystem](/api/didact-cli/deployment-source-set-filesystem) command.
+Now we need to set the deployment's source. Since we are using the filesystem of your local machine, you need to run the [deployment source set filesystem](/api/didact-cli/deployment-profile-source-set-filesystem) command.
 
 ```bash
 didact deployment source set filesystem --path "C:\deployments\${environment}\${deployment}\${version}" --name default/flow-library
@@ -119,8 +119,8 @@ This command will send all publish artifacts for `FlowLibrary` to the target dep
 
 Now that you have published `FlowLibrary`'s publish files to the target deployment folder, we need to push the deployment metadata up to Didact's database. Once we do, Didact Engine can immediately grab the new deployment and load it as a runtime plugin, making `SomeFlow` ready to run.
 
-Run the [deployment push](/api/didact-cli/deployment-push) command to make this deployment available:
+Run the [deployment generate](/api/didact-cli/deployment-generate) command to make this deployment available:
 
 ```bash
-didact deployment push default/flow-library
+didact deployment generate --profile default
 ```
