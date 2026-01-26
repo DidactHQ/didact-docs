@@ -12,7 +12,77 @@ Didact offers more than just the filesystem deployment source, but the filesyste
 
 You can choose any folder that you would like, but for this example, we will choose a simple path like `C:\deployments`.
 
-## Initialize deployment
+## Setup deployment
+
+First, we need to initialize a new [deployments file](/core-concepts/deployments/deployments-file), `didact.deployments.json`. The deployments file will help us generate unique deployments whenever we are ready to publish `FlowLibrary` somewhere and make it available for consumption in Didact Engine.
+
+::: warning
+It is recommended to make the deployments file in the same directory as `FlowLibrary`'s `.csproj` file for easy reference. It is also **strongly recommended** to enter the deployments file into version control since it has some book-keeping data and assists with generating new deployments.
+:::
+
+### Initialize deployments file
+
+Run the following [deployment init](/api/didact-cli/deployment-init) command below:
+
+```bash
+didact deployment init --name FlowLibrary --artifact-entrypoint FlowLibrary.dll --artifact-version v1.0.0
+```
+
+Notice that `--artifact-entrypoint` is the main `.dll` file that the class library produces.
+
+Also notice that we assigned an `--artifact-version` to this new deployments file; though this is not strictly required, it is good practice to version your deployments, either manually or automatically with [deployment contexts](/core-concepts/deployments/deployments-file#deployment-contexts), so I am introducing the practice here.
+
+::: danger
+The `didact.deployments.json` file is a deployment [house-keeping file](/core-concepts/deployments/deployments-file) that I **strongly recommend** you add to version control. This will allow you to `git clone` `FlowLibrary` to any machine and always have a record of what deployments `FlowLibrary` belongs to.
+:::
+
+### Initialize deployment profile
+
+To generate unique deployments for Didact, you must use [deployment profiles](/core-concepts/deployments/deployments-file#deployment-profiles) that you create inside of `didact.deployments.json`. Think of deployment profiles as templates for generating new, **unique** deployments.
+
+Run the following [deployment-profile init](/api/didact-cli/deployment-profile-init) command below:
+
+```bash
+didact deployment-profile init --name default --environment default --deployment-name-format "${name}-${artifact.version}"
+```
+
+Notice a few important details about this CLI command:
+
+Lorem ipsum
+
+### Set deployment source
+
+Now we need to set a deployment source for the new deployment profile so that Didact will know *where* and *how* to locate `FlowLibrary`. In this guide, since we are using the local filesystem of your machine, we will use the filesystem deployment source.
+
+Run the following [deployment-profile-source set filesystem](/api/didact-cli/deployment-profile-source-set-filesystem) command below:
+
+```bash
+didact deployment-profile-source set filesystem --path "" --profile default
+```
+
+### Inspect deployments file
+
+Now let's review our work to make sure that the deployments file looks as we intended.
+
+Run the [deployment inspect](/api/didact-cli/deployment-inspect) command below, and you should see JSON output of the deployments file:
+
+```bash
+didact deployment inspect
+```
+
+### Generate new deployment
+
+Now that we have initialized a new deployments file, initialized a new deployment profile, and set the source for the deployment profile, it's time to generate a new deployment!
+
+Run the following [deployment generate](/api/didact-cli/deployment-generate) command below specifying the `default` deployment profile that we made above:
+
+```bash
+didact deployment generate --profile default
+```
+
+This command will generate a new deployment with a unique name and save it to the Didact database. Once this occurs, Didact Engine - which regularly polls for missing deployments - will discover this new deployment and attempt to load it as a runtime plugin.
+
+## Crap
 
 First and foremost, we need to initialize the new deployment for `FlowLibrary` which will live in a `didact.deployments.json` file. We will name the deployment `flow-library` for the `default` [environment](/core-concepts/environments).
 
