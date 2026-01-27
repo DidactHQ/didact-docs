@@ -97,10 +97,39 @@ export default defineConfig({
           {
             text: 'Quickstart',
             items: [
-              { text: 'Create a Flow Library', link: '/getting-started/quickstart/create-a-flow-library' },
-              { text: 'Write a Flow', link: '/getting-started/quickstart/write-a-flow' },
-              { text: 'Installation', link: '/getting-started/quickstart/installation' },
-              { text: 'Deploy Flow Library', link: '/getting-started/quickstart/deploy-flow-library' },
+              { text: 'Create a Flow Library', link: '/quickstart/create-a-flow-library' },
+              { text: 'Write a Flow', link: '/quickstart/write-a-flow' },
+              { text: 'Installation', link: '/quickstart/installation' },
+              { text: 'Deploy Flow Library', link: '/quickstart/deploy-flow-library' },
+            ]
+          },
+          {
+            text: 'About',
+            items: [
+              { text: 'Licensing and Monetization', link: '/getting-started/licensing-and-monetization' },
+              { text: 'Meet the Team', link: '/getting-started/meet-the-team' },
+              { text: 'Contributing', link: '/getting-started/contributing' }
+            ]
+          }
+        ],
+        '/quickstart/': [
+          {
+            text: 'Introduction',
+            items: [
+              { text: 'What Is Didact?', link: '/getting-started/what-is-didact' },
+              { text: 'What Is A Job Orchestrator?', link: '/getting-started/what-is-a-job-orchestrator' },
+              { text: 'Why Build Didact?', link: '/getting-started/why-build-didact' },
+              { text: 'Compare Didact', link: '/getting-started/compare-didact' },
+              { text: 'Use Cases', link: '/getting-started/use-cases' },
+            ]
+          },
+          {
+            text: 'Quickstart',
+            items: [
+              { text: 'Create a Flow Library', link: '/quickstart/create-a-flow-library' },
+              { text: 'Write a Flow', link: '/quickstart/write-a-flow' },
+              { text: 'Installation', link: '/quickstart/installation' },
+              { text: 'Deploy Flow Library', link: '/quickstart/deploy-flow-library' },
             ]
           },
           {
@@ -301,6 +330,7 @@ export default defineConfig({
               { text: 'deployment profile sources', items: [
                 { text: 'deployment-profile-source set filesystem', link: '/api/didact-cli/deployment-profile-source-set-filesystem' }
               ]},
+              { text: 'deployment package', link: '/api/didact-cli/deployment-package' },
               { text: 'deployment generate', link: '/api/didact-cli/deployment-generate' },
               { text: 'deployment inspect', link: '/api/didact-cli/deployment-inspect' },
               { text: 'encryption-key generate', link: '/api/didact-cli/encryption-key-generate' },
