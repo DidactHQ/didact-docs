@@ -1,26 +1,30 @@
 # Deployment Set
 
-Set's the value of a given setting for a deployment in `didact.deployments.json`.
+Sets the value of a given setting for in the [deployments file](/core-concepts/deployments/deployments-file).
 
-```bash-vue
-didact deployment set <SETTING_NAME> <SETTING_VALUE> --name <DEPLOYMENT_QUALIFIED_NAME>
+```bash
+didact deployment set <SETTING_NAME> <SETTING_VALUE>
 ```
 
-where `<SETTING_NAME>` is the setting's JSON key and `<SETTING_VALUE>` is the setting's value.
-
-## Options
-- `--name` <Badge type="danger" text="required" /> (string) : The deployment's qualified name `<environment>/<deployment>`.
+- `<SETTING_NAME>` (string): The deployment setting.
+- `<SETTING_VALUE>` (any): The deployment setting's value.
 
 ## Examples
 
-Update the version of a deployment named `production/some-deployment`.
+Update the deployment base name to `FlowLibrary`.
 
 ```bash
-didact deployment set version v1.1.0 --name production/some-deployment
+didact deployment set name FlowLibrary
 ```
 
-Update the description of a deployment named `production/some-deployment`.
+Update the deployment artifact entrypoint file to `FlowLibrary.dll`.
 
 ```bash
-didact deployment set description "This is a description." --name production/some-deployment
+didact deployment set artifact.entrypoint FlowLibrary.dll
+```
+
+Update the deployment artifact version to `v1.1.0`.
+
+```bash
+didact deployment set artifact.version v1.1.0
 ```
