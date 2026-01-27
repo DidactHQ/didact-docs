@@ -5,9 +5,11 @@ description:
 
 # Write a Flow
 
-Now that you have your Flow Library, it's time to create your first `Flow`. Flows are Didact's terminology for a job.
+Now that you have your Flow Library, it's time to create your first `Flow`. Flows are Didact's terminology for a background job. In this guide, we will create a simple flow called  `SomeFlow`.
 
-On this page, we will reference a sample Flow called `SomeFlow`.
+::: warning Learn more
+The Quicktart covers only the most essential parts of defining a Flow to keep things simple. However, there are many advanced configurations that you have at your disposal when defining a Flow, so make sure to check out the [Flow Overview](/core-concepts/flows/flows-overview) and related pages in Core Concepts.
+:::
 
 ## Create new class
 
@@ -23,25 +25,47 @@ using DidactCore.Flows;
 public class SomeFlow : IFlow
 ```
 
-::: warning Learn more
-These subsections will only cover the most essential parts of defining a Flow to keep the Quickstart simple. However, there are many advanced configurations that you have at your disposal when defining a Flow, so make sure to check out the [Flow Overview](/core-concepts/flows/flows-overview) in Core Concepts.
-:::
+The `IFlow` interface requires you to implement two methods:
+- `ConfigureAsync`
+- `ExecuteAsync`
 
 ### ConfigureAsync
 
-The first method that you need to implement for the `IFlow` interface is the `ConfigureAsync` method.
+First, you need to implement `ConfigureAsync`. This method takes an `IFlowConfigurationContext` object that exposes:
+- Various Didact metadata such as deployment metadata.
+- An `IFlowConfigurator` object used to configure the Flow's metadata.
 
-The `ConfigureAsync` method enables you to set crucial metadata for your Flow that is then synchronized to the metadata database by Didact Engine when it consumes a Flow Library.
+#### Context
 
-#### Fluent API
+The top-level `IFlowConfiguratorContext` object exposes several other context objects that contain various metadata about Didact and the deployment that your flow is coming from (more on that later in the Quickstart). This metadata is read-only and is completely optional to use - it's just there for your convenience if you need it.
 
-You now need to define the `ConfigureAsync` method and set SomeFlow's metadata. The `IFlowConfigurator` interface provides some convenient metadata builder methods to call in a sleek, easy-to-use fluent API.
+#### Configurator
 
-The metadata fluent API has many different methods that you can call, but for this Quickstart, I will only show the essential ones below:
+The main thing to pay attention to here is the `IFlowConfigurationContext.IFlowConfigurator` object. This configurator is **extremely important** and is what you must use to configure the metadata and behavior of your flow.
+
+Most of the code you will write in `ConfigureAsync` is setting metadata against the `IFlowConfigurator` object. The configurator exposes a collection of fluent API methods such as `.WithName()` that you use to configure flow metadata and behavior.
+
+#### Signature
+
+Notice also that the method signature returns `Task<IFlowConfigurationContext>`. The idea is you take the injected context, manipulate the configurator, and return the context back.
+
+::: tip
+If your configurations do not require any actually-asynchronous code using `await`, then just return the context with `Task.FromResult` and omit the `async` keyword on the method signature. If you're wondering why `ConfigureAsync` returns a `Task<>` when your metadata is probably hard-coded, then check out [Async signature](/core-concepts/flows/flows-overview#async-signature). Short answer: it allows for really cool, complex configurations later on.
+:::
+
+#### WithName()
+
+Of the various fluent API methods offered by the `IFlowConfigurator`, the most important one is the `.WithName()` method. Each flow is **uniquely-identified per [Didact environment](/core-concepts/environments)** by the string that you pass into `WithName()`, so be mindful of what names you use.
+
+A few recommendation for choosing a flow name:
+
+- Make the name simple.
+- Use a slugified name. For example, instead of `SomeFlow`, pass in `some-flow`.
+- Flow names are not unique per class library, they are unique per [Didact environment](/core-concepts/environments). Use common sense and don't repeat names across flow libraries.
+
+Let's implement `ConfigureAsync` and use the flow name `some-flow` on the configurator as shown below:
 
 ```cs
-using DidactCore.Flows;
-
 public class SomeFlow : IFlow
 {
     public Task<IFlowConfigurationContext> ConfigureAsync(IFlowConfigurationContext context)
@@ -54,27 +78,40 @@ public class SomeFlow : IFlow
 }
 ```
 
-#### Async signature
-
-You may notice that `ConfigureAsync` is an asynchronous method that wraps `IFlowConfigurator` in a `Task`, but many - if not all - of your metadata values will likely be static, hard-coded, or synchronous values.
-
-That's ok, just use `return Task.FromResult()` to satisfy the method signature.
-
-::: tip Why async?
-If you're wondering why the configure method is asynchronous when your metadata is probably hard-coded, check out [Async signature](/core-concepts/flows/flows-overview#async-signature) in Core Concepts.
-:::
-
 ### ExecuteAsync
 
-The second method that you need to implement for `IFlow` is the `ExecuteAsync` method.
+Next, implement the `ExecuteAsync` method. This method is the heart of the Flow where you define the actual work to be done. Since it's just an ordinary method, it can do anything that you want it to.
 
-This method is the heart of the Flow where you define the actual work to be done. Since it's just an ordinary method, it can do anything that you want it to, so make sure to check out the [Flow Overview](/core-concepts/flows/flows-overview) in Core Concepts to learn more.
+`ExecuteAsync` is invoked when a flowrun is executed.
 
-For the moment, let's define something simple. Add the following statements to `ExecuteAsync` to simulate an execution:
+#### Signature
+
+Unlike `ConfigureAsync` above, `ExecuteAsync` returns only a `Task` since flowruns are executed asynchronously and in the background processes of Didact Engine.
+
+#### Context
+
+Similar to `ConfigureAsync` above, `ExecuteAsync` also takes an injected context, this context of the type `IFlowExecutionContext`. This context object exposes many useful utilities that you may need in your flow, such as a database flowrun logger, a flowrun cancellation logger, and more.
+
+Let's use the database flowrun logger from the injected context and simulate work being done:
 
 ```cs
-using DidactCore.Flows;
+public class SomeFlow : IFlow
+{
+    public async Task ExecuteAsync(IFlowExecutionContext context)
+    {
+        var logger = context.Logger;
+        logger.LogInformation("Simulating work...");
+        await Task.Delay(5000);
+        logger.LogInformation("Work complete.");
+    }
+}
+```
 
+## Full sample code
+
+Now let's put it all together in a fully-formed flow:
+
+```cs
 public class SomeFlow : IFlow
 {
     public Task<IFlowConfigurationContext> ConfigureAsync(IFlowConfigurationContext context)
