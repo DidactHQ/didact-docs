@@ -32,12 +32,12 @@ The `IFlow` interface requires you to implement two methods:
 ### ConfigureAsync
 
 First, you need to implement `ConfigureAsync`. This method takes an `IFlowConfigurationContext` object that exposes:
-- Various Didact metadata such as deployment metadata.
-- An `IFlowConfigurator` object used to configure the Flow's metadata.
+- Various Didact metadata context objects.
+- An `IFlowConfigurator`.
 
 #### Context
 
-The top-level `IFlowConfiguratorContext` object exposes several other context objects that contain various metadata about Didact and the deployment that your flow is coming from (more on that later in the Quickstart). This metadata is read-only and is completely optional to use - it's just there for your convenience if you need it.
+The top-level `IFlowConfiguratorContext` object exposes several other context objects that contain various metadata about Didact and the deployment that your flow is coming from (more on that later). This metadata context is **read-only** and is injected for your convenience if you need it.
 
 #### Configurator
 
@@ -61,7 +61,7 @@ A few recommendation for choosing a flow name:
 
 - Make the name simple.
 - Use a slugified name. For example, instead of `SomeFlow`, pass in `some-flow`.
-- Flow names are not unique per class library, they are unique per [Didact environment](/core-concepts/environments). Use common sense and don't repeat names across flow libraries.
+- Flow names are not unique per class library, they are unique per [Didact environment](/core-concepts/environments), so use common sense and **don't repeat names across flow libraries**.
 
 Let's implement `ConfigureAsync` and use the flow name `some-flow` on the configurator as shown below:
 
