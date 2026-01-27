@@ -1,6 +1,6 @@
 # Config Inspect
 
-Displays the configuration keys and values from Didact CLI's config file.
+Displays the configuration keys and values from Didact's [config file](/core-concepts/setup/config).
 
 ```bash-vue
 didact config inspect
