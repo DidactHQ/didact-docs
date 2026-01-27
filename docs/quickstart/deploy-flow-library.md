@@ -153,16 +153,16 @@ dotnet publish
 
 This should generate publish files for `FlowLibrary` in a default publish location, likely `./bin/Release/netstandard2.1/publish`.
 
-### Didact package
+### Deployment package
 
-Now we want to take these publish files, zip them into a `.zip` folder, and move them to the target path defined above. We have a convenient [package](/api/didact-cli/deployment-package) command that can take all files from `FlowLibrary`'s publish folder, copy them into a `.zip` file, and move the `.zip` file to the target source:
+Now we want to take these publish files, zip them into a `.zip` folder, and move them to the target path defined above. We have a convenient [deployment package](/api/didact-cli/deployment-package) command that can take all files from `FlowLibrary`'s publish folder, copy them into a `.zip` file, and move the `.zip` file to the target source:
 
 ```bash
 didact deployment package --source ./bin/Release/netstandard2.1/publish --profile default
 ```
 
 ::: tip
-You may be wondering: why do we need a special CLI command to basically zip up the publish folder when I could run a Powershell or Bash command instead? The answer is that this command can utilize the filesystem source we defined in the `default` deployment profile earlier to auto-generate the specific filename for this new deployment, utilizing the [deployment contexts](/core-concepts/deployments/deployments-file#deployment-contexts) from the `--deployment-name-format` earlier.
+You may be wondering: why do we need a special CLI command to basically zip up the publish folder when I could run a Powershell or Bash command instead? The answer is that this command can utilize the filesystem source we defined in the `default` deployment profile earlier to auto-generate the specific filename for this new deployment, utilizing the [deployment contexts](/core-concepts/deployments/deployments-file#deployment-contexts) from the `--deployment-name-format` earlier, and auto-move the zip file to the target path.
 :::
 
 The output of this command should take all of `FlowLibrary`'s publish files, put them in a dynamically-named zip folder, and put them zip folder in the predetermind deployment source path.

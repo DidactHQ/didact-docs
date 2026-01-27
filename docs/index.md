@@ -11,7 +11,7 @@ hero:
       link: /getting-started/what-is-didact
     - theme: alt
       text: Quickstart
-      link: /getting-started/quickstart/create-a-flow-library
+      link: /quickstart/create-a-flow-library
 features:
   - icon: 🛠️
     title: Work In Progress

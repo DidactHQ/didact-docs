@@ -90,7 +90,7 @@ Unlike `ConfigureAsync` above, `ExecuteAsync` returns only a `Task` since flowru
 
 #### Context
 
-Similar to `ConfigureAsync` above, `ExecuteAsync` also takes an injected context, this context of the type `IFlowExecutionContext`. This context object exposes many useful utilities that you may need in your flow, such as a database flowrun logger, a flowrun cancellation logger, and more.
+Similar to `ConfigureAsync` above, `ExecuteAsync` also takes an injected context, this context of the type `IFlowExecutionContext`. This context object exposes many useful utilities that you may need in your flow, such as a database flowrun logger, a flowrun cancellation token, and more.
 
 Let's use the database flowrun logger from the injected context and simulate work being done:
 
