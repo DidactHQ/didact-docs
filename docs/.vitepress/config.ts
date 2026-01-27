@@ -295,8 +295,9 @@ export default defineConfig({
               // { text: 'ui run', link: '/api/didact-cli/ui-run' },
               { text: 'deployment init', link: '/api/didact-cli/deployment-init' },
               { text: 'deployment set', link: '/api/didact-cli/deployment-set' },
-              { text: 'deployment version', link: '/api/didact-cli/deployment-version' },
+              // { text: 'deployment version', link: '/api/didact-cli/deployment-version' },
               { text: 'deployment-profile init', link: '/api/didact-cli/deployment-profile-init' },
+              { text: 'deployment-profile set', link: '/api/didact-cli/deployment-profile-set' },
               { text: 'deployment profile sources', items: [
                 { text: 'deployment-profile-source set filesystem', link: '/api/didact-cli/deployment-profile-source-set-filesystem' }
               ]},
