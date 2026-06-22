@@ -34,9 +34,9 @@ It's important to keep in mind, then, that config settings are actually saved sp
 
 This is very convenient for you because you can easily create different profiles and easily swap back and forth between their settings. For example, you could make a `staging` profile for your Staging environment and a `production` profile for your Production environment.
 
-To create a new config profile, run the [config profile init](/api/didact-cli/config-profile-init) command.
+To create a new config profile, run the [config-profile init](/api/didact-cli/config-profile-init) command.
 
-To activate an existing profile, run the [config profile activate](/api/didact-cli/config-profile-activate) command.
+To activate an existing profile, run the [config-profile activate](/api/didact-cli/config-profile-activate) command.
 
 ## Config contexts
 
