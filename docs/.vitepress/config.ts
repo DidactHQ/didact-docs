@@ -131,6 +131,7 @@ export default defineConfig({
               { text: 'Write a Flow', link: '/quickstart/write-a-flow' },
               { text: 'Installation', link: '/quickstart/installation' },
               { text: 'Deploy Flow Library', link: '/quickstart/deploy-flow-library' },
+              { text: 'Execute a FlowRun', link: '/quickstart/execute-a-flowrun' },
             ]
           },
           {
