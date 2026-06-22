@@ -68,10 +68,9 @@ public class QuickstartFlow : IFlow
 {
     public async Task ExecuteAsync(IFlowExecutionContext context)
     {
-        var logger = context.Logger;
-        logger.LogInformation("Simulating work...");
+        context.Logger.LogInformation("Simulating work...");
         await Task.Delay(5000);
-        logger.LogInformation("Work complete.");
+        context.Logger.LogInformation("Work complete.");
     }
 }
 ```
