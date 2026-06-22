@@ -101,6 +101,7 @@ export default defineConfig({
               { text: 'Write a Flow', link: '/quickstart/write-a-flow' },
               { text: 'Installation', link: '/quickstart/installation' },
               { text: 'Deploy Flow Library', link: '/quickstart/deploy-flow-library' },
+              { text: 'Execute a FlowRun', link: '/quickstart/execute-a-flowrun' },
             ]
           },
           {
@@ -310,7 +311,6 @@ export default defineConfig({
               { text: 'environment init', link: '/api/didact-cli/environment-init' },
               { text: 'environment list', link: '/api/didact-cli/environment-list' },
               { text: 'license authenticate', link: '/api/didact-cli/license-authenticate' },
-              { text: 'license refresh', link: '/api/didact-cli/license-refresh' },
               // { text: 'license validate', link: '/api/didact-cli/license-validate' },
               // { text: 'engine install', link:'/api/didact-cli/engine-install' },
               // { text: 'engine config init', link: '/api/didact-cli/engine-config-init' },
@@ -322,17 +322,21 @@ export default defineConfig({
               // { text: 'ui config set', link: '/api/didact-cli/ui-config-set' },
               // { text: 'ui config inspect', link: '/api/didact-cli/ui-config-inspect' },
               // { text: 'ui run', link: '/api/didact-cli/ui-run' },
-              { text: 'deployment init', link: '/api/didact-cli/deployment-init' },
-              { text: 'deployment set', link: '/api/didact-cli/deployment-set' },
-              // { text: 'deployment version', link: '/api/didact-cli/deployment-version' },
-              { text: 'deployment-profile init', link: '/api/didact-cli/deployment-profile-init' },
-              { text: 'deployment-profile set', link: '/api/didact-cli/deployment-profile-set' },
-              { text: 'deployment profile sources', items: [
-                { text: 'deployment-profile-source set filesystem', link: '/api/didact-cli/deployment-profile-source-set-filesystem' }
+              { text: 'deployments', items: [
+                { text: 'deploy filesystem', link: '/api/didact-cli/deploy-filesystem' },
               ]},
-              { text: 'deployment package', link: '/api/didact-cli/deployment-package' },
-              { text: 'deployment generate', link: '/api/didact-cli/deployment-generate' },
-              { text: 'deployment inspect', link: '/api/didact-cli/deployment-inspect' },
+
+              // { text: 'deployment init', link: '/api/didact-cli/deployment-init' },
+              // { text: 'deployment set', link: '/api/didact-cli/deployment-set' },
+              // // { text: 'deployment version', link: '/api/didact-cli/deployment-version' },
+              // { text: 'deployment-profile init', link: '/api/didact-cli/deployment-profile-init' },
+              // { text: 'deployment-profile set', link: '/api/didact-cli/deployment-profile-set' },
+              // { text: 'deployment profile sources', items: [
+              //   { text: 'deployment-profile-source set filesystem', link: '/api/didact-cli/deployment-profile-source-set-filesystem' }
+              // ]},
+              // { text: 'deployment generate', link: '/api/didact-cli/deployment-generate' },
+              // { text: 'deployment inspect', link: '/api/didact-cli/deployment-inspect' },
+
               { text: 'encryption-key generate', link: '/api/didact-cli/encryption-key-generate' },
               // { text: 'encryption-key rotate', link: '/api/didact-cli/encryption-key-rotate' }
             ]

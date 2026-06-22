@@ -1,9 +1,9 @@
-# Config Profile Init
+# Config-Profile Init
 
 Initializes a new [config profile](/core-concepts/setup/config#config-profiles) in Didact's [config file](/core-concepts/setup/config#config-file).
 
 ```bash-vue
-didact config profile init <PROFILE_NAME>
+didact config-profile init <PROFILE_NAME>
 ```
 
 - `<PROFILE_NAME>` (string): The name of the new config profile.
@@ -13,5 +13,5 @@ didact config profile init <PROFILE_NAME>
 Initialize a new config profile named `production`.
 
 ```bash
-didact config profile init production
+didact config-profile init production
 ```
