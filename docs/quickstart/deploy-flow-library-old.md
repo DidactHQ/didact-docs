@@ -155,7 +155,7 @@ This should generate publish files for `FlowLibrary` in a default publish locati
 
 ### Deployment package
 
-Now we want to take these publish files, zip them into a `.zip` folder, and move them to the target path defined above. We have a convenient [deployment package](/api/didact-cli/deployment-package) command that can take all files from `FlowLibrary`'s publish folder, copy them into a `.zip` file, and move the `.zip` file to the target source:
+Now we want to take these publish files, zip them into a `.zip` folder, and move them to the target path defined above. We have a convenient deployment package command that can take all files from `FlowLibrary`'s publish folder, copy them into a `.zip` file, and move the `.zip` file to the target source:
 
 ```bash
 didact deployment package --source ./bin/Release/netstandard2.1/publish --profile default
