@@ -69,8 +69,7 @@ public class QuickstartFlow : IFlow
     public async Task ExecuteAsync(IFlowExecutionContext context)
     {
         context.Logger.LogInformation("Simulating work...");
-        await Task.Delay(5000);
-        context.Logger.LogInformation("Work complete.");
+        await Task.Delay(1000);
     }
 }
 ```
@@ -92,10 +91,8 @@ public class QuickstartFlow : IFlow
 
     public async Task ExecuteAsync(IFlowExecutionContext context)
     {
-        var logger = context.Logger;
-        logger.LogInformation("Simulating work...");
-        await Task.Delay(5000);
-        logger.LogInformation("Work complete.");
+        context.Logger.LogInformation("Simulating work...");
+        await Task.Delay(1000);
     }
 }
 ```
