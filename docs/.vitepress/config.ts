@@ -174,12 +174,29 @@ export default defineConfig({
             text: 'Flows',
             items: [
               { text: 'Overview', link: '/core-concepts/flows/flows-overview' },
+              { text: 'Contexts', link: '/core-concepts/flows/contexts' },
               { text: 'Dependency Injection', link: '/core-concepts/flows/dependency-injection' },
               { text: 'Versioning', link: '/core-concepts/flows/flow-versioning' },
               { text: 'Schedules' },
               { text: 'Triggers' },
               { text: 'Logging', link: '/core-concepts/flows/logging' },
               { text: 'Retry Policies' }
+            ]
+          },
+          {
+            text: 'Steps',
+            items: [
+              { text: 'Overview', link: '/core-concepts/steps/steps-overview' }
+            ]
+          },
+          {
+            text: 'Deployments',
+            items: [
+              { text: 'Overview', link: '/core-concepts/deployments/deployments-overview' },
+              { text: 'Deployment Names', link: '/core-concepts/deployments/deployment-names' },
+              { text: 'Deployments File', link: '/core-concepts/deployments/deployments-file' },
+              { text: 'Deployment Types' },
+              { text: 'Deployment Sources', link: '/core-concepts/deployments/deployment-sources' }
             ]
           },
           {
@@ -193,12 +210,10 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Deployments',
+            text: 'Didact Console',
             items: [
-              { text: 'Overview', link: '/core-concepts/deployments/deployments-overview' },
-              { text: 'Deployments File', link: '/core-concepts/deployments/deployments-file' },
-              { text: 'Deployment Types' },
-              { text: 'Deployment Sources', link: '/core-concepts/deployments/deployment-sources' }
+              { text: 'Console Overview', link: '/core-concepts/didact-console/console-overview' },
+              { text: 'License Keys', link: '/core-concepts/didact-console/license-keys' }
             ]
           },
           // {

@@ -45,8 +45,8 @@ Deployment commands typically do the following:
 
 1. Runs `dotnet publish` against your flow library to produce publish artifacts which primarily consist of the project's main `.dll` file.
 2. Packages the publish artifacts into a zip folder.
-3. Infers a deployment name for your published flow library. By default, Didact resolves the name using the flow library's `.csproj` name and the `<Version>` attribute in the `.csproj`.
-4. Moves the zip folder to the designated deployment source, wherever that may be.
+3. Infers or resolves a [deployment name](/core-concepts/deployments/deployment-names) for your published flow library.
+4. Moves the zip folder to the designated [deployment source](/core-concepts/deployments/deployment-sources), wherever that may be.
 5. Creates new deployment metadata in the Didact database.
 
 As you can see, that's an ugly workflow, so I'd rather have Didact take care of that for you! Once a deployment command runs successfully, a flow library is **discoverable** and **consumable** by Didact Engine.

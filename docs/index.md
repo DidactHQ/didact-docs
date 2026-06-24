@@ -4,7 +4,7 @@ titleTemplate: The open core .NET job orchestrator
 hero:
   name: Didact Docs
   # text: Welcome
-  tagline: The open core .NET job orchestrator
+  tagline: A Pythonically-inspired, DX-obsessed, durable job orchestrator for .NET background jobs and workflows.
   actions:
     - theme: brand
       text: Get Started
