@@ -52,7 +52,7 @@ This is drastically different from other background job libraries like Hangfire 
 
 ## Database Migrations
 
-The Didact CLI is required to run database migrations.
+The Didact CLI is required to run database migrations. See [Installation](/core-concepts/setup/installation) and [Config](/core-concepts/setup/config) for more details.
 
 ::: warning
 When database migrations are ran, make sure that Didact CLI uses a connection string with DDL privileges.
