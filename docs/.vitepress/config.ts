@@ -148,12 +148,14 @@ export default defineConfig({
             text: 'Architecture',
             items: [
               { text: 'How It Works', link: '/core-concepts/architecture/how-it-works' },
-              { text: 'Metadata Database', link: '/core-concepts/architecture/metadata-database' },
-              { text: 'Didact CLI', link: '/core-concepts/architecture/didact-cli' },
-              { text: 'Didact Engine', link: '/core-concepts/architecture/didact-engine' },
-              { text: 'Didact UI', link: '/core-concepts/architecture/didact-ui' },
-              { text: 'Didact Core', link: '/core-concepts/architecture/didact-core' },
-              { text: 'Flow Library', link: '/core-concepts/architecture/flow-library'},
+              { text: 'Components', collapsed: true, items: [
+                { text: 'Metadata Database', link: '/core-concepts/architecture/metadata-database' },
+                { text: 'Didact CLI', link: '/core-concepts/architecture/didact-cli' },
+                { text: 'Didact Engine', link: '/core-concepts/architecture/didact-engine' },
+                { text: 'Didact UI', link: '/core-concepts/architecture/didact-ui' },
+                { text: 'Didact Core', link: '/core-concepts/architecture/didact-core' },
+                { text: 'Flow Library', link: '/core-concepts/architecture/flow-library'},
+              ]}
             ]
           },
           {
