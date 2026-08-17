@@ -155,6 +155,7 @@ export default defineConfig({
                 { text: 'Didact UI', link: '/core-concepts/architecture/didact-ui' },
                 { text: 'Didact Core', link: '/core-concepts/architecture/didact-core' },
                 { text: 'Flow Library', link: '/core-concepts/architecture/flow-library'},
+                { text: 'Didact Console', link: '/core-concepts/architecture/didact-console' }
               ]}
             ]
           },
@@ -182,7 +183,8 @@ export default defineConfig({
               { text: 'Schedules' },
               { text: 'Triggers' },
               { text: 'Logging', link: '/core-concepts/flows/logging' },
-              { text: 'Retry Policies' }
+              { text: 'Retry Policies' },
+              { text: 'Payload Encryption', link: '/core-concepts/flows/payload-encryption' }
             ]
           },
           {
@@ -208,6 +210,7 @@ export default defineConfig({
               { text: 'Queues', link: '/core-concepts/queues' },
               { text: 'Variables', link: '/core-concepts/variables' },
               { text: 'Secrets', link: '/core-concepts/secrets' },
+              { text: 'Alerts', link: '/core-concepts/alerts' }
               // { text: 'Engine Tunings', link: '/core-concepts/engine-tunings' }
             ]
           },
@@ -215,7 +218,9 @@ export default defineConfig({
             text: 'Didact Console',
             items: [
               { text: 'Console Overview', link: '/core-concepts/didact-console/console-overview' },
-              { text: 'License Keys', link: '/core-concepts/didact-console/license-keys' }
+              { text: 'License Keys', link: '/core-concepts/didact-console/license-keys' },
+              { text: 'Hosted Deployments', link: '/core-concepts/didact-console/hosted-deployments' },
+              { text: 'Users & Teams', link: '/core-concepts/didact-console/users-and-teams' }
             ]
           },
           // {
