@@ -18,15 +18,15 @@ For a list of all config settings, see the [config page](/core-concepts/setup/co
 Set the database provider and database connection string in back-to-back commands.
 
 ```bash
-didact config set Database.Provider SQLServer
+didact config set engine.database.provider SQLServer
 ```
 
 ```bash
-didact config set Database.ConnectionString "localhost"
+didact config set engine.database.connectionString "localhost"
 ```
 
 Set the license key.
 
 ```bash
-didact config set LicenseKey someAPIKeyabd123...
+didact config set engine.licenseKey someAPIKeyabd123...
 ```
