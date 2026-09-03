@@ -99,17 +99,20 @@ A `didact.config.json` JSON template file is shown below with the `default` conf
     "activeProfile": "default",
     "profiles": {
         "default": {
-            "Database": {
-                "Provider": "<DB_PROVIDER_KEY>",
-                "ConnectionString": "<DB_CONNECTION_STRING>"
+            "cli": {
+                "engineBaseUrl": "<ENGINE_BASE_URL>"
             },
-            "EncryptionKey": "<ENCRYPTION_KEY>",
-            "LicenseKey": "<LICENSE_KEY>",
-            "Engine": {
-                "Name": "<ENGINE_NAME>"
+            "engine": {
+                "database": {
+                    "provider": "<DB_PROVIDER_KEY>",
+                    "connectionString": "<DB_CONNECTION_STRING>"
+                },
+                "encryptionKey": "<ENCRYPTION_KEY>",
+                "licenseKey": "<LICENSE_KEY>",
+                "name": "<ENGINE_NAME>"
             },
-            "UI": {
-                "EngineBaseUrl": "<BASE_URL>"
+            "ui": {
+                "engineBaseUrl": "<ENGINE_BASE_URL>"
             }
         }
     }
@@ -127,12 +130,13 @@ For simplicity, when referencing these settings through Didact CLI commands, use
 | Setting | Type | Description |
 | --- | :---: | --- |
 | `activeProfile` | string | The currently activated config profile. |
-| `Database.Provider` | string | The [database provider key](/core-concepts/architecture/metadata-database#database-providers) for your database provider of choice. |
-| `Database.ConnectionString` | string | The connection string for the database. |
-| `EncryptionKey` | string | The symmetric encryption key. |
-| `LicenseKey` | string | An API key from [Didact Console](https://console.didact.dev) that unlocks enhanced features. |
-| `Engine.Name` | string | The name of the Didact Engine instance. |
-| `UI.EngineBaseUrl` | string | The base URL of a target Didact Engine. |
+| `cli.engineBaseUrl` | string | The base URL of a target Didact Engine. |
+| `engine.database.provider` | string | The [database provider key](/core-concepts/architecture/metadata-database#database-providers) for your database provider of choice. |
+| `engine.database.connectionString` | string | The connection string for the database. |
+| `engine.encryptionKey` | string | The symmetric encryption key. |
+| `engine.licenseKey` | string | An API key from [Didact Console](https://console.didact.dev) that unlocks enhanced features. |
+| `engine.name` | string | The name of the Didact Engine instance. |
+| `ui.engineBaseUrl` | string | The base URL of a target Didact Engine. |
 
 ### LicenseKey
 

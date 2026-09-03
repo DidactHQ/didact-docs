@@ -54,11 +54,11 @@ didact config init
 Next, set the [database provider key](/core-concepts/architecture/metadata-database#database-providers) and database connection string with the [config set command](/api/didact-cli/config-set) below:
 
 ```bash
-didact config set Database.Provider db-provider-key
+didact config set engine.database.provider db-provider-key
 ```
 
 ```bash
-didact config set Database.ConnectionString "your-conn-string"
+didact config set engine.database.connectionString "your-conn-string"
 ```
 
 Ensure that your config settings were saved successfully by running the [config inspect command](/api/didact-cli/config-inspect):
